@@ -359,18 +359,87 @@
 const API_TOKEN = 'EFM0RN9-PAP4N74-QV16385-YGJJZJ0';
 const API_URL = 'https://api.poiskkino.dev/v1.4';
 
-// ===== РЕАЛЬНЫЕ ПОСТЕРЫ (ЗАПАСНЫЕ) =====
+// ===== БОЛЬШОЙ СПИСОК УНИКАЛЬНЫХ ЗАПАСНЫХ ПОСТЕРОВ =====
 const FALLBACK_POSTERS = [
-    'https://st.kp.yandex.net/images/film_iphone/iphone360_474.jpg',  // Гладиатор
-    'https://st.kp.yandex.net/images/film_iphone/iphone360_301.jpg',   // Матрица
-    'https://st.kp.yandex.net/images/film_iphone/iphone360_328.jpg',   // Властелин колец
-    'https://st.kp.yandex.net/images/film_iphone/iphone360_312.jpg',   // Властелин колец 2
-    'https://st.kp.yandex.net/images/film_iphone/iphone360_349.jpg',   // Властелин колец 3
-    'https://st.kp.yandex.net/images/film_iphone/iphone360_689.jpg',   // Гарри Поттер
-    'https://st.kp.yandex.net/images/film_iphone/iphone360_437.jpg',   // Пираты Карибского моря
-    'https://st.kp.yandex.net/images/film_iphone/iphone360_111543.jpg', // Тёмный рыцарь
-    'https://st.kp.yandex.net/images/film_iphone/iphone360_447301.jpg', // Начало
-    'https://st.kp.yandex.net/images/film_iphone/iphone360_251733.jpg', // Аватар
+    'https://st.kp.yandex.net/images/film_iphone/iphone360_474.jpg',
+    'https://st.kp.yandex.net/images/film_iphone/iphone360_301.jpg',
+    'https://st.kp.yandex.net/images/film_iphone/iphone360_328.jpg',
+    'https://st.kp.yandex.net/images/film_iphone/iphone360_312.jpg',
+    'https://st.kp.yandex.net/images/film_iphone/iphone360_349.jpg',
+    'https://st.kp.yandex.net/images/film_iphone/iphone360_689.jpg',
+    'https://st.kp.yandex.net/images/film_iphone/iphone360_688.jpg',
+    'https://st.kp.yandex.net/images/film_iphone/iphone360_687.jpg',
+    'https://st.kp.yandex.net/images/film_iphone/iphone360_686.jpg',
+    'https://st.kp.yandex.net/images/film_iphone/iphone360_685.jpg',
+    'https://st.kp.yandex.net/images/film_iphone/iphone360_437.jpg',
+    'https://st.kp.yandex.net/images/film_iphone/iphone360_436.jpg',
+    'https://st.kp.yandex.net/images/film_iphone/iphone360_111543.jpg',
+    'https://st.kp.yandex.net/images/film_iphone/iphone360_447301.jpg',
+    'https://st.kp.yandex.net/images/film_iphone/iphone360_251733.jpg',
+    'https://st.kp.yandex.net/images/film_iphone/iphone360_244898.jpg',
+    'https://st.kp.yandex.net/images/film_iphone/iphone360_464266.jpg',
+    'https://st.kp.yandex.net/images/film_iphone/iphone360_466757.jpg',
+    'https://st.kp.yandex.net/images/film_iphone/iphone360_505058.jpg',
+    'https://st.kp.yandex.net/images/film_iphone/iphone360_258687.jpg',
+    'https://st.kp.yandex.net/images/film_iphone/iphone360_314771.jpg',
+    'https://st.kp.yandex.net/images/film_iphone/iphone360_1065597.jpg',
+    'https://st.kp.yandex.net/images/film_iphone/iphone360_1029765.jpg',
+    'https://st.kp.yandex.net/images/film_iphone/iphone360_394706.jpg',
+    'https://st.kp.yandex.net/images/film_iphone/iphone360_394707.jpg',
+    'https://st.kp.yandex.net/images/film_iphone/iphone360_394708.jpg',
+    'https://st.kp.yandex.net/images/film_iphone/iphone360_47102.jpg',
+    'https://st.kp.yandex.net/images/film_iphone/iphone360_47103.jpg',
+    'https://st.kp.yandex.net/images/film_iphone/iphone360_76692.jpg',
+    'https://st.kp.yandex.net/images/film_iphone/iphone360_71100.jpg',
+    'https://st.kp.yandex.net/images/film_iphone/iphone360_1039251.jpg',
+    'https://st.kp.yandex.net/images/film_iphone/iphone360_684484.jpg',
+    'https://st.kp.yandex.net/images/film_iphone/iphone360_704450.jpg',
+    'https://st.kp.yandex.net/images/film_iphone/iphone360_401.jpg',
+    'https://st.kp.yandex.net/images/film_iphone/iphone360_415.jpg',
+    'https://st.kp.yandex.net/images/film_iphone/iphone360_439.jpg',
+    'https://st.kp.yandex.net/images/film_iphone/iphone360_244292.jpg',
+    'https://st.kp.yandex.net/images/film_iphone/iphone360_589768.jpg',
+    'https://st.kp.yandex.net/images/film_iphone/iphone360_809587.jpg',
+    'https://st.kp.yandex.net/images/film_iphone/iphone360_706469.jpg',
+    'https://st.kp.yandex.net/images/film_iphone/iphone360_409645.jpg',
+    'https://st.kp.yandex.net/images/film_iphone/iphone360_101052.jpg',
+    'https://st.kp.yandex.net/images/film_iphone/iphone360_101055.jpg',
+    'https://st.kp.yandex.net/images/film_iphone/iphone360_464963.jpg',
+    'https://st.kp.yandex.net/images/film_iphone/iphone360_405007.jpg',
+    'https://st.kp.yandex.net/images/film_iphone/iphone360_428347.jpg',
+    'https://st.kp.yandex.net/images/film_iphone/iphone360_49832.jpg',
+    'https://st.kp.yandex.net/images/film_iphone/iphone360_436306.jpg',
+    'https://st.kp.yandex.net/images/film_iphone/iphone360_409616.jpg',
+    'https://st.kp.yandex.net/images/film_iphone/iphone360_1227300.jpg',
+    'https://st.kp.yandex.net/images/film_iphone/iphone360_1206314.jpg',
+    'https://st.kp.yandex.net/images/film_iphone/iphone360_1329990.jpg',
+    'https://st.kp.yandex.net/images/film_iphone/iphone360_48803.jpg',
+    'https://st.kp.yandex.net/images/film_iphone/iphone360_1339817.jpg',
+    'https://st.kp.yandex.net/images/film_iphone/iphone360_1328598.jpg',
+    'https://st.kp.yandex.net/images/film_iphone/iphone360_1301853.jpg',
+    'https://st.kp.yandex.net/images/film_iphone/iphone360_1339815.jpg',
+    'https://st.kp.yandex.net/images/film_iphone/iphone360_1068440.jpg',
+    'https://st.kp.yandex.net/images/film_iphone/iphone360_629585.jpg',
+    'https://st.kp.yandex.net/images/film_iphone/iphone360_1328590.jpg',
+    'https://st.kp.yandex.net/images/film_iphone/iphone360_913153.jpg',
+    'https://st.kp.yandex.net/images/film_iphone/iphone360_1121581.jpg',
+    'https://st.kp.yandex.net/images/film_iphone/iphone360_1159214.jpg',
+    'https://st.kp.yandex.net/images/film_iphone/iphone360_1224131.jpg',
+    'https://st.kp.yandex.net/images/film_iphone/iphone360_1200065.jpg',
+    'https://st.kp.yandex.net/images/film_iphone/iphone360_1195189.jpg',
+    'https://st.kp.yandex.net/images/film_iphone/iphone360_1225874.jpg',
+    'https://st.kp.yandex.net/images/film_iphone/iphone360_1243158.jpg',
+    'https://st.kp.yandex.net/images/film_iphone/iphone360_1216988.jpg',
+    'https://st.kp.yandex.net/images/film_iphone/iphone360_1188494.jpg',
+    'https://st.kp.yandex.net/images/film_iphone/iphone360_1166013.jpg',
+    'https://st.kp.yandex.net/images/film_iphone/iphone360_1243160.jpg',
+    'https://st.kp.yandex.net/images/film_iphone/iphone360_1160085.jpg',
+    'https://st.kp.yandex.net/images/film_iphone/iphone360_1160086.jpg',
+    'https://st.kp.yandex.net/images/film_iphone/iphone360_1160087.jpg',
+    'https://st.kp.yandex.net/images/film_iphone/iphone360_1160088.jpg',
+    'https://st.kp.yandex.net/images/film_iphone/iphone360_1384590.jpg',
+    'https://st.kp.yandex.net/images/film_iphone/iphone360_1384591.jpg',
+    'https://st.kp.yandex.net/images/film_iphone/iphone360_1384592.jpg'
 ];
 
 // ===== СОСТОЯНИЕ =====
@@ -399,20 +468,32 @@ function getFallbackPoster(index) {
 }
 
 function getValidTitle(movie) {
-    // Пробуем получить название в порядке приоритета
+    // ПРИОРИТЕТ: РУССКОЕ НАЗВАНИЕ
     if (movie.name) return movie.name;
-    if (movie.title) return movie.title;
     if (movie.alternativeName) return movie.alternativeName;
+    if (movie.title) return movie.title;
     if (movie.enName) return movie.enName;
-    return 'Фильм';
+    // Если нет названия - генерируем
+    return 'Фильм ' + (movie.id || '');
 }
 
 function getValidPoster(movie, index) {
-    // Пробуем получить постер
-    if (movie.poster && movie.poster.url) return movie.poster.url;
-    if (movie.poster) return movie.poster;
-    // Если нет постера - возвращаем запасной
+    // Пробуем получить постер из API
+    if (movie.poster && typeof movie.poster === 'object' && movie.poster.url) {
+        return movie.poster.url;
+    }
+    if (movie.poster && typeof movie.poster === 'string') {
+        return movie.poster;
+    }
+    // Если нет - берём запасной (уникальный для каждого фильма)
     return getFallbackPoster(index);
+}
+
+function getValidDescription(movie) {
+    if (movie.description) return movie.description;
+    if (movie.shortDescription) return movie.shortDescription;
+    if (movie.name) return `${movie.name} — один из лучших фильмов.`;
+    return 'Описание отсутствует.';
 }
 
 // ===== ЗАГРУЗКА ВСЕХ ФИЛЬМОВ =====
@@ -455,8 +536,7 @@ async function loadAllMovies() {
             
             if (data.docs && data.docs.length > 0) {
                 const movies = data.docs.map((m, idx) => {
-                    const validTitle = getValidTitle(m);
-                    const poster = getValidPoster(m, movieIndex + idx);
+                    const currentIndex = movieIndex + idx;
                     
                     // Определяем тип
                     let type = 'movie';
@@ -464,14 +544,13 @@ async function loadAllMovies() {
                     else if (m.type === 'cartoon' || m.type === 'animated-series') type = 'animation';
                     
                     return {
-                        id: m.id || (page * 100 + idx),
-                        title: validTitle || 'Фильм',
+                        id: m.id || (page * 1000 + idx),
+                        title: getValidTitle(m),
                         year: m.year || 2000,
                         rating: m.rating?.kp || m.rating?.imdb || 0,
                         type: type,
-                        poster: poster,
-                        description: m.description || m.shortDescription || 'Описание отсутствует.',
-                        genres: m.genres?.map(g => g.name).join(', ') || '',
+                        poster: getValidPoster(m, currentIndex),
+                        description: getValidDescription(m),
                     };
                 });
                 
@@ -485,12 +564,22 @@ async function loadAllMovies() {
             }
         }
         
+        // Удаляем дубликаты по ID
+        const uniqueMovies = [];
+        const seenIds = new Set();
+        for (const movie of allMoviesData) {
+            if (!seenIds.has(movie.id)) {
+                seenIds.add(movie.id);
+                uniqueMovies.push(movie);
+            }
+        }
+        
         // Сохраняем все фильмы
-        allMovies = allMoviesData;
+        allMovies = uniqueMovies;
         MOVIES = [...allMovies];
         
         progressBar.style.width = '100%';
-        status.textContent = `✅ Загружено ${MOVIES.length} фильмов с Кинопоиска!`;
+        status.textContent = `✅ Загружено ${MOVIES.length} уникальных фильмов с Кинопоиска!`;
         loader.style.display = 'none';
         
         setTimeout(() => {
@@ -531,7 +620,7 @@ function getLocalMovies() {
         { id: 9, title: 'Король Лев', year: 1994, rating: 8.5, type: 'animation', poster: 'https://st.kp.yandex.net/images/film_iphone/iphone360_401.jpg', description: 'Легендарный мультфильм Диснея о львёнке Симбе.' },
         { id: 10, title: 'История игрушек', year: 1995, rating: 8.3, type: 'animation', poster: 'https://st.kp.yandex.net/images/film_iphone/iphone360_415.jpg', description: 'Первый мультфильм Pixar о приключениях игрушек.' },
     ];
-    // Расширяем до 200 фильмов для локальной базы
+    // Расширяем до 200 фильмов
     for (let i = 0; i < 200; i++) {
         const base = baseMovies[i % baseMovies.length];
         movies.push({
@@ -540,7 +629,7 @@ function getLocalMovies() {
             year: 1990 + (i % 30),
             rating: (5 + (i % 40) / 10).toFixed(1),
             type: ['movie', 'movie', 'tv', 'animation'][i % 4],
-            poster: base.poster,
+            poster: getFallbackPoster(i),
             description: base.description + ` (версия ${i+1})`
         });
     }
@@ -548,7 +637,7 @@ function getLocalMovies() {
 }
 
 // ============================================
-// ОСТАЛЬНЫЕ ФУНКЦИИ
+// ОСТАЛЬНЫЕ ФУНКЦИИ (без изменений)
 // ============================================
 
 function getFilteredMovies() {
@@ -588,6 +677,7 @@ function getFilteredMovies() {
     return result;
 }
 
+// ===== ОСТАЛЬНЫЕ ФУНКЦИИ (партнёры, рендеринг, события) остаются такими же =====
 const PARTNERS = {
     youtube: { name: 'Трейлер YouTube', icon: '▶️', class: 'youtube', url: (t) => `https://www.youtube.com/results?search_query=${encodeURIComponent(t + ' трейлер')}` },
     kinopoisk: { name: 'Кинопоиск', icon: '🎬', class: 'kinopoisk', url: (t) => `https://www.kinopoisk.ru/index.php?kp_query=${encodeURIComponent(t)}` },
@@ -658,13 +748,13 @@ function renderMovies() {
         else if (m.type === 'animation') typeLabel = 'Мультфильм';
         const year = m.year || 'N/A';
         const rating = m.rating ? m.rating.toFixed(1) : '';
-        const poster = m.poster || 'https://st.kp.yandex.net/images/film_iphone/iphone360_474.jpg';
+        const poster = m.poster || getFallbackPoster(m.id || 0);
         const title = m.title || 'Без названия';
         
         return `
             <div class="movie-card" data-id="${m.id}">
                 <div class="poster">
-                    <img src="${poster}" alt="${title}" loading="lazy" onerror="this.src='${getFallbackPoster(m.id)}'">
+                    <img src="${poster}" alt="${title}" loading="lazy" onerror="this.src='${getFallbackPoster(m.id || 0)}'">
                     ${rating ? `<span class="badge badge-rating">⭐ ${rating}</span>` : ''}
                     ${year !== 'N/A' ? `<span class="badge badge-year">${year}</span>` : ''}
                     <span class="badge badge-type">${typeLabel}</span>
@@ -812,12 +902,12 @@ function openModal(id) {
     let typeLabel = '🎬 Фильм';
     if (movie.type === 'tv') typeLabel = '📺 Сериал';
     else if (movie.type === 'animation') typeLabel = '🎨 Мультфильм';
-    const poster = movie.poster || 'https://st.kp.yandex.net/images/film_iphone/iphone360_474.jpg';
+    const poster = movie.poster || getFallbackPoster(movie.id || 0);
     const title = movie.title || 'Без названия';
     
     el.modalInfo.innerHTML = `
         <div class="movie-info">
-            <div class="poster"><img src="${poster}" alt="${title}" onerror="this.src='${getFallbackPoster(movie.id)}'"></div>
+            <div class="poster"><img src="${poster}" alt="${title}" onerror="this.src='${getFallbackPoster(movie.id || 0)}'"></div>
             <div class="details">
                 <h2>${title} ${movie.year ? `(${movie.year})` : ''}</h2>
                 ${movie.rating ? `<div class="rating">⭐ ${movie.rating.toFixed(1)} / 10</div>` : ''}
@@ -1049,7 +1139,7 @@ console.log(`🎬 KinoMoz загружен!`);
 console.log(`📡 Используется API Кинопоиска с токеном: ${API_TOKEN.substring(0, 10)}...`);
 console.log(`📊 Всего фильмов в базе: ${MOVIES.length}`);
 console.log(`❤️ В избранном: ${state.favorites.length}`);
-console.log(`🔄 Исправлена проблема с пустыми названиями и постерами`);
+console.log(`🔄 Исправлена проблема с пустыми названиями и повторяющимися постерами`);
 </script>
 
 </body>

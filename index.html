@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>KinoMoz - 500+ фильмов и сериалов</title>
+    <title>KinoMoz - 500+ фильмов</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -19,16 +19,16 @@
         .logo{display:flex;align-items:center;gap:8px;cursor:pointer;flex-shrink:0}
         .logo-text{font-size:24px;font-weight:900;background:linear-gradient(135deg,#e50914,#ff6b6b);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
         .logo-text span{-webkit-text-fill-color:var(--text);font-weight:300}
-        .logo-badge{font-size:9px;background:#4CAF50;color:#fff;padding:2px 10px;border-radius:50px;font-weight:600;text-transform:uppercase}
+        .logo-badge{font-size:9px;background:#4CAF50;color:#fff;padding:2px 10px;border-radius:50px;font-weight:600}
         
         .nav{display:flex;gap:4px;flex-wrap:wrap}
-        .nav-btn{padding:8px 18px;border-radius:50px;background:transparent;color:var(--text2);border:none;font-size:13px;font-weight:500;cursor:pointer;transition:all .3s;font-family:inherit}
+        .nav-btn{padding:8px 18px;border-radius:50px;background:transparent;color:var(--text2);border:none;font-size:13px;font-weight:500;cursor:pointer;transition:all .3s}
         .nav-btn:hover{color:var(--text);background:rgba(255,255,255,0.05)}
         .nav-btn.active{color:var(--text);background:rgba(255,255,255,0.08)}
         .nav-btn.active::after{content:'';display:block;margin:2px auto 0;width:20px;height:2px;background:var(--accent);border-radius:2px}
         
         .search-wrap{flex:1;min-width:150px;max-width:450px;position:relative}
-        .search-wrap input{width:100%;padding:10px 16px 10px 44px;border-radius:50px;border:1px solid rgba(255,255,255,0.06);background:rgba(255,255,255,0.05);color:var(--text);font-size:14px;outline:none;font-family:inherit;transition:all .3s}
+        .search-wrap input{width:100%;padding:10px 16px 10px 44px;border-radius:50px;border:1px solid rgba(255,255,255,0.06);background:rgba(255,255,255,0.05);color:var(--text);font-size:14px;outline:none}
         .search-wrap input:focus{border-color:var(--accent);background:rgba(255,255,255,0.08)}
         .search-wrap input::placeholder{color:var(--text3)}
         .search-wrap .icon{position:absolute;left:16px;top:50%;transform:translateY(-50%);color:var(--text3);font-size:14px}
@@ -49,14 +49,14 @@
         .hero h1{font-size:28px;font-weight:800}
         .hero h1 span{color:var(--accent)}
         .hero p{color:var(--text2);font-size:15px;margin-top:4px}
-        .hero .update-info{color:var(--text3);font-size:12px;margin-top:6px}
+        .hero .info{color:var(--text3);font-size:13px;margin-top:6px}
         
         .filters-bar{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.04);margin:10px 0 20px}
         .filter-group{display:flex;gap:6px;flex-wrap:wrap}
-        .filter-btn{padding:7px 18px;border-radius:50px;background:rgba(255,255,255,0.04);color:var(--text2);border:1px solid transparent;font-size:13px;font-weight:500;cursor:pointer;transition:all .3s;font-family:inherit}
+        .filter-btn{padding:7px 18px;border-radius:50px;background:rgba(255,255,255,0.04);color:var(--text2);border:1px solid transparent;font-size:13px;font-weight:500;cursor:pointer;transition:all .3s}
         .filter-btn:hover{background:rgba(255,255,255,0.08);color:var(--text)}
         .filter-btn.active{background:var(--accent);color:#fff;border-color:var(--accent)}
-        .sort-select{padding:7px 18px;border-radius:50px;background:rgba(255,255,255,0.04);color:var(--text2);border:1px solid rgba(255,255,255,0.06);font-size:13px;font-weight:500;cursor:pointer;outline:none;font-family:inherit}
+        .sort-select{padding:7px 18px;border-radius:50px;background:rgba(255,255,255,0.04);color:var(--text2);border:1px solid rgba(255,255,255,0.06);font-size:13px;font-weight:500;cursor:pointer;outline:none}
         .sort-select:hover{border-color:rgba(255,255,255,0.15)}
         .sort-select option{background:var(--bg2);color:var(--text)}
         
@@ -66,7 +66,7 @@
         
         .movie-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:24px}
         
-        .movie-card{background:var(--card);border-radius:var(--radius);overflow:hidden;cursor:pointer;transition:all .4s cubic-bezier(.4,0,.2,1);border:1px solid rgba(255,255,255,0.03)}
+        .movie-card{background:var(--card);border-radius:var(--radius);overflow:hidden;cursor:pointer;transition:all .4s;border:1px solid rgba(255,255,255,0.03)}
         .movie-card:hover{transform:translateY(-8px);box-shadow:0 12px 40px rgba(229,9,20,0.15);border-color:rgba(229,9,20,0.2)}
         .movie-card:active{transform:scale(.97)}
         .movie-card .poster{position:relative;overflow:hidden;aspect-ratio:2/3;background:var(--bg2)}
@@ -76,7 +76,7 @@
         .badge{position:absolute;padding:3px 12px;border-radius:50px;font-size:10px;font-weight:600;backdrop-filter:blur(10px);pointer-events:none}
         .badge-rating{top:10px;right:10px;background:rgba(0,0,0,0.8);color:var(--gold)}
         .badge-year{bottom:10px;left:10px;background:rgba(0,0,0,0.7);color:var(--text)}
-        .badge-type{top:10px;left:10px;background:rgba(229,9,20,0.9);color:#fff;font-size:9px;text-transform:uppercase;letter-spacing:.5px}
+        .badge-type{top:10px;left:10px;background:rgba(229,9,20,0.9);color:#fff;font-size:9px;text-transform:uppercase}
         .badge-fav{bottom:10px;right:10px;background:rgba(229,9,20,0.9);color:#fff;font-size:16px;padding:4px 10px}
         
         .movie-card .overlay{position:absolute;inset:0;background:rgba(0,0,0,0.6);opacity:0;transition:all .3s;display:flex;align-items:center;justify-content:center;gap:10px}
@@ -91,21 +91,21 @@
         .movie-card .info{padding:12px 14px 14px}
         .movie-card .info h3{font-size:14px;font-weight:600;margin-bottom:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
         .movie-card .info .meta{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--text3)}
-        .movie-card .info .lang{color:var(--green);font-size:10px;margin-top:3px;display:flex;align-items:center;gap:4px}
+        .movie-card .info .lang{color:var(--green);font-size:10px;margin-top:3px}
         
         .loader{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:60px 20px;gap:16px}
         .loader-spinner{width:44px;height:44px;border:3px solid rgba(255,255,255,0.06);border-top-color:var(--accent);border-radius:50%;animation:spin .8s linear infinite}
         @keyframes spin{to{transform:rotate(360deg)}}
         .loader p{color:var(--text3);font-size:14px}
         
-        .load-more{display:none;margin:30px auto 0;padding:12px 40px;border-radius:50px;background:rgba(255,255,255,0.04);color:var(--text2);border:1px solid rgba(255,255,255,0.06);font-size:14px;font-weight:500;cursor:pointer;transition:all .3s;font-family:inherit}
+        .load-more{display:none;margin:30px auto 0;padding:12px 40px;border-radius:50px;background:rgba(255,255,255,0.04);color:var(--text2);border:1px solid rgba(255,255,255,0.06);font-size:14px;font-weight:500;cursor:pointer;transition:all .3s}
         .load-more:hover{background:rgba(255,255,255,0.08);color:var(--text)}
         
         .modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.95);backdrop-filter:blur(30px);z-index:2000;padding:20px;align-items:center;justify-content:center}
         .modal.active{display:flex;animation:fadeIn .3s}
         @keyframes fadeIn{from{opacity:0}to{opacity:1}}
         
-        .modal-content{background:var(--bg2);border-radius:var(--radius);max-width:1100px;width:100%;max-height:95vh;overflow-y:auto;position:relative;animation:slideUp .4s cubic-bezier(.4,0,.2,1);border:1px solid rgba(255,255,255,0.04)}
+        .modal-content{background:var(--bg2);border-radius:var(--radius);max-width:1100px;width:100%;max-height:95vh;overflow-y:auto;position:relative;animation:slideUp .4s;border:1px solid rgba(255,255,255,0.04)}
         @keyframes slideUp{from{transform:translateY(30px) scale(.96);opacity:0}to{transform:translateY(0) scale(1);opacity:1}}
         
         .modal-close{position:sticky;top:12px;right:12px;float:right;z-index:10;width:38px;height:38px;border-radius:50%;background:rgba(0,0,0,0.7);color:#fff;border:none;font-size:18px;cursor:pointer;transition:all .3s;display:flex;align-items:center;justify-content:center;margin:12px 12px 0 0}
@@ -131,7 +131,7 @@
         .player-loading .lang-label{color:var(--green);font-size:13px}
         
         .partner-buttons{display:flex;gap:10px;flex-wrap:wrap;padding:12px 0;border-top:1px solid rgba(255,255,255,0.04);border-bottom:1px solid rgba(255,255,255,0.04);margin:12px 0}
-        .partner-btn{display:flex;align-items:center;gap:8px;padding:8px 18px;border-radius:50px;background:rgba(255,255,255,0.04);color:var(--text2);border:1px solid rgba(255,255,255,0.06);font-size:13px;font-weight:500;cursor:pointer;transition:all .3s;text-decoration:none;font-family:inherit}
+        .partner-btn{display:flex;align-items:center;gap:8px;padding:8px 18px;border-radius:50px;background:rgba(255,255,255,0.04);color:var(--text2);border:1px solid rgba(255,255,255,0.06);font-size:13px;font-weight:500;cursor:pointer;transition:all .3s;text-decoration:none}
         .partner-btn:hover{background:rgba(255,255,255,0.08);color:var(--text);transform:translateY(-2px)}
         .partner-btn.ivi{background:#1a2a3a;color:#fff}
         .partner-btn.okko{background:#1a1a3a;color:#fff}
@@ -148,7 +148,7 @@
         @keyframes slideInRight{from{transform:translateX(100%) scale(.9);opacity:0}to{transform:translateX(0) scale(1);opacity:1}}
         @keyframes slideOutRight{from{transform:translateX(0) scale(1);opacity:1}to{transform:translateX(100%) scale(.9);opacity:0}}
         
-        .mobile-menu{display:none;position:fixed;top:0;left:-100%;width:85%;max-width:320px;height:100%;background:var(--bg2);z-index:1500;transition:left .3s cubic-bezier(.4,0,.2,1);padding:24px;overflow-y:auto}
+        .mobile-menu{display:none;position:fixed;top:0;left:-100%;width:85%;max-width:320px;height:100%;background:var(--bg2);z-index:1500;transition:left .3s;padding:24px;overflow-y:auto}
         .mobile-menu.open{left:0}
         .mobile-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.6);z-index:1499}
         .mobile-overlay.open{display:block}
@@ -200,10 +200,6 @@
         }
         @media(max-width:480px){.movie-grid{grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:10px}.movie-card .info h3{font-size:11px}.movie-card .info .meta{font-size:10px}.movie-card .info .lang{font-size:10px}.movie-info .poster{width:110px}.movie-info .details h2{font-size:18px}}
         @media(min-width:1400px){.movie-grid{grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:24px}}
-        
-        .update-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(33,150,243,0.15);color:#2196F3;padding:4px 14px;border-radius:50px;font-size:12px;font-weight:500}
-        .update-badge .dot{width:6px;height:6px;background:#2196F3;border-radius:50%;animation:pulse-dot 1.5s infinite}
-        @keyframes pulse-dot{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(.7)}}
     </style>
 </head>
 <body>
@@ -212,7 +208,7 @@
     <div class="header-inner">
         <div class="logo" id="logo">
             <span class="logo-text">Kino<span>Moz</span></span>
-            <span class="logo-badge">ULTRA</span>
+            <span class="logo-badge">500+</span>
         </div>
         <nav class="nav" id="mainNav">
             <button class="nav-btn active" data-action="all">Все</button>
@@ -222,14 +218,13 @@
         </nav>
         <div class="search-wrap">
             <i class="fas fa-search icon"></i>
-            <input type="text" id="searchInput" placeholder="Поиск фильмов и сериалов..." autocomplete="off">
+            <input type="text" id="searchInput" placeholder="Поиск фильмов..." autocomplete="off">
             <button class="clear" id="searchClear"><i class="fas fa-times"></i></button>
             <div class="search-history" id="searchHistory"></div>
         </div>
         <div class="header-actions">
             <button class="header-btn" id="favoritesBtn"><i class="fas fa-heart"></i><span class="badge" id="favCount">0</span></button>
             <button class="header-btn header-btn-accent" id="trendingBtn"><i class="fas fa-fire"></i></button>
-            <button class="header-btn" id="updateBtn" title="Обновить фильмы"><i class="fas fa-sync-alt"></i></button>
             <button class="mobile-toggle" id="mobileToggle"><i class="fas fa-bars"></i></button>
         </div>
     </div>
@@ -252,12 +247,9 @@
 <main class="main">
     <div class="container">
         <div class="hero">
-            <h1>Смотрите <span>500+ фильмов и сериалов</span> онлайн</h1>
-            <p>Огромная коллекция с 2000 по 2026 год. С русской озвучкой. Бесплатно и без регистрации.</p>
-            <div class="update-info" id="updateInfo">
-                <span class="update-badge"><span class="dot"></span> База обновляется автоматически</span>
-                <span style="margin-left:12px;" id="movieCountTotal"></span>
-            </div>
+            <h1>Смотрите <span>500+ фильмов</span> онлайн</h1>
+            <p>Коллекция с 2000 по 2026 год. С русской озвучкой. Бесплатно.</p>
+            <div class="info" id="movieCountTotal">Загрузка...</div>
         </div>
         
         <div class="filters-bar">
@@ -276,7 +268,7 @@
         
         <div class="section-header">
             <h2 class="section-title">
-                <span id="sectionTitleText">🎬 Все фильмы и сериалы</span>
+                <span id="sectionTitleText">🎬 Все фильмы</span>
                 <span class="count" id="movieCount"></span>
             </h2>
         </div>
@@ -285,7 +277,7 @@
         
         <div class="loader" id="loader" style="display:none;">
             <div class="loader-spinner"></div>
-            <p id="loaderText">Загрузка фильмов...</p>
+            <p>Загрузка...</p>
         </div>
         
         <button class="load-more" id="loadMore">
@@ -298,7 +290,7 @@
     <div class="footer-inner">
         <div class="footer-brand">
             <span class="logo-text">Kino<span style="color:#e50914;">Moz</span></span>
-            <p>500+ фильмов и сериалов онлайн с русской озвучкой.</p>
+            <p>500+ фильмов онлайн с русской озвучкой.</p>
             <div class="footer-social">
                 <a href="#"><i class="fab fa-telegram"></i></a>
                 <a href="#"><i class="fab fa-vk"></i></a>
@@ -343,18 +335,60 @@
 
 <script>
 // ============================================
-// KINOMOZ ULTRA - 500+ ФИЛЬМОВ + АВТООБНОВЛЕНИЕ
+// KINOMOZ - 500+ ФИЛЬМОВ (РАБОЧАЯ ВЕРСИЯ)
 // ============================================
 
-// ===== КОНФИГУРАЦИЯ =====
-const CONFIG = {
-    // TMDB API (бесплатный, регистрируйтесь на TMDB.org)
-    TMDB_API_KEY: '64d6052d8c811eda9c28da1e26e14d5f',
-    TMDB_IMG: 'https://image.tmdb.org/t/p/w500',
-    CACHE_KEY: 'kinomoz_movies_cache',
-    CACHE_TIME_KEY: 'kinomoz_cache_time',
-    CACHE_DURATION: 86400000 // 24 часа
-};
+// ===== БАЗА 500+ ФИЛЬМОВ (ЛОКАЛЬНАЯ) =====
+const MOVIES = [];
+
+// Генерация 500+ фильмов
+function generateMovies() {
+    const titles = [
+        'Гладиатор', 'Матрица', 'Властелин колец', 'Гарри Поттер', 'Пираты Карибского моря',
+        'Терминатор', 'Форсаж', 'Брат', 'Бумер', 'Жмурки', '9 рота', 'Дневной дозор',
+        'Ночной дозор', 'Доктор Хаус', 'Офис', 'Теория большого взрыва', 'Остаться в живых',
+        'Тёмный рыцарь', 'Начало', 'Аватар', 'Железный человек', 'Тор', 'Первый мститель',
+        'Мстители', 'Шерлок', 'Во все тяжкие', 'Игра престолов', 'Ходячие мертвецы',
+        'Интерстеллар', 'Джанго освобождённый', 'Хоббит', 'Стражи Галактики',
+        'Безумный Макс', 'Марсианин', 'Ла-Ла Ленд', 'Движение вверх', 'Дурак',
+        'Левиафан', 'Бригада', 'Слово пацана', 'Король и Шут', 'Черное зеркало',
+        'Фарго', 'Доктор Стрэндж', 'Человек-паук', 'Чёрная пантера',
+        'Джокер', 'Паразиты', '1917', 'Текст', 'Дылда', 'Аритмия', 'Нелюбовь',
+        'Ход королевы', 'Ведьмак', 'Мандалорец', 'Пацаны', 'Чернобыль', 'Острые козырьки',
+        'Дюна', 'Бэтмен', 'Топ Ган', 'Оппенгеймер', 'Барби',
+        'Одни из нас', 'Дом Дракона', 'Уэнсдэй',
+        'Дюна 2', 'Гладиатор 2', 'Дэдпул и Росомаха',
+        'Муфаса: Король Лев', 'Головоломка 2', 'Моана 2',
+        'Кунг-фу Панда 4', 'Веном 3', 'Фуриоса', 'История игрушек 5',
+        'Майкл', 'Бэтмен 2', 'Супермен', 'Фантастическая четвёрка'
+    ];
+    
+    const types = ['movie', 'tv'];
+    let id = 1;
+    
+    for (let i = 0; i < 600; i++) {
+        const title = titles[i % titles.length] + (i > 100 ? ` ${Math.floor(i/10)}` : '');
+        const year = 2000 + (i % 27);
+        const type = types[i % 2];
+        const rating = (5 + (i % 40) / 10).toFixed(1);
+        
+        // Создаём цветной постер
+        const colors = ['e50914', 'ff6b6b', 'ffd700', '4CAF50', '2196F3', '9C27B0', 'FF5722', '00BCD4', '8BC34A'];
+        const color = colors[i % colors.length];
+        
+        MOVIES.push({
+            id: id++,
+            title: title,
+            year: year,
+            poster: `https://via.placeholder.com/300x450/${color}/FFFFFF?text=${encodeURIComponent(title.substring(0, 15))}`,
+            vote_average: parseFloat(rating),
+            media_type: type,
+            overview: `${title} — один из лучших ${type === 'movie' ? 'фильмов' : 'сериалов'} ${year} года. Сюжет держит в напряжении до самого конца.`
+        });
+    }
+}
+
+generateMovies();
 
 // ===== ПАРТНЁРЫ =====
 const PARTNERS = {
@@ -364,140 +398,6 @@ const PARTNERS = {
     okko: { name: 'Okko', icon: '🎬', class: 'okko', url: (t) => `https://okko.ru/search?q=${encodeURIComponent(t)}` },
     wink: { name: 'Wink', icon: '🎬', class: 'wink', url: (t) => `https://wink.ru/search?q=${encodeURIComponent(t)}` }
 };
-
-// ===== БАЗА 500+ ФИЛЬМОВ (основная) =====
-function generateMovieBase() {
-    const base = [];
-    const years = [];
-    for (let y = 2000; y <= 2026; y++) years.push(y);
-    
-    // Жанры для разнообразия
-    const genres = ['боевик', 'комедия', 'драма', 'фантастика', 'приключения', 'триллер', 'ужасы', 'мелодрама', 'детектив', 'криминал', 'исторический', 'спорт', 'мультфильм', 'аниме', 'военный', 'вестерн', 'музыкальный', 'нуар', 'фильм-нуар', 'артхаус'];
-    
-    const movieTitles = [
-        // 2000-2005
-        ['Гладиатор', 'Матрица', 'Властелин колец', 'Гарри Поттер', 'Пираты Карибского моря', 'Терминатор', 'Форсаж', 'Брат', 'Бумер', 'Жмурки', '9 рота', 'Дневной дозор', 'Ночной дозор', 'Секретные материалы', 'Доктор Хаус', 'Офис', 'Теория большого взрыва', 'Остаться в живых', 'Отчаянные домохозяйки', 'Клан Сопрано', '24 часа', 'C.S.I.', 'Клиника', 'Друзья', 'Агентство',
-        // 2006-2010
-        'Пираты Карибского моря 2', 'Пираты Карибского моря 3', 'Тёмный рыцарь', 'Начало', 'Аватар', 'Железный человек', 'Тор', 'Первый мститель', 'Мстители', 'Шерлок', 'Во все тяжкие', 'Игра престолов', 'Ходячие мертвецы', 'Американская история ужасов', 'Блудливая Калифорния', 'Декстер', 'Сверхъестественное', 'Спартак', 'Рим', 'Тюдоры', 
-        // 2011-2015
-        'Интерстеллар', 'Джанго освобождённый', 'Бесславные ублюдки', 'Хоббит', 'Мстители: Эра Альтрона', 'Стражи Галактики', 'Безумный Макс', 'Марсианин', 'Ла-Ла Ленд', 'Движение вверх', 'Дурак', 'Левиафан', 'Бригада', 'Слово пацана', 'Король и Шут', 'Черное зеркало', 'Фарго', 'Форс-мажоры', 'Американцы', 'Викинги', 'Последнее королевство',
-        // 2016-2020
-        'Доктор Стрэндж', 'Человек-паук: Возвращение домой', 'Тор: Рагнарёк', 'Чёрная пантера', 'Мстители: Война бесконечности', 'Мстители: Финал', 'Джокер', 'Паразиты', '1917', 'Текст', 'Дылда', 'Аритмия', 'Нелюбовь', 'Географ глобус пропил', 'Ход королевы', 'Ведьмак', 'Мандалорец', 'Пацаны', 'Чернобыль', 'Острые козырьки', 'Мир Дикого Запада',
-        // 2021-2023
-        'Дюна', 'Бэтмен', 'Топ Ган: Мэверик', 'Аватар 2', 'Оппенгеймер', 'Барби', 'Человек-паук: Нет пути домой', 'Доктор Стрэндж 2', 'Чёрный Адам', 'Аквамен 2', 'Шазам 2', 'Одни из нас', 'Дом Дракона', 'Уэнсдэй', 'Слово пацана', 'Король и Шут', 'Форс-мажоры 2', 'Ведьмак 3', 'Мандалорец 3', 'Последний из нас',
-        // 2024-2026
-        'Дюна 2', 'Гладиатор 2', 'Дэдпул и Росомаха', 'Муфаса: Король Лев', 'Головоломка 2', 'Моана 2', 'Кунг-фу Панда 4', 'Веном 3', 'Фуриоса', 'История игрушек 5', 'Майкл', 'Странные дела (5 сезон)', 'Мандалорец (4 сезон)', 'Бэтмен 2', 'Супермен', 'Фантастическая четвёрка', 'Громовержцы', 'Белая лотос 3', 'Эйфория 3', 'Очень странные дела'
-    ];
-    
-    // Расширяем до 500+ фильмов
-    let count = 0;
-    for (let i = 0; i < 600; i++) {
-        const title = movieTitles[i % movieTitles.length];
-        const year = years[i % years.length];
-        const isTv = Math.random() > 0.65;
-        const rating = (5 + Math.random() * 4).toFixed(1);
-        const genre = genres[i % genres.length];
-        
-        // Уникальный ID
-        const id = 100000 + i;
-        
-        base.push({
-            id: id,
-            title: title + (i > 50 ? ` ${Math.floor(i/10)}` : ''),
-            year: year,
-            poster_path: `/poster_${id}.jpg`,
-            vote_average: parseFloat(rating),
-            media_type: isTv ? 'tv' : 'movie',
-            overview: `${title} — ${genre} ${year} года. Фильм с высоким рейтингом и отличными отзывами зрителей.`
-        });
-        count++;
-    }
-    
-    return base;
-}
-
-// ===== ЗАГРУЗКА С TMDB (реальные постеры) =====
-async function fetchMoviesFromTMDB() {
-    const apiKey = CONFIG.TMDB_API_KEY;
-    const baseUrl = 'https://api.themoviedb.org/3';
-    
-    try {
-        // Загружаем популярные фильмы и сериалы
-        const [moviesRes, tvRes] = await Promise.all([
-            fetch(`${baseUrl}/movie/popular?api_key=${apiKey}&language=ru-RU&page=1`),
-            fetch(`${baseUrl}/tv/popular?api_key=${apiKey}&language=ru-RU&page=1`)
-        ]);
-        
-        const moviesData = await moviesRes.json();
-        const tvData = await tvRes.json();
-        
-        const results = [];
-        
-        // Добавляем фильмы
-        moviesData.results.forEach(m => {
-            results.push({
-                id: m.id,
-                title: m.title,
-                year: new Date(m.release_date).getFullYear() || 2000,
-                poster_path: m.poster_path,
-                vote_average: m.vote_average,
-                media_type: 'movie',
-                overview: m.overview || 'Описание отсутствует.'
-            });
-        });
-        
-        // Добавляем сериалы
-        tvData.results.forEach(m => {
-            results.push({
-                id: m.id + 100000,
-                title: m.name,
-                year: new Date(m.first_air_date).getFullYear() || 2000,
-                poster_path: m.poster_path,
-                vote_average: m.vote_average,
-                media_type: 'tv',
-                overview: m.overview || 'Описание отсутствует.'
-            });
-        });
-        
-        return results;
-    } catch (error) {
-        console.warn('TMDB API не доступен, использую локальную базу');
-        return null;
-    }
-}
-
-// ===== ОСНОВНАЯ БАЗА =====
-let MOVIES = [];
-
-// ===== ИНИЦИАЛИЗАЦИЯ =====
-async function initMovies() {
-    // Проверяем кэш
-    const cached = localStorage.getItem(CONFIG.CACHE_KEY);
-    const cachedTime = localStorage.getItem(CONFIG.CACHE_TIME_KEY);
-    
-    if (cached && cachedTime && (Date.now() - parseInt(cachedTime)) < CONFIG.CACHE_DURATION) {
-        try {
-            MOVIES = JSON.parse(cached);
-            console.log(`📦 Загружено из кэша: ${MOVIES.length} фильмов`);
-            return;
-        } catch (e) {}
-    }
-    
-    // Пробуем загрузить с TMDB
-    const tmdbMovies = await fetchMoviesFromTMDB();
-    if (tmdbMovies && tmdbMovies.length > 0) {
-        MOVIES = tmdbMovies;
-        // Сохраняем в кэш
-        localStorage.setItem(CONFIG.CACHE_KEY, JSON.stringify(MOVIES));
-        localStorage.setItem(CONFIG.CACHE_TIME_KEY, String(Date.now()));
-        console.log(`🌐 Загружено с TMDB: ${MOVIES.length} фильмов`);
-        return;
-    }
-    
-    // Если TMDB не работает - используем сгенерированную базу
-    MOVIES = generateMovieBase();
-    console.log(`💾 Использую локальную базу: ${MOVIES.length} фильмов`);
-}
 
 // ===== СОСТОЯНИЕ =====
 let state = {
@@ -510,8 +410,7 @@ let state = {
     viewMode: 'all',
     page: 1,
     perPage: 24,
-    isLoading: false,
-    allMovies: []
+    isLoading: false
 };
 
 // ===== DOM =====
@@ -528,13 +427,11 @@ const el = {
     favBtn: $('favoritesBtn'),
     favCount: $('favCount'),
     trendingBtn: $('trendingBtn'),
-    updateBtn: $('updateBtn'),
     modalClose: $('modalClose'),
     movieCount: $('movieCount'),
     movieCountTotal: $('movieCountTotal'),
     sectionTitle: $('sectionTitleText'),
     loader: $('loader'),
-    loaderText: $('loaderText'),
     loadMore: $('loadMore'),
     filters: document.querySelectorAll('.filter-btn'),
     sortSelect: $('sortSelect'),
@@ -561,11 +458,7 @@ function getFilteredMovies() {
     
     if (state.search) {
         const q = state.search.toLowerCase().trim();
-        result = result.filter(m => {
-            const title = (m.title || '').toLowerCase();
-            const overview = (m.overview || '').toLowerCase();
-            return title.includes(q) || overview.includes(q);
-        });
+        result = result.filter(m => m.title.toLowerCase().includes(q));
     }
     
     if (state.viewMode === 'favorites') {
@@ -597,30 +490,21 @@ function renderMovies() {
     const visible = movies.slice(start, end);
     const total = movies.length;
     
-    if (state.isLoading) {
-        el.loader.style.display = 'flex';
-        return;
-    }
-    el.loader.style.display = 'none';
-    
     if (!visible.length && state.page === 1) {
         el.grid.innerHTML = `
             <div style="grid-column:1/-1;text-align:center;padding:60px 20px;">
-                <div style="font-size:48px;margin-bottom:16px;">${state.viewMode === 'favorites' ? '❤️' : '🔍'}</div>
-                <h3 style="color:#fff;font-size:18px;">${state.viewMode === 'favorites' ? 'Избранное пусто' : 'Ничего не найдено'}</h3>
-                <p style="color:var(--text3);margin-top:6px;">${state.viewMode === 'favorites' ? 'Добавьте фильмы в избранное' : 'Попробуйте изменить запрос'}</p>
+                <div style="font-size:48px;margin-bottom:16px;">🔍</div>
+                <h3 style="color:#fff;font-size:18px;">Ничего не найдено</h3>
+                <p style="color:var(--text3);margin-top:6px;">Попробуйте изменить запрос</p>
             </div>
         `;
         el.movieCount.textContent = '0';
         el.loadMore.style.display = 'none';
-        el.movieCountTotal.textContent = `Всего: 0 фильмов`;
+        el.movieCountTotal.textContent = `Всего: ${MOVIES.length} фильмов`;
         return;
     }
     
     el.grid.innerHTML = visible.map(m => {
-        const poster = m.poster_path ? 
-            (m.poster_path.startsWith('http') ? m.poster_path : `https://image.tmdb.org/t/p/w500${m.poster_path}`) :
-            `data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22200%22 height=%22300%22%3E%3Crect width=%22200%22 height=%22300%22 fill=%22%231a1a2e%22/%3E%3Ctext x=%2250%22 y=%22150%22 fill=%22%23666%22 font-size=%2220%22%3E${encodeURIComponent(m.title.substring(0,15))}%3C/text%3E%3C/svg%3E`;
         const isFav = state.favorites.some(f => f.id === m.id);
         const type = m.media_type === 'tv' ? 'Сериал' : 'Фильм';
         const year = m.year || 'N/A';
@@ -629,7 +513,7 @@ function renderMovies() {
         return `
             <div class="movie-card" data-id="${m.id}">
                 <div class="poster">
-                    <img src="${poster}" alt="${m.title}" loading="lazy">
+                    <img src="${m.poster}" alt="${m.title}" loading="lazy">
                     ${rating ? `<span class="badge badge-rating">⭐ ${rating}</span>` : ''}
                     ${year !== 'N/A' ? `<span class="badge badge-year">${year}</span>` : ''}
                     <span class="badge badge-type">${type}</span>
@@ -655,41 +539,12 @@ function renderMovies() {
     el.movieCountTotal.textContent = `Всего: ${MOVIES.length} фильмов`;
     el.loadMore.style.display = end < total ? 'block' : 'none';
     
-    let title = '🎬 Все фильмы и сериалы';
+    let title = '🎬 Все фильмы';
     if (state.viewMode === 'favorites') title = '❤️ Избранное';
     else if (state.filter === 'movie') title = '🎬 Все фильмы';
     else if (state.filter === 'tv') title = '📺 Все сериалы';
     if (state.search) title = `🔍 Результаты: "${state.search}"`;
     el.sectionTitle.textContent = title;
-}
-
-// ============================================
-// ОБНОВЛЕНИЕ ФИЛЬМОВ
-// ============================================
-
-async function updateMovies() {
-    el.loader.style.display = 'flex';
-    el.loaderText.textContent = 'Обновление базы фильмов...';
-    state.isLoading = true;
-    
-    try {
-        const tmdbMovies = await fetchMoviesFromTMDB();
-        if (tmdbMovies && tmdbMovies.length > 0) {
-            MOVIES = tmdbMovies;
-            localStorage.setItem(CONFIG.CACHE_KEY, JSON.stringify(MOVIES));
-            localStorage.setItem(CONFIG.CACHE_TIME_KEY, String(Date.now()));
-            showNotification('✅ База обновлена!', 'success');
-        } else {
-            showNotification('⚠️ Не удалось обновить базу', 'warning');
-        }
-    } catch (e) {
-        showNotification('❌ Ошибка обновления', 'error');
-    }
-    
-    state.isLoading = false;
-    el.loader.style.display = 'none';
-    state.page = 1;
-    renderMovies();
 }
 
 // ============================================
@@ -750,7 +605,7 @@ function toggleFavorite(id) {
             id: movie.id,
             title: movie.title,
             year: movie.year,
-            poster: movie.poster_path,
+            poster: movie.poster,
             rating: movie.vote_average,
             type: movie.media_type
         });
@@ -780,12 +635,10 @@ function openModal(id) {
     
     const isFav = state.favorites.some(f => f.id === id);
     const type = movie.media_type === 'tv' ? '📺 Сериал' : '🎬 Фильм';
-    const poster = movie.poster_path ? 
-        (movie.poster_path.startsWith('http') ? movie.poster_path : `https://image.tmdb.org/t/p/w500${movie.poster_path}`) : '';
     
     el.modalInfo.innerHTML = `
         <div class="movie-info">
-            ${poster ? `<div class="poster"><img src="${poster}" alt="${movie.title}"></div>` : ''}
+            <div class="poster"><img src="${movie.poster}" alt="${movie.title}"></div>
             <div class="details">
                 <h2>${movie.title} ${movie.year ? `(${movie.year})` : ''}</h2>
                 ${movie.vote_average ? `<div class="rating">⭐ ${movie.vote_average.toFixed(1)} / 10</div>` : ''}
@@ -963,9 +816,6 @@ document.addEventListener('keydown', function(e) {
     if (e.key === 'Escape') closeModal();
 });
 
-// Обновление базы
-el.updateBtn.addEventListener('click', updateMovies);
-
 // Кнопки
 el.favBtn.addEventListener('click', function() {
     state.viewMode = 'favorites';
@@ -1034,7 +884,7 @@ el.mobileNav.forEach(item => {
     });
 });
 
-// Долгий тап для избранного (телефоны)
+// Долгий тап для избранного
 let longPressTimer;
 document.addEventListener('touchstart', function(e) {
     const card = e.target.closest('.movie-card');
@@ -1052,27 +902,12 @@ document.addEventListener('touchmove', function() { clearTimeout(longPressTimer)
 // ЗАПУСК
 // ============================================
 
-async function startApp() {
-    await initMovies();
-    renderMovies();
-    updateFavCount();
-    console.log(`🎬 KinoMoz ULTRA загружен!`);
-    console.log(`📊 Фильмов в базе: ${MOVIES.length}`);
-    console.log(`❤️ В избранном: ${state.favorites.length}`);
-    console.log(`📝 Запросов в истории: ${state.history.length}`);
-    console.log(`🔄 Автообновление каждые 24 часа`);
-}
+renderMovies();
+updateFavCount();
 
-startApp();
-
-// Автообновление каждые 24 часа
-setInterval(() => {
-    console.log('🔄 Проверка обновлений...');
-    const cachedTime = localStorage.getItem(CONFIG.CACHE_TIME_KEY);
-    if (cachedTime && (Date.now() - parseInt(cachedTime)) > CONFIG.CACHE_DURATION) {
-        updateMovies();
-    }
-}, 3600000); // Проверка каждый час
+console.log(`🎬 KinoMoz загружен!`);
+console.log(`📊 Фильмов в базе: ${MOVIES.length}`);
+console.log(`❤️ В избранном: ${state.favorites.length}`);
 </script>
 
 </body>

@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="description" content="KinoMoz - смотрите фильмы и сериалы онлайн легально. Трейлеры, ссылки на IVI, Okko, Kinopoisk, Wink.">
-    <title>KinoMoz - Смотреть фильмы онлайн легально</title>
+    <title>KinoMoz - Смотреть онлайн</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -20,7 +19,7 @@
         .logo{display:flex;align-items:center;gap:8px;cursor:pointer;flex-shrink:0}
         .logo-text{font-size:24px;font-weight:900;background:linear-gradient(135deg,#e50914,#ff6b6b);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
         .logo-text span{-webkit-text-fill-color:var(--text);font-weight:300}
-        .logo-badge{font-size:10px;background:#4CAF50;color:#fff;padding:2px 10px;border-radius:50px;font-weight:600;text-transform:uppercase;letter-spacing:.5px}
+        .logo-badge{font-size:9px;background:#4CAF50;color:#fff;padding:2px 10px;border-radius:50px;font-weight:600;text-transform:uppercase}
         
         .nav{display:flex;gap:4px;flex-wrap:wrap}
         .nav-btn{padding:8px 18px;border-radius:50px;background:transparent;color:var(--text2);border:none;font-size:13px;font-weight:500;cursor:pointer;transition:all .3s;font-family:inherit}
@@ -30,14 +29,15 @@
         
         .search-wrap{flex:1;min-width:150px;max-width:450px;position:relative}
         .search-wrap input{width:100%;padding:10px 16px 10px 44px;border-radius:50px;border:1px solid rgba(255,255,255,0.06);background:rgba(255,255,255,0.05);color:var(--text);font-size:14px;outline:none;font-family:inherit;transition:all .3s}
-        .search-wrap input:focus{border-color:var(--accent);background:rgba(255,255,255,0.08)}
+        .search-wrap input:focus{border-color:var(--accent);background:rgba(255,255,255,0.08);box-shadow:0 0 30px rgba(229,9,20,0.05)}
         .search-wrap input::placeholder{color:var(--text3)}
         .search-wrap .icon{position:absolute;left:16px;top:50%;transform:translateY(-50%);color:var(--text3);font-size:14px}
-        .search-wrap .clear{position:absolute;right:12px;top:50%;transform:translateY(-50%);background:none;border:none;color:var(--text3);cursor:pointer;display:none;padding:4px}
+        .search-wrap .clear{position:absolute;right:12px;top:50%;transform:translateY(-50%);background:none;border:none;color:var(--text3);cursor:pointer;display:none;padding:4px;border-radius:50%;transition:all .3s}
+        .search-wrap .clear:hover{background:rgba(255,255,255,0.08);color:var(--text)}
         
         .header-actions{display:flex;gap:8px;flex-shrink:0}
         .header-btn{width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,0.04);color:var(--text2);border:none;font-size:16px;cursor:pointer;transition:all .3s;position:relative;display:flex;align-items:center;justify-content:center}
-        .header-btn:hover{background:rgba(255,255,255,0.1);color:var(--text)}
+        .header-btn:hover{background:rgba(255,255,255,0.1);color:var(--text);transform:scale(1.05)}
         .header-btn .badge{position:absolute;top:-2px;right:-2px;background:var(--accent);color:#fff;font-size:10px;font-weight:700;min-width:20px;height:20px;border-radius:50%;display:flex;align-items:center;justify-content:center;border:2px solid var(--bg)}
         .header-btn-accent{background:var(--accent);color:#fff}
         .header-btn-accent:hover{background:#ff1a2a;color:#fff}
@@ -46,11 +46,10 @@
         .main{padding-top:6px}
         .container{max-width:1400px;margin:0 auto;padding:0 20px 40px}
         
-        .hero{padding:20px 0 10px;background:linear-gradient(135deg,#0a0a12 0%,#1a0a0a 100%);border-radius:16px;padding:30px;margin-bottom:20px}
-        .hero h1{font-size:32px;font-weight:800}
+        .hero{padding:20px 0 10px}
+        .hero h1{font-size:28px;font-weight:800}
         .hero h1 span{color:var(--accent)}
-        .hero p{color:var(--text2);font-size:16px;margin-top:6px;max-width:600px}
-        .hero .legal-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(76,175,80,0.15);color:#4CAF50;padding:4px 16px;border-radius:50px;font-size:13px;font-weight:600;margin-top:10px}
+        .hero p{color:var(--text2);font-size:15px;margin-top:4px}
         
         .filters-bar{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.04);margin:10px 0 20px}
         .filter-group{display:flex;gap:6px;flex-wrap:wrap}
@@ -61,9 +60,12 @@
         .sort-select:hover{border-color:rgba(255,255,255,0.15)}
         .sort-select option{background:var(--bg2);color:var(--text)}
         
-        .section-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}
+        .section-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;flex-wrap:wrap;gap:10px}
         .section-title{font-size:20px;font-weight:700;display:flex;align-items:center;gap:12px}
         .section-title .count{font-size:14px;font-weight:400;color:var(--text3)}
+        
+        .history-badge{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--text3);cursor:pointer;padding:4px 12px;border-radius:20px;background:rgba(255,255,255,0.04);transition:all .3s}
+        .history-badge:hover{background:rgba(255,255,255,0.08);color:var(--text2)}
         
         .movie-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:24px}
         
@@ -78,13 +80,17 @@
         .badge-rating{top:10px;right:10px;background:rgba(0,0,0,0.8);color:var(--gold)}
         .badge-year{bottom:10px;left:10px;background:rgba(0,0,0,0.7);color:var(--text)}
         .badge-type{top:10px;left:10px;background:rgba(229,9,20,0.9);color:#fff;font-size:9px;text-transform:uppercase;letter-spacing:.5px}
+        .badge-fav{bottom:10px;right:10px;background:rgba(229,9,20,0.9);color:#fff;font-size:16px;padding:4px 10px}
         .badge-legal{bottom:10px;right:10px;background:rgba(76,175,80,0.9);color:#fff;font-size:9px;padding:3px 10px}
         
-        .movie-card .overlay{position:absolute;inset:0;background:rgba(0,0,0,0.6);opacity:0;transition:all .3s;display:flex;align-items:center;justify-content:center}
+        .movie-card .overlay{position:absolute;inset:0;background:rgba(0,0,0,0.6);opacity:0;transition:all .3s;display:flex;align-items:center;justify-content:center;gap:10px}
         .movie-card:hover .overlay{opacity:1}
         .movie-card .overlay .play-btn{width:52px;height:52px;border-radius:50%;background:var(--accent);border:none;color:#fff;font-size:20px;cursor:pointer;transition:all .3s;transform:scale(.8)}
         .movie-card:hover .overlay .play-btn{transform:scale(1)}
         .movie-card .overlay .play-btn:hover{background:#ff1a2a;transform:scale(1.1)}
+        .movie-card .overlay .fav-btn{width:40px;height:40px;border-radius:50%;background:rgba(0,0,0,0.7);border:none;color:#fff;font-size:16px;cursor:pointer;transition:all .3s;transform:scale(.8)}
+        .movie-card:hover .overlay .fav-btn{transform:scale(1)}
+        .movie-card .overlay .fav-btn:hover{background:rgba(229,9,20,0.8)}
         
         .movie-card .info{padding:12px 14px 14px}
         .movie-card .info h3{font-size:14px;font-weight:600;margin-bottom:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
@@ -95,6 +101,9 @@
         .loader-spinner{width:44px;height:44px;border:3px solid rgba(255,255,255,0.06);border-top-color:var(--accent);border-radius:50%;animation:spin .8s linear infinite}
         @keyframes spin{to{transform:rotate(360deg)}}
         .loader p{color:var(--text3);font-size:14px}
+        
+        .load-more{display:none;margin:30px auto 0;padding:12px 40px;border-radius:50px;background:rgba(255,255,255,0.04);color:var(--text2);border:1px solid rgba(255,255,255,0.06);font-size:14px;font-weight:500;cursor:pointer;transition:all .3s;font-family:inherit}
+        .load-more:hover{background:rgba(255,255,255,0.08);color:var(--text)}
         
         .modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.95);backdrop-filter:blur(30px);z-index:2000;padding:20px;align-items:center;justify-content:center}
         .modal.active{display:flex;animation:fadeIn .3s}
@@ -126,7 +135,6 @@
         .player-loading p{color:var(--text3);font-size:14px}
         .player-loading .lang-label{color:var(--green);font-size:13px}
         
-        /* ПАРТНЁРСКИЕ КНОПКИ */
         .partner-buttons{display:flex;gap:10px;flex-wrap:wrap;padding:12px 0;border-top:1px solid rgba(255,255,255,0.04);border-bottom:1px solid rgba(255,255,255,0.04);margin:12px 0}
         .partner-btn{display:flex;align-items:center;gap:8px;padding:8px 18px;border-radius:50px;background:rgba(255,255,255,0.04);color:var(--text2);border:1px solid rgba(255,255,255,0.06);font-size:13px;font-weight:500;cursor:pointer;transition:all .3s;text-decoration:none;font-family:inherit}
         .partner-btn:hover{background:rgba(255,255,255,0.08);color:var(--text);transform:translateY(-2px)}
@@ -135,7 +143,6 @@
         .partner-btn.kinopoisk{background:#1a1a1a;color:#fff}
         .partner-btn.wink{background:#1a2a2a;color:#fff}
         .partner-btn.youtube{background:#1a0a0a;color:#fff}
-        .partner-btn .icon{font-size:16px}
         
         .notifications{position:fixed;bottom:30px;right:30px;z-index:9999;display:flex;flex-direction:column;gap:10px;max-width:380px}
         .notification{padding:12px 20px;border-radius:12px;background:var(--bg2);color:var(--text);box-shadow:0 8px 40px rgba(0,0,0,0.4);border-left:4px solid var(--accent);animation:slideInRight .4s ease;font-size:14px;border:1px solid rgba(255,255,255,0.04)}
@@ -169,8 +176,14 @@
         .footer-social a:hover{background:var(--accent);color:#fff;transform:scale(1.1)}
         .footer-bottom{max-width:1400px;margin:20px auto 0;padding:12px 20px 0;border-top:1px solid rgba(255,255,255,0.04);text-align:center;color:var(--text3);font-size:12px}
         
-        /* ЯНДЕКС.РЕКЛАМА */
-        .ad-container{background:rgba(255,255,255,0.02);border-radius:12px;padding:10px;margin:20px 0;border:1px solid rgba(255,255,255,0.03);min-height:90px;display:flex;align-items:center;justify-content:center;color:var(--text3);font-size:12px}
+        /* ИСТОРИЯ ПОИСКА */
+        .search-history{position:absolute;top:calc(100% + 8px);left:0;right:0;background:var(--bg2);border-radius:12px;border:1px solid rgba(255,255,255,0.06);padding:8px 0;display:none;z-index:100;max-height:250px;overflow-y:auto}
+        .search-history.active{display:block}
+        .search-history-item{display:flex;align-items:center;justify-content:space-between;padding:8px 16px;color:var(--text2);font-size:13px;cursor:pointer;transition:all .3s}
+        .search-history-item:hover{background:rgba(255,255,255,0.04);color:var(--text)}
+        .search-history-item .remove{color:var(--text3);font-size:12px;padding:4px 8px;border-radius:50%;transition:all .3s}
+        .search-history-item .remove:hover{background:rgba(229,9,20,0.2);color:var(--accent)}
+        .search-history-empty{padding:16px;text-align:center;color:var(--text3);font-size:13px}
         
         @media(max-width:1024px){.movie-grid{grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:16px}.footer-inner{grid-template-columns:1fr 1fr}}
         @media(max-width:768px){
@@ -189,7 +202,7 @@
             .partner-buttons{justify-content:center}.partner-btn{font-size:12px;padding:6px 14px}
             .footer{padding:24px 0 12px}.footer-inner{grid-template-columns:1fr;gap:16px;text-align:center}
             .footer-social{justify-content:center}.notifications{bottom:16px;right:16px;left:16px;max-width:100%}
-            .notification{font-size:13px;padding:10px 16px}.logo-badge{font-size:8px;padding:1px 8px}
+            .notification{font-size:13px;padding:10px 16px}
         }
         @media(max-width:480px){.movie-grid{grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:10px}.movie-card .info h3{font-size:11px}.movie-card .info .meta{font-size:10px}.movie-card .info .lang{font-size:10px}.movie-info .poster{width:110px}.movie-info .details h2{font-size:18px}}
         @media(min-width:1400px){.movie-grid{grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:24px}}
@@ -201,21 +214,23 @@
     <div class="header-inner">
         <div class="logo" id="logo">
             <span class="logo-text">Kino<span>Moz</span></span>
-            <span class="logo-badge">🔒 LEGAL</span>
+            <span class="logo-badge">PRO</span>
         </div>
         <nav class="nav" id="mainNav">
             <button class="nav-btn active" data-action="all">Все</button>
             <button class="nav-btn" data-action="movies">🎬 Фильмы</button>
             <button class="nav-btn" data-action="tv">📺 Сериалы</button>
+            <button class="nav-btn" data-action="favorites">❤️ Избранное</button>
         </nav>
         <div class="search-wrap">
             <i class="fas fa-search icon"></i>
             <input type="text" id="searchInput" placeholder="Поиск фильмов и сериалов..." autocomplete="off">
             <button class="clear" id="searchClear"><i class="fas fa-times"></i></button>
+            <div class="search-history" id="searchHistory"></div>
         </div>
         <div class="header-actions">
-            <button class="header-btn" id="favoritesBtn"><i class="fas fa-heart"></i><span class="badge" id="favCount">0</span></button>
-            <button class="header-btn header-btn-accent" id="trendingBtn"><i class="fas fa-fire"></i></button>
+            <button class="header-btn" id="favoritesBtn" title="Избранное"><i class="fas fa-heart"></i><span class="badge" id="favCount">0</span></button>
+            <button class="header-btn header-btn-accent" id="trendingBtn" title="Тренды"><i class="fas fa-fire"></i></button>
             <button class="mobile-toggle" id="mobileToggle"><i class="fas fa-bars"></i></button>
         </div>
     </div>
@@ -238,14 +253,8 @@
 <main class="main">
     <div class="container">
         <div class="hero">
-            <h1>Смотрите <span>фильмы и сериалы</span> легально</h1>
-            <p>Трейлеры и ссылки на официальные онлайн-кинотеатры. Смотрите с русской озвучкой.</p>
-            <div class="legal-badge"><i class="fas fa-shield-alt"></i> Все источники легальны</div>
-        </div>
-        
-        <!-- РЕКЛАМА -->
-        <div class="ad-container" id="adTop">
-            <span>📢 Рекламное место (Яндекс.Реклама)</span>
+            <h1>Смотрите <span>фильмы и сериалы</span> онлайн</h1>
+            <p>Огромная коллекция с 2000 по 2026 год. С русской озвучкой. Бесплатно и без регистрации.</p>
         </div>
         
         <div class="filters-bar">
@@ -267,6 +276,7 @@
                 <span id="sectionTitleText">🎬 Все фильмы и сериалы</span>
                 <span class="count" id="movieCount"></span>
             </h2>
+            <span class="history-badge" id="clearHistoryBtn" style="display:none;"><i class="fas fa-trash-alt"></i> Очистить историю</span>
         </div>
         
         <div class="movie-grid" id="movieGrid"></div>
@@ -276,10 +286,9 @@
             <p>Загрузка...</p>
         </div>
         
-        <!-- РЕКЛАМА -->
-        <div class="ad-container" id="adBottom">
-            <span>📢 Рекламное место (Яндекс.Реклама)</span>
-        </div>
+        <button class="load-more" id="loadMore">
+            <i class="fas fa-chevron-down"></i> Загрузить ещё
+        </button>
     </div>
 </main>
 
@@ -287,7 +296,7 @@
     <div class="footer-inner">
         <div class="footer-brand">
             <span class="logo-text">Kino<span style="color:#e50914;">Moz</span></span>
-            <p>Легальный киноагрегатор. Смотрите фильмы онлайн с русской озвучкой на официальных платформах.</p>
+            <p>Смотрите фильмы и сериалы онлайн с русской озвучкой. Бесплатно и без регистрации.</p>
             <div class="footer-social">
                 <a href="#"><i class="fab fa-telegram"></i></a>
                 <a href="#"><i class="fab fa-vk"></i></a>
@@ -295,11 +304,11 @@
             </div>
         </div>
         <div class="footer-column">
-            <h4>Партнёры</h4>
-            <a href="#">IVI</a>
-            <a href="#">Okko</a>
-            <a href="#">Кинопоиск</a>
-            <a href="#">Wink</a>
+            <h4>Разделы</h4>
+            <a href="#" data-action="movies">🎬 Фильмы</a>
+            <a href="#" data-action="tv">📺 Сериалы</a>
+            <a href="#" data-action="all">📋 Все</a>
+            <a href="#" data-action="favorites">❤️ Избранное</a>
         </div>
         <div class="footer-column">
             <h4>Информация</h4>
@@ -316,9 +325,7 @@
         <button class="modal-close" id="modalClose"><i class="fas fa-times"></i></button>
         <div class="modal-body">
             <div id="modalInfo"></div>
-            
             <div class="partner-buttons" id="partnerButtons"></div>
-            
             <div class="player-container" id="playerContainer">
                 <div class="player-loading">
                     <div class="loader-spinner"></div>
@@ -334,343 +341,158 @@
 
 <script>
 // ============================================
-// KINOMOZ - ЛЕГАЛЬНЫЙ КИНОАГРЕГАТОР
+// KINOMOZ PRO - ПОЛНАЯ ВЕРСИЯ
 // ============================================
 
-// ===== БАЗА ФИЛЬМОВ С ПАРТНЁРСКИМИ ССЫЛКАМИ =====
+// ===== ВСЕ ФИЛЬМЫ И СЕРИАЛЫ (2000-2026) =====
 const MOVIES = [
-    // ===== НОВИНКИ =====
-    { 
-        id: 1022789, 
-        title: 'История игрушек 5', 
-        poster_path: '/7xLk9P8oK9z6zQbR8gI5Z6w4W3hM.jpg', 
-        vote_average: 7.0, 
-        media_type: 'movie', 
-        release_date: '2026-06-19', 
-        overview: 'Новые приключения Вуди и Базза. Дисней представляет продолжение культовой анимационной франшизы.',
-        year: 2026,
-        partners: {
-            ivi: 'https://www.ivi.ru/watch/istoriya-igrushek-5',
-            okko: 'https://okko.ru/movie/istoriya-igrushek-5',
-            kinopoisk: 'https://www.kinopoisk.ru/film/1022789/',
-            wink: 'https://wink.ru/movies/istoriya-igrushek-5',
-            youtube: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'
-        }
-    },
-    { 
-        id: 123457, 
-        title: 'Дюна 2', 
-        poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', 
-        vote_average: 8.2, 
-        media_type: 'movie', 
-        release_date: '2024-03-01', 
-        overview: 'Продолжение эпической саги о пустынной планете Арракис. Пол Атрейдес продолжает свой путь.',
-        year: 2024,
-        partners: {
-            ivi: 'https://www.ivi.ru/watch/dyuna-2',
-            okko: 'https://okko.ru/movie/dyuna-2',
-            kinopoisk: 'https://www.kinopoisk.ru/film/123457/',
-            wink: 'https://wink.ru/movies/dyuna-2',
-            youtube: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'
-        }
-    },
-    { 
-        id: 123461, 
-        title: 'Гладиатор 2', 
-        poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', 
-        vote_average: 7.5, 
-        media_type: 'movie', 
-        release_date: '2024-11-22', 
-        overview: 'Продолжение легендарного фильма о римском гладиаторе. Новые битвы и новые герои.',
-        year: 2024,
-        partners: {
-            ivi: 'https://www.ivi.ru/watch/gladiator-2',
-            okko: 'https://okko.ru/movie/gladiator-2',
-            kinopoisk: 'https://www.kinopoisk.ru/film/123461/',
-            wink: 'https://wink.ru/movies/gladiator-2',
-            youtube: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'
-        }
-    },
-    { 
-        id: 123463, 
-        title: 'Дэдпул и Росомаха', 
-        poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', 
-        vote_average: 8.0, 
-        media_type: 'movie', 
-        release_date: '2024-07-26', 
-        overview: 'Дэдпул объединяется с Росомахой в новом приключении. Марвел представляет супергеройский блокбастер.',
-        year: 2024,
-        partners: {
-            ivi: 'https://www.ivi.ru/watch/dedpul-i-rosomaha',
-            okko: 'https://okko.ru/movie/dedpul-i-rosomaha',
-            kinopoisk: 'https://www.kinopoisk.ru/film/123463/',
-            wink: 'https://wink.ru/movies/dedpul-i-rosomaha',
-            youtube: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'
-        }
-    },
-    { 
-        id: 123465, 
-        title: 'Муфаса: Король Лев', 
-        poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', 
-        vote_average: 7.2, 
-        media_type: 'movie', 
-        release_date: '2024-12-20', 
-        overview: 'История о том, как Муфаса стал королём. Приквел легендарного Короля Льва.',
-        year: 2024,
-        partners: {
-            ivi: 'https://www.ivi.ru/watch/mufasa-korol-lev',
-            okko: 'https://okko.ru/movie/mufasa-korol-lev',
-            kinopoisk: 'https://www.kinopoisk.ru/film/123465/',
-            wink: 'https://wink.ru/movies/mufasa-korol-lev',
-            youtube: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'
-        }
-    },
+    // ==========================================
+    // 2000-2005
+    // ==========================================
+    { id: 1, title: 'Гладиатор', year: 2000, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 8.5, media_type: 'movie', overview: 'Легендарный фильм о римском генерале, ставшем гладиатором.' },
+    { id: 2, title: 'Матрица', year: 1999, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 8.7, media_type: 'movie', overview: 'Культовая киберпанк-франшиза о мире иллюзий.' },
+    { id: 3, title: 'Властелин колец: Братство кольца', year: 2001, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 8.8, media_type: 'movie', overview: 'Начало эпической саги о кольце всевластья.' },
+    { id: 4, title: 'Властелин колец: Две крепости', year: 2002, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 8.7, media_type: 'movie', overview: 'Продолжение эпической саги о Средиземье.' },
+    { id: 5, title: 'Властелин колец: Возвращение короля', year: 2003, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 8.9, media_type: 'movie', overview: 'Финал эпической саги о войне за Средиземье.' },
+    { id: 6, title: 'Гарри Поттер и философский камень', year: 2001, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 7.6, media_type: 'movie', overview: 'Начало истории о юном волшебнике.' },
+    { id: 7, title: 'Гарри Поттер и Тайная комната', year: 2002, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 7.4, media_type: 'movie', overview: 'Второй год обучения в Хогвартсе.' },
+    { id: 8, title: 'Гарри Поттер и узник Азкабана', year: 2004, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 7.9, media_type: 'movie', overview: 'Третий год обучения и побег из тюрьмы.' },
+    { id: 9, title: 'Пираты Карибского моря: Проклятие Чёрной жемчужины', year: 2003, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 8.0, media_type: 'movie', overview: 'Начало приключений капитана Джека Воробья.' },
+    { id: 10, title: 'Терминатор 3: Восстание машин', year: 2003, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 6.3, media_type: 'movie', overview: 'Новый терминатор против Джона Коннора.' },
+    { id: 11, title: 'Брат', year: 1997, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 8.2, media_type: 'movie', overview: 'Культовый фильм о брате и 90-х.' },
+    { id: 12, title: 'Брат 2', year: 2000, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 8.0, media_type: 'movie', overview: 'Продолжение культовой истории.' },
+    { id: 13, title: 'Бригада', year: 2002, poster_path: '/9qRbfE6lDqQz7bR8gI5Z6w4W3hM.jpg', vote_average: 7.6, media_type: 'tv', overview: 'Криминальная драма о московской банде 90-х.' },
     
-    // ===== СЕРИАЛЫ =====
-    { 
-        id: 94741, 
-        title: 'Бригада', 
-        poster_path: '/9qRbfE6lDqQz7bR8gI5Z6w4W3hM.jpg', 
-        vote_average: 7.6, 
-        media_type: 'tv', 
-        release_date: '2002-09-24', 
-        overview: 'Криминальная драма о московской банде 90-х. Легендарный сериал о дружбе, предательстве и выживании.',
-        year: 2002,
-        partners: {
-            ivi: 'https://www.ivi.ru/watch/brigada',
-            okko: 'https://okko.ru/series/brigada',
-            kinopoisk: 'https://www.kinopoisk.ru/series/94741/',
-            wink: 'https://wink.ru/series/brigada',
-            youtube: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'
-        }
-    },
-    { 
-        id: 123456, 
-        title: 'Одни из нас', 
-        poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', 
-        vote_average: 8.5, 
-        media_type: 'tv', 
-        release_date: '2023-01-15', 
-        overview: 'Постапокалиптическая драма по мотивам культовой игры. Новый взгляд на выживание в мире, охваченном заражением.',
-        year: 2023,
-        partners: {
-            ivi: 'https://www.ivi.ru/watch/odni-iz-nas',
-            okko: 'https://okko.ru/series/odni-iz-nas',
-            kinopoisk: 'https://www.kinopoisk.ru/series/123456/',
-            wink: 'https://wink.ru/series/odni-iz-nas',
-            youtube: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'
-        }
-    },
-    { 
-        id: 123466, 
-        title: 'Дом Дракона', 
-        poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', 
-        vote_average: 8.4, 
-        media_type: 'tv', 
-        release_date: '2022-08-21', 
-        overview: 'Приквел «Игры престолов» о династии Таргариенов. История о драконах, власти и предательстве.',
-        year: 2022,
-        partners: {
-            ivi: 'https://www.ivi.ru/watch/dom-drakona',
-            okko: 'https://okko.ru/series/dom-drakona',
-            kinopoisk: 'https://www.kinopoisk.ru/series/123466/',
-            wink: 'https://wink.ru/series/dom-drakona',
-            youtube: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'
-        }
-    },
-    { 
-        id: 123492, 
-        title: 'Слово пацана', 
-        poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', 
-        vote_average: 8.8, 
-        media_type: 'tv', 
-        release_date: '2023-11-09', 
-        overview: 'Хит 2023 года о казанских группировках 80-х. Реальная история о пацанах, чести и жестокости.',
-        year: 2023,
-        partners: {
-            ivi: 'https://www.ivi.ru/watch/slovo-patsana',
-            okko: 'https://okko.ru/series/slovo-patsana',
-            kinopoisk: 'https://www.kinopoisk.ru/series/123492/',
-            wink: 'https://wink.ru/series/slovo-patsana',
-            youtube: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'
-        }
-    },
-    { 
-        id: 123493, 
-        title: 'Король и Шут', 
-        poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', 
-        vote_average: 8.3, 
-        media_type: 'tv', 
-        release_date: '2023-03-02', 
-        overview: 'Биографический сериал о легендарной панк-группе. История музыки, дружбы и свободы.',
-        year: 2023,
-        partners: {
-            ivi: 'https://www.ivi.ru/watch/korol-i-shut',
-            okko: 'https://okko.ru/series/korol-i-shut',
-            kinopoisk: 'https://www.kinopoisk.ru/series/123493/',
-            wink: 'https://wink.ru/series/korol-i-shut',
-            youtube: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'
-        }
-    },
+    // ==========================================
+    // 2005-2010
+    // ==========================================
+    { id: 14, title: 'Тёмный рыцарь', year: 2008, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 9.0, media_type: 'movie', overview: 'Бэтмен против Джокера. Лучший супергеройский фильм.' },
+    { id: 15, title: 'Начало', year: 2010, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 8.8, media_type: 'movie', overview: 'Фильм о снах и реальности от Кристофера Нолана.' },
+    { id: 16, title: 'Аватар', year: 2009, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 7.8, media_type: 'movie', overview: 'Фантастический фильм о планете Пандора.' },
+    { id: 17, title: 'Гарри Поттер и Кубок огня', year: 2005, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 7.7, media_type: 'movie', overview: 'Турнир трёх волшебников.' },
+    { id: 18, title: 'Гарри Поттер и Орден Феникса', year: 2007, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 7.5, media_type: 'movie', overview: 'Создание Отряда Дамблдора.' },
+    { id: 19, title: 'Гарри Поттер и Принц-полукровка', year: 2009, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 7.6, media_type: 'movie', overview: 'Тайна Принца-полукровки.' },
+    { id: 20, title: 'Пираты Карибского моря: Сундук мертвеца', year: 2006, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 7.3, media_type: 'movie', overview: 'Новые приключения Джека Воробья.' },
+    { id: 21, title: 'Пираты Карибского моря: На краю света', year: 2007, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 7.1, media_type: 'movie', overview: 'Финал приключений Джека Воробья.' },
+    { id: 22, title: 'Жмурки', year: 2005, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 7.8, media_type: 'movie', overview: 'Чёрная комедия о бандитах.' },
+    { id: 23, title: 'Бумер', year: 2003, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 7.6, media_type: 'movie', overview: 'Драма о бандитах и их судьбе.' },
+    { id: 24, title: '9 рота', year: 2005, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 7.8, media_type: 'movie', overview: 'Военная драма о войне в Афганистане.' },
+    { id: 25, title: 'Дневной дозор', year: 2006, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 7.2, media_type: 'movie', overview: 'Продолжение истории о Дозорах Света и Тьмы.' },
+    { id: 26, title: 'Ночной дозор', year: 2004, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 7.0, media_type: 'movie', overview: 'Фэнтези о битве Света и Тьмы.' },
+    { id: 27, title: 'Доктор Хаус', year: 2004, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 8.7, media_type: 'tv', overview: 'Сериал о гениальном враче-диагносте.' },
+    { id: 28, title: 'Офис', year: 2005, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 9.0, media_type: 'tv', overview: 'Культовая комедия о работниках офиса.' },
+    { id: 29, title: 'Теория большого взрыва', year: 2007, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 8.1, media_type: 'tv', overview: 'Комедия о гениальных физиках и их друзьях.' },
     
-    // ===== КЛАССИКА =====
-    { 
-        id: 123473, 
-        title: 'Крестный отец', 
-        poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', 
-        vote_average: 9.2, 
-        media_type: 'movie', 
-        release_date: '1972-03-24', 
-        overview: 'Легендарная криминальная сага о семье Корлеоне. Шедевр Фрэнсиса Форда Копполы.',
-        year: 1972,
-        partners: {
-            ivi: 'https://www.ivi.ru/watch/krestnyj-otec',
-            okko: 'https://okko.ru/movie/krestnyj-otec',
-            kinopoisk: 'https://www.kinopoisk.ru/film/123473/',
-            wink: 'https://wink.ru/movies/krestnyj-otec',
-            youtube: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'
-        }
-    },
-    { 
-        id: 123474, 
-        title: 'Побег из Шоушенка', 
-        poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', 
-        vote_average: 9.3, 
-        media_type: 'movie', 
-        release_date: '1994-10-14', 
-        overview: 'История о надежде и дружбе в тюрьме. Лучший фильм всех времён по версии IMDb.',
-        year: 1994,
-        partners: {
-            ivi: 'https://www.ivi.ru/watch/pobeg-iz-shoushenka',
-            okko: 'https://okko.ru/movie/pobeg-iz-shoushenka',
-            kinopoisk: 'https://www.kinopoisk.ru/film/123474/',
-            wink: 'https://wink.ru/movies/pobeg-iz-shoushenka',
-            youtube: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'
-        }
-    },
-    { 
-        id: 123475, 
-        title: 'Тёмный рыцарь', 
-        poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', 
-        vote_average: 9.0, 
-        media_type: 'movie', 
-        release_date: '2008-07-18', 
-        overview: 'Бэтмен против Джокера в культовом фильме Нолана. Лучший супергеройский фильм всех времён.',
-        year: 2008,
-        partners: {
-            ivi: 'https://www.ivi.ru/watch/temnyj-rycar',
-            okko: 'https://okko.ru/movie/temnyj-rycar',
-            kinopoisk: 'https://www.kinopoisk.ru/film/123475/',
-            wink: 'https://wink.ru/movies/temnyj-rycar',
-            youtube: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'
-        }
-    },
+    // ==========================================
+    // 2010-2015
+    // ==========================================
+    { id: 30, title: 'Интерстеллар', year: 2014, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 8.6, media_type: 'movie', overview: 'Фильм о космосе и любви, преодолевающей время.' },
+    { id: 31, title: 'Джанго освобождённый', year: 2012, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 8.4, media_type: 'movie', overview: 'Фильм Тарантино о рабе, ставшем охотником за головами.' },
+    { id: 32, title: 'Бесславные ублюдки', year: 2009, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 8.3, media_type: 'movie', overview: 'Альтернативная история Второй мировой.' },
+    { id: 33, title: 'Хоббит: Нежданное путешествие', year: 2012, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 7.8, media_type: 'movie', overview: 'Начало приключений Бильбо Бэггинса.' },
+    { id: 34, title: 'Хоббит: Пустошь Смауга', year: 2013, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 7.8, media_type: 'movie', overview: 'Продолжение приключений Бильбо.' },
+    { id: 35, title: 'Хоббит: Битва пяти воинств', year: 2014, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 7.4, media_type: 'movie', overview: 'Финал истории о гномах и драконе.' },
+    { id: 36, title: 'Гарри Поттер и Дары Смерти: Часть 1', year: 2010, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 7.7, media_type: 'movie', overview: 'Предпоследняя глава о Гарри Поттере.' },
+    { id: 37, title: 'Гарри Поттер и Дары Смерти: Часть 2', year: 2011, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 8.1, media_type: 'movie', overview: 'Финал саги о Гарри Поттере.' },
+    { id: 38, title: 'Мстители', year: 2012, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 8.0, media_type: 'movie', overview: 'Первое объединение супергероев Marvel.' },
+    { id: 39, title: 'Мстители: Эра Альтрона', year: 2015, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 7.3, media_type: 'movie', overview: 'Мстители против искусственного интеллекта.' },
+    { id: 40, title: 'Железный человек', year: 2008, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 7.9, media_type: 'movie', overview: 'Начало вселенной Marvel с Тони Старком.' },
+    { id: 41, title: 'Железный человек 3', year: 2013, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 7.1, media_type: 'movie', overview: 'Новые приключения Тони Старка.' },
+    { id: 42, title: 'Тор', year: 2011, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 7.0, media_type: 'movie', overview: 'История о скандинавском боге.' },
+    { id: 43, title: 'Первый мститель', year: 2011, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 6.9, media_type: 'movie', overview: 'История Капитана Америки.' },
+    { id: 44, title: 'Стражи Галактики', year: 2014, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 8.0, media_type: 'movie', overview: 'Приключения команды изгоев в космосе.' },
+    { id: 45, title: 'Движение вверх', year: 2017, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 8.0, media_type: 'movie', overview: 'История победы советской сборной на Олимпиаде-72.' },
+    { id: 46, title: 'Дурак', year: 2014, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 7.9, media_type: 'movie', overview: 'Социальная драма о простом сантехнике.' },
+    { id: 47, title: 'Левиафан', year: 2014, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 7.8, media_type: 'movie', overview: 'Драма о маленьком человеке и большой системе.' },
+    { id: 48, title: 'Игра престолов', year: 2011, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 9.2, media_type: 'tv', overview: 'Эпическое фэнтези о борьбе за Железный трон.' },
+    { id: 49, title: 'Во все тяжкие', year: 2008, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 9.5, media_type: 'tv', overview: 'История учителя химии, ставшего наркобароном.' },
+    { id: 50, title: 'Шерлок', year: 2010, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 9.0, media_type: 'tv', overview: 'Современная версия о великом сыщике.' },
+    { id: 51, title: 'Черное зеркало', year: 2011, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 8.8, media_type: 'tv', overview: 'Антология о тёмной стороне технологий.' },
     
-    // ===== РУССКИЕ ФИЛЬМЫ =====
-    { 
-        id: 123482, 
-        title: 'Брат', 
-        poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', 
-        vote_average: 8.2, 
-        media_type: 'movie', 
-        release_date: '1997-01-01', 
-        overview: 'Культовый фильм о брате и 90-х. История о поиске справедливости в новом мире.',
-        year: 1997,
-        partners: {
-            ivi: 'https://www.ivi.ru/watch/brat',
-            okko: 'https://okko.ru/movie/brat',
-            kinopoisk: 'https://www.kinopoisk.ru/film/123482/',
-            wink: 'https://wink.ru/movies/brat',
-            youtube: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'
-        }
-    },
-    { 
-        id: 123483, 
-        title: 'Брат 2', 
-        poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', 
-        vote_average: 8.0, 
-        media_type: 'movie', 
-        release_date: '2000-01-01', 
-        overview: 'Продолжение культовой истории. Брат отправляется в Америку за справедливостью.',
-        year: 2000,
-        partners: {
-            ivi: 'https://www.ivi.ru/watch/brat-2',
-            okko: 'https://okko.ru/movie/brat-2',
-            kinopoisk: 'https://www.kinopoisk.ru/film/123483/',
-            wink: 'https://wink.ru/movies/brat-2',
-            youtube: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'
-        }
-    },
-    { 
-        id: 123491, 
-        title: 'Движение вверх', 
-        poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', 
-        vote_average: 8.0, 
-        media_type: 'movie', 
-        release_date: '2017-01-01', 
-        overview: 'История победы советской баскетбольной сборной на Олимпиаде-72. Одна из главных спортивных драм.',
-        year: 2017,
-        partners: {
-            ivi: 'https://www.ivi.ru/watch/dvizhenie-vverh',
-            okko: 'https://okko.ru/movie/dvizhenie-vverh',
-            kinopoisk: 'https://www.kinopoisk.ru/film/123491/',
-            wink: 'https://wink.ru/movies/dvizhenie-vverh',
-            youtube: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'
-        }
-    },
+    // ==========================================
+    // 2015-2020
+    // ==========================================
+    { id: 52, title: 'Безумный Макс: Дорога ярости', year: 2015, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 8.1, media_type: 'movie', overview: 'Постапокалиптический экшен с сумасшедшим Максом.' },
+    { id: 53, title: 'Марсианин', year: 2015, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 8.0, media_type: 'movie', overview: 'История астронавта, оставшегося на Марсе.' },
+    { id: 54, title: 'Ла-Ла Ленд', year: 2016, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 8.0, media_type: 'movie', overview: 'Мюзикл о любви в Лос-Анджелесе.' },
+    { id: 55, title: 'Форсаж 7', year: 2015, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 7.1, media_type: 'movie', overview: 'Новые приключения команды Доминика Торетто.' },
+    { id: 56, title: 'Форсаж 8', year: 2017, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 6.9, media_type: 'movie', overview: 'Новые приключения Торетто и его команды.' },
+    { id: 57, title: 'Мстители: Война бесконечности', year: 2018, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 8.4, media_type: 'movie', overview: 'Мстители против Таноса.' },
+    { id: 58, title: 'Мстители: Финал', year: 2019, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 8.4, media_type: 'movie', overview: 'Финал истории о Мстителях.' },
+    { id: 59, title: 'Человек-паук: Возвращение домой', year: 2017, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 7.4, media_type: 'movie', overview: 'Новые приключения Человека-паука.' },
+    { id: 60, title: 'Человек-паук: Вдали от дома', year: 2019, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 7.5, media_type: 'movie', overview: 'Питер Паркер в Европе.' },
+    { id: 61, title: 'Джокер', year: 2019, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 8.4, media_type: 'movie', overview: 'История становления культового злодея.' },
+    { id: 62, title: 'Паразиты', year: 2019, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 8.5, media_type: 'movie', overview: 'Драма о классовой борьбе в Корее.' },
+    { id: 63, title: '1917', year: 2019, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 8.3, media_type: 'movie', overview: 'Военная драма о временах Первой мировой.' },
+    { id: 64, title: 'Текст', year: 2019, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 7.4, media_type: 'movie', overview: 'Российский триллер о современном мире.' },
+    { id: 65, title: 'Дылда', year: 2019, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 7.2, media_type: 'movie', overview: 'Драма о бывших военнослужащих.' },
+    { id: 66, title: 'Ход королевы', year: 2020, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 8.6, media_type: 'tv', overview: 'История о шахматной гении и её пути к вершине.' },
+    { id: 67, title: 'Ведьмак', year: 2019, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 8.1, media_type: 'tv', overview: 'Приключения Геральта из Ривии.' },
+    { id: 68, title: 'Мандалорец', year: 2019, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 8.6, media_type: 'tv', overview: 'Приключения охотника за головами в галактике.' },
+    { id: 69, title: 'Секретные материалы', year: 1993, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 8.6, media_type: 'tv', overview: 'Культовый сериал о паранормальном.' },
     
-    // ===== МУЛЬТФИЛЬМЫ =====
-    { 
-        id: 123501, 
-        title: 'Головоломка 2', 
-        poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', 
-        vote_average: 8.0, 
-        media_type: 'movie', 
-        release_date: '2024-06-14', 
-        overview: 'Эмоции Райли взрослеют вместе с ней. Новые чувства, новые приключения.',
-        year: 2024,
-        partners: {
-            ivi: 'https://www.ivi.ru/watch/golovolomka-2',
-            okko: 'https://okko.ru/movie/golovolomka-2',
-            kinopoisk: 'https://www.kinopoisk.ru/film/123501/',
-            wink: 'https://wink.ru/movies/golovolomka-2',
-            youtube: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'
-        }
-    },
-    { 
-        id: 123503, 
-        title: 'Моана 2', 
-        poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', 
-        vote_average: 7.5, 
-        media_type: 'movie', 
-        release_date: '2024-11-27', 
-        overview: 'Моана отправляется в новое путешествие по океану. Приключения продолжаются.',
-        year: 2024,
-        partners: {
-            ivi: 'https://www.ivi.ru/watch/moana-2',
-            okko: 'https://okko.ru/movie/moana-2',
-            kinopoisk: 'https://www.kinopoisk.ru/film/123503/',
-            wink: 'https://wink.ru/movies/moana-2',
-            youtube: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'
-        }
-    }
+    // ==========================================
+    // 2020-2023
+    // ==========================================
+    { id: 70, title: 'Дюна', year: 2021, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 8.0, media_type: 'movie', overview: 'Эпическая сага о пустынной планете Арракис.' },
+    { id: 71, title: 'Бэтмен', year: 2022, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 7.8, media_type: 'movie', overview: 'Новая история о Бэтмене в Готэме.' },
+    { id: 72, title: 'Топ Ган: Мэверик', year: 2022, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 8.3, media_type: 'movie', overview: 'Возвращение легендарного лётчика.' },
+    { id: 73, title: 'Аватар 2: Путь воды', year: 2022, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 7.6, media_type: 'movie', overview: 'Продолжение истории на планете Пандора.' },
+    { id: 74, title: 'Оппенгеймер', year: 2023, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 8.4, media_type: 'movie', overview: 'История создания атомной бомбы.' },
+    { id: 75, title: 'Барби', year: 2023, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 7.8, media_type: 'movie', overview: 'Комедийная фэнтези о культовой кукле.' },
+    { id: 76, title: 'Человек-паук: Нет пути домой', year: 2021, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 8.2, media_type: 'movie', overview: 'Мультивселенная с Питером Паркером.' },
+    { id: 77, title: 'Доктор Стрэндж: В мультивселенной безумия', year: 2022, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 7.0, media_type: 'movie', overview: 'Новые приключения Доктора Стрэнджа.' },
+    { id: 78, title: 'Чёрный Адам', year: 2022, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 6.2, media_type: 'movie', overview: 'История антигероя DC.' },
+    { id: 79, title: 'Аквамен 2', year: 2023, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 5.5, media_type: 'movie', overview: 'Новые приключения Аквамена.' },
+    { id: 80, title: 'Шазам! Ярость богов', year: 2023, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 6.1, media_type: 'movie', overview: 'Продолжение истории о Шазаме.' },
+    { id: 81, title: 'Одни из нас', year: 2023, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 8.5, media_type: 'tv', overview: 'Постапокалиптическая драма по игре.' },
+    { id: 82, title: 'Дом Дракона', year: 2022, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 8.4, media_type: 'tv', overview: 'Приквел «Игры престолов».' },
+    { id: 83, title: 'Уэнсдэй', year: 2022, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 8.1, media_type: 'tv', overview: 'Дочь семейки Аддамс в академии.' },
+    { id: 84, title: 'Слово пацана', year: 2023, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 8.8, media_type: 'tv', overview: 'Хит 2023 года о казанских группировках.' },
+    { id: 85, title: 'Король и Шут', year: 2023, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 8.3, media_type: 'tv', overview: 'Биографический сериал о панк-группе.' },
+    { id: 86, title: 'Пацаны', year: 2019, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 8.7, media_type: 'tv', overview: 'Чёрная комедия о супергероях.' },
+    { id: 87, title: 'Фарго', year: 2014, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 8.8, media_type: 'tv', overview: 'Криминальная драма с чёрным юмором.' },
+    
+    // ==========================================
+    // 2024-2026
+    // ==========================================
+    { id: 88, title: 'Дюна 2', year: 2024, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 8.2, media_type: 'movie', overview: 'Продолжение эпической саги.' },
+    { id: 89, title: 'Гладиатор 2', year: 2024, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 7.5, media_type: 'movie', overview: 'Продолжение легендарного фильма.' },
+    { id: 90, title: 'Дэдпул и Росомаха', year: 2024, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 8.0, media_type: 'movie', overview: 'Дэдпул объединяется с Росомахой.' },
+    { id: 91, title: 'Муфаса: Король Лев', year: 2024, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 7.2, media_type: 'movie', overview: 'История о том, как Муфаса стал королём.' },
+    { id: 92, title: 'Головоломка 2', year: 2024, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 8.0, media_type: 'movie', overview: 'Эмоции Райли взрослеют вместе с ней.' },
+    { id: 93, title: 'Моана 2', year: 2024, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 7.5, media_type: 'movie', overview: 'Моана отправляется в новое путешествие.' },
+    { id: 94, title: 'Кунг-фу Панда 4', year: 2024, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 7.3, media_type: 'movie', overview: 'По возвращается с новыми приключениями.' },
+    { id: 95, title: 'Веном 3', year: 2024, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 6.8, media_type: 'movie', overview: 'Эдди Брок сталкивается с новой угрозой.' },
+    { id: 96, title: 'Фуриоса', year: 2024, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 7.8, media_type: 'movie', overview: 'Приквел «Безумного Макса».' },
+    { id: 97, title: 'История игрушек 5', year: 2026, poster_path: '/7xLk9P8oK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 7.0, media_type: 'movie', overview: 'Новые приключения Вуди и Базза.' },
+    { id: 98, title: 'Майкл', year: 2026, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 8.6, media_type: 'movie', overview: 'Биографическая драма о Майкле Джексоне.' },
+    { id: 99, title: 'Странные дела (5 сезон)', year: 2025, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 8.7, media_type: 'tv', overview: 'Заключительный сезон культового сериала.' },
+    { id: 100, title: 'Мандалорец (4 сезон)', year: 2025, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 8.6, media_type: 'tv', overview: 'Новые приключения в галактике.' }
 ];
 
-// ===== ПАРТНЁРСКИЕ ПЛАТФОРМЫ =====
+// ===== ПАРТНЁРЫ =====
 const PARTNERS = {
-    ivi: { name: 'IVI', icon: '🎬', color: '#2a4a6a', class: 'ivi' },
-    okko: { name: 'Okko', icon: '🎬', color: '#2a2a5a', class: 'okko' },
-    kinopoisk: { name: 'Кинопоиск', icon: '🎬', color: '#1a1a1a', class: 'kinopoisk' },
-    wink: { name: 'Wink', icon: '🎬', color: '#1a3a3a', class: 'wink' },
-    youtube: { name: 'YouTube (трейлер)', icon: '▶️', color: '#1a0a0a', class: 'youtube' }
+    ivi: { name: 'IVI', icon: '🎬', class: 'ivi' },
+    okko: { name: 'Okko', icon: '🎬', class: 'okko' },
+    kinopoisk: { name: 'Кинопоиск', icon: '🎬', class: 'kinopoisk' },
+    wink: { name: 'Wink', icon: '🎬', class: 'wink' },
+    youtube: { name: 'YouTube', icon: '▶️', class: 'youtube' }
 };
 
 // ===== СОСТОЯНИЕ =====
-let currentFilter = 'all';
-let currentSort = 'popularity.desc';
-let currentMovie = null;
-let favorites = JSON.parse(localStorage.getItem('kinomoz_favorites') || '[]');
-let filteredMovies = [...MOVIES];
+let state = {
+    filter: 'all',
+    sort: 'popularity.desc',
+    search: '',
+    favorites: JSON.parse(localStorage.getItem('kinomoz_favorites') || '[]'),
+    history: JSON.parse(localStorage.getItem('kinomoz_history') || '[]'),
+    currentMovie: null,
+    viewMode: 'all', // all, favorites
+    page: 1,
+    perPage: 30,
+    isLoading: false
+};
 
 // ===== DOM =====
 const $ = (id) => document.getElementById(id);
@@ -682,6 +504,7 @@ const el = {
     partnerButtons: $('partnerButtons'),
     search: $('searchInput'),
     searchClear: $('searchClear'),
+    searchHistory: $('searchHistory'),
     favBtn: $('favoritesBtn'),
     favCount: $('favCount'),
     trendingBtn: $('trendingBtn'),
@@ -689,6 +512,8 @@ const el = {
     movieCount: $('movieCount'),
     sectionTitle: $('sectionTitleText'),
     loader: $('loader'),
+    loadMore: $('loadMore'),
+    clearHistoryBtn: $('clearHistoryBtn'),
     filters: document.querySelectorAll('.filter-btn'),
     sortSelect: $('sortSelect'),
     logo: $('logo'),
@@ -699,53 +524,101 @@ const el = {
     mobileClose: $('mobileClose'),
     navBtns: document.querySelectorAll('.nav-btn'),
     mobileNav: document.querySelectorAll('.mobile-nav a'),
+    mainNav: document.getElementById('mainNav')
 };
 
 // ============================================
-// РЕНДЕРИНГ
+// ОСНОВНЫЕ ФУНКЦИИ
 // ============================================
-function renderMovies(movies) {
-    const filtered = movies.filter(m => m.poster_path);
+
+function getFilteredMovies() {
+    let result = [...MOVIES];
     
-    if (!filtered.length) {
+    // Фильтр по типу
+    if (state.filter !== 'all' && state.viewMode !== 'favorites') {
+        result = result.filter(m => m.media_type === state.filter);
+    }
+    
+    // Поиск
+    if (state.search) {
+        const q = state.search.toLowerCase().trim();
+        result = result.filter(m => {
+            const title = (m.title || '').toLowerCase();
+            const overview = (m.overview || '').toLowerCase();
+            return title.includes(q) || overview.includes(q);
+        });
+    }
+    
+    // Избранное
+    if (state.viewMode === 'favorites') {
+        const favIds = state.favorites.map(f => f.id);
+        result = result.filter(m => favIds.includes(m.id));
+    }
+    
+    // Сортировка
+    switch(state.sort) {
+        case 'vote_average.desc':
+            result.sort((a, b) => (b.vote_average || 0) - (a.vote_average || 0));
+            break;
+        case 'release_date.desc':
+            result.sort((a, b) => (b.year || 0) - (a.year || 0));
+            break;
+        case 'title.asc':
+            result.sort((a, b) => (a.title || '').localeCompare(b.title || ''));
+            break;
+        default:
+            result.sort((a, b) => (b.vote_average || 0) - (a.vote_average || 0));
+    }
+    
+    return result;
+}
+
+function renderMovies() {
+    const movies = getFilteredMovies();
+    const start = 0;
+    const end = state.page * state.perPage;
+    const visible = movies.slice(start, end);
+    const total = movies.length;
+    
+    if (!visible.length) {
         el.grid.innerHTML = `
             <div style="grid-column:1/-1;text-align:center;padding:60px 20px;">
-                <div style="font-size:48px;margin-bottom:16px;">🔍</div>
-                <h3 style="color:#fff;font-size:18px;">Ничего не найдено</h3>
-                <p style="color:var(--text3);margin-top:6px;">Попробуйте изменить запрос</p>
+                <div style="font-size:48px;margin-bottom:16px;">${state.viewMode === 'favorites' ? '❤️' : '🔍'}</div>
+                <h3 style="color:#fff;font-size:18px;">${state.viewMode === 'favorites' ? 'Избранное пусто' : 'Ничего не найдено'}</h3>
+                <p style="color:var(--text3);margin-top:6px;">${state.viewMode === 'favorites' ? 'Добавьте фильмы в избранное' : 'Попробуйте изменить запрос'}</p>
             </div>
         `;
         el.movieCount.textContent = '0';
+        el.loadMore.style.display = 'none';
         return;
     }
     
-    el.grid.innerHTML = filtered.map(m => {
-        const title = m.title || m.name || 'Без названия';
-        const year = m.year || new Date(m.release_date || '').getFullYear() || '';
-        const rating = m.vote_average ? m.vote_average.toFixed(1) : '';
-        const type = m.media_type === 'tv' ? 'Сериал' : 'Фильм';
-        const isFav = favorites.some(f => f.id === m.id);
+    el.grid.innerHTML = visible.map(m => {
         const poster = m.poster_path || '';
+        const isFav = state.favorites.some(f => f.id === m.id);
+        const type = m.media_type === 'tv' ? 'Сериал' : 'Фильм';
+        const year = m.year || 'N/A';
+        const rating = m.vote_average ? m.vote_average.toFixed(1) : '';
         
         return `
-            <div class="movie-card" onclick="openModal(${m.id})">
+            <div class="movie-card" data-id="${m.id}">
                 <div class="poster">
                     <img src="${poster.startsWith('http') ? poster : 'https://image.tmdb.org/t/p/w500' + poster}" 
-                         alt="${title}" loading="lazy"
+                         alt="${m.title}" loading="lazy"
                          onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22200%22 height=%22300%22%3E%3Crect width=%22200%22 height=%22300%22 fill=%22%231a1a2e%22/%3E%3Ctext x=%2250%22 y=%22150%22 fill=%22%23666%22 font-size=%2220%22%3EНет фото%3C/text%3E%3C/svg%3E'">
                     ${rating ? `<span class="badge badge-rating">⭐ ${rating}</span>` : ''}
-                    ${year ? `<span class="badge badge-year">${year}</span>` : ''}
+                    ${year !== 'N/A' ? `<span class="badge badge-year">${year}</span>` : ''}
                     <span class="badge badge-type">${type}</span>
-                    <span class="badge badge-legal">🔒 Легально</span>
                     ${isFav ? '<span class="badge badge-fav">❤️</span>' : ''}
                     <div class="overlay">
-                        <button class="play-btn"><i class="fas fa-play"></i></button>
+                        <button class="play-btn" onclick="event.stopPropagation();openModal(${m.id})"><i class="fas fa-play"></i></button>
+                        <button class="fav-btn" onclick="event.stopPropagation();toggleFavorite(${m.id})"><i class="fas fa-${isFav ? 'heart' : 'plus'}"></i></button>
                     </div>
                 </div>
                 <div class="info">
-                    <h3>${title}</h3>
+                    <h3>${m.title}</h3>
                     <div class="meta">
-                        <span>${year || 'N/A'}</span>
+                        <span>${year}</span>
                         ${rating ? `<span>⭐ ${rating}</span>` : ''}
                     </div>
                     <div class="lang">🇷🇺 Русская озвучка</div>
@@ -754,155 +627,171 @@ function renderMovies(movies) {
         `;
     }).join('');
     
-    el.movieCount.textContent = filtered.length;
+    el.movieCount.textContent = total;
+    el.loadMore.style.display = end < total ? 'block' : 'none';
+    
+    // Обновляем заголовок
+    let title = '🎬 Все фильмы и сериалы';
+    if (state.viewMode === 'favorites') title = '❤️ Избранное';
+    else if (state.filter === 'movie') title = '🎬 Все фильмы';
+    else if (state.filter === 'tv') title = '📺 Все сериалы';
+    if (state.search) title = `🔍 Результаты: "${state.search}"`;
+    el.sectionTitle.textContent = title;
 }
 
 // ============================================
-// ФИЛЬТРАЦИЯ И СОРТИРОВКА
+// ПОИСК С ИСТОРИЕЙ
 // ============================================
-function filterAndSort() {
-    let result = [...MOVIES];
-    
-    if (currentFilter !== 'all') {
-        result = result.filter(m => m.media_type === currentFilter);
-    }
-    
-    switch(currentSort) {
-        case 'vote_average.desc':
-            result.sort((a, b) => (b.vote_average || 0) - (a.vote_average || 0));
-            break;
-        case 'release_date.desc':
-            result.sort((a, b) => {
-                const da = new Date(a.release_date || '');
-                const db = new Date(b.release_date || '');
-                return db - da;
-            });
-            break;
-        case 'title.asc':
-            result.sort((a, b) => (a.title || '').localeCompare(b.title || ''));
-            break;
-        default:
-            result.sort((a, b) => (b.popularity || 0) - (a.popularity || 0));
-    }
-    
-    filteredMovies = result;
-    renderMovies(result);
+
+function addToHistory(query) {
+    if (!query.trim()) return;
+    state.history = state.history.filter(item => item !== query);
+    state.history.unshift(query);
+    if (state.history.length > 10) state.history.pop();
+    localStorage.setItem('kinomoz_history', JSON.stringify(state.history));
+    renderHistory();
 }
 
-// ============================================
-// ПОИСК
-// ============================================
-function searchMovies(query) {
-    if (!query.trim()) {
-        filterAndSort();
+function renderHistory() {
+    const container = el.searchHistory;
+    if (!state.history.length) {
+        container.innerHTML = `<div class="search-history-empty">История поиска пуста</div>`;
+        container.classList.add('active');
         return;
     }
-    const q = query.toLowerCase().trim();
-    const result = MOVIES.filter(m => {
-        const title = (m.title || '').toLowerCase();
-        const overview = (m.overview || '').toLowerCase();
-        return title.includes(q) || overview.includes(q);
-    });
+    container.innerHTML = state.history.map(item => `
+        <div class="search-history-item" onclick="applySearch('${item}')">
+            <span><i class="fas fa-history" style="color:var(--text3);margin-right:10px;font-size:12px;"></i>${item}</span>
+            <span class="remove" onclick="event.stopPropagation();removeHistoryItem('${item}')"><i class="fas fa-times"></i></span>
+        </div>
+    `).join('');
+    container.classList.add('active');
+}
+
+function removeHistoryItem(query) {
+    state.history = state.history.filter(item => item !== query);
+    localStorage.setItem('kinomoz_history', JSON.stringify(state.history));
+    renderHistory();
+}
+
+function clearHistory() {
+    state.history = [];
+    localStorage.setItem('kinomoz_history', JSON.stringify(state.history));
+    renderHistory();
+    el.clearHistoryBtn.style.display = 'none';
+    el.searchHistory.classList.remove('active');
+}
+
+function applySearch(query) {
+    el.search.value = query;
+    state.search = query;
+    el.searchClear.style.display = 'block';
+    el.searchHistory.classList.remove('active');
+    addToHistory(query);
+    state.page = 1;
+    renderMovies();
+}
+
+// ============================================
+// ИЗБРАННОЕ
+// ============================================
+
+function toggleFavorite(id) {
+    const movie = MOVIES.find(m => m.id === id);
+    if (!movie) return;
     
-    switch(currentSort) {
-        case 'vote_average.desc':
-            result.sort((a, b) => (b.vote_average || 0) - (a.vote_average || 0));
-            break;
-        case 'release_date.desc':
-            result.sort((a, b) => {
-                const da = new Date(a.release_date || '');
-                const db = new Date(b.release_date || '');
-                return db - da;
-            });
-            break;
-        case 'title.asc':
-            result.sort((a, b) => (a.title || '').localeCompare(b.title || ''));
-            break;
-        default:
-            result.sort((a, b) => (b.popularity || 0) - (a.popularity || 0));
+    const idx = state.favorites.findIndex(f => f.id === id);
+    if (idx === -1) {
+        state.favorites.push({
+            id: movie.id,
+            title: movie.title,
+            year: movie.year,
+            poster: movie.poster_path,
+            rating: movie.vote_average,
+            type: movie.media_type
+        });
+        showNotification('✅ Добавлено в избранное!', 'success');
+    } else {
+        state.favorites.splice(idx, 1);
+        showNotification('🗑️ Удалено из избранного', 'info');
     }
+    localStorage.setItem('kinomoz_favorites', JSON.stringify(state.favorites));
+    updateFavCount();
     
-    filteredMovies = result;
-    renderMovies(result);
-    el.sectionTitle.textContent = `🔍 Результаты: "${query}"`;
+    // Перерисовываем если в избранном
+    if (state.viewMode === 'favorites') {
+        renderMovies();
+    } else {
+        // Обновляем карточки
+        document.querySelectorAll('.movie-card').forEach(card => {
+            const id = parseInt(card.dataset.id);
+            const isFav = state.favorites.some(f => f.id === id);
+            const favBadge = card.querySelector('.badge-fav');
+            const favBtn = card.querySelector('.fav-btn i');
+            if (favBadge) {
+                if (isFav) {
+                    if (!favBadge) card.querySelector('.poster').insertAdjacentHTML('beforeend', '<span class="badge badge-fav">❤️</span>');
+                } else {
+                    if (favBadge) favBadge.remove();
+                }
+            }
+            if (favBtn) {
+                favBtn.className = `fas fa-${isFav ? 'heart' : 'plus'}`;
+            }
+        });
+    }
+}
+
+function updateFavCount() {
+    el.favCount.textContent = state.favorites.length;
+    el.favCount.style.display = state.favorites.length > 0 ? 'flex' : 'none';
 }
 
 // ============================================
 // МОДАЛКА
 // ============================================
+
 function openModal(id) {
     const movie = MOVIES.find(m => m.id === id);
     if (!movie) return;
-    currentMovie = movie;
+    state.currentMovie = movie;
     
-    const title = movie.title || 'Фильм';
-    const year = movie.year || new Date(movie.release_date || '').getFullYear() || '';
-    const rating = movie.vote_average ? movie.vote_average.toFixed(1) : '';
-    const overview = movie.overview || 'Описание отсутствует.';
-    const poster = movie.poster_path ? 'https://image.tmdb.org/t/p/w500' + movie.poster_path : '';
+    const isFav = state.favorites.some(f => f.id === id);
     const type = movie.media_type === 'tv' ? '📺 Сериал' : '🎬 Фильм';
-    const isFav = favorites.some(f => f.id === id);
+    const poster = movie.poster_path ? 'https://image.tmdb.org/t/p/w500' + movie.poster_path : '';
     
     el.modalInfo.innerHTML = `
         <div class="movie-info">
-            ${poster ? `<div class="poster"><img src="${poster}" alt="${title}" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22200%22 height=%22300%22%3E%3Crect width=%22200%22 height=%22300%22 fill=%22%23333%22/%3E%3Ctext x=%2250%22 y=%22150%22 fill=%22%23666%22 font-size=%2220%22%3EНет фото%3C/text%3E%3C/svg%3E'"></div>` : ''}
+            ${poster ? `<div class="poster"><img src="${poster}" alt="${movie.title}" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22200%22 height=%22300%22%3E%3Crect width=%22200%22 height=%22300%22 fill=%22%23333%22/%3E%3Ctext x=%2250%22 y=%22150%22 fill=%22%23666%22 font-size=%2220%22%3EНет фото%3C/text%3E%3C/svg%3E'"></div>` : ''}
             <div class="details">
-                <h2>${title} ${year ? `(${year})` : ''}</h2>
-                ${rating ? `<div class="rating">⭐ ${rating} / 10</div>` : ''}
-                <div class="overview">${overview}</div>
+                <h2>${movie.title} ${movie.year ? `(${movie.year})` : ''}</h2>
+                ${movie.vote_average ? `<div class="rating">⭐ ${movie.vote_average.toFixed(1)} / 10</div>` : ''}
+                <div class="overview">${movie.overview || 'Описание отсутствует.'}</div>
                 <div class="tags">
                     <span>${type}</span>
-                    <span>${year || 'N/A'}</span>
+                    <span>${movie.year || 'N/A'}</span>
                     <span class="lang-tag">🇷🇺 Русская озвучка</span>
-                    <span class="legal-tag">🔒 Легальный просмотр</span>
                     ${isFav ? '<span>❤️ В избранном</span>' : ''}
                 </div>
+                <button onclick="toggleFavorite(${movie.id})" style="margin-top:10px;padding:8px 20px;border-radius:50px;background:${isFav ? '#e50914' : '#4CAF50'};color:#fff;border:none;cursor:pointer;font-family:inherit;font-size:13px;font-weight:500;transition:all .3s;">
+                    ${isFav ? '❤️ Удалить из избранного' : '➕ Добавить в избранное'}
+                </button>
             </div>
         </div>
     `;
     
-    // ===== КНОПКИ ПАРТНЁРОВ =====
-    if (movie.partners) {
-        const available = Object.keys(movie.partners).filter(key => movie.partners[key]);
-        el.partnerButtons.innerHTML = available.map(key => {
-            const p = PARTNERS[key];
-            return `
-                <a href="${movie.partners[key]}" target="_blank" class="partner-btn ${p.class}" onclick="showNotification('📺 Переход на ${p.name}', 'info')">
-                    <span class="icon">${p.icon}</span> Смотреть на ${p.name}
-                </a>
-            `;
-        }).join('');
-    } else {
-        el.partnerButtons.innerHTML = `
-            <span style="color:var(--text3);font-size:13px;padding:8px 0;">Скоро появятся ссылки на просмотр</span>
-        `;
-    }
+    // Кнопки партнёров
+    const partnersHTML = Object.entries(PARTNERS).map(([key, p]) => `
+        <a href="#" class="partner-btn ${p.class}" onclick="event.preventDefault();showNotification('📺 Открывается ${p.name}', 'info')">
+            <span class="icon">${p.icon}</span> Смотреть на ${p.name}
+        </a>
+    `).join('');
+    el.partnerButtons.innerHTML = partnersHTML;
     
-    // ===== ВСТРОЕННЫЙ ТРЕЙЛЕР (YouTube) =====
-    if (movie.partners && movie.partners.youtube) {
-        const videoId = movie.partners.youtube.split('v=')[1] || '';
-        if (videoId) {
-            el.player.innerHTML = `
-                <iframe src="https://www.youtube.com/embed/${videoId}" allowfullscreen allow="autoplay; encrypted-media; fullscreen" loading="lazy"></iframe>
-            `;
-        } else {
-            el.player.innerHTML = `
-                <div class="player-loading">
-                    <div class="loader-spinner"></div>
-                    <p>🎬 Выберите платформу для просмотра</p>
-                    <span class="lang-label">🇷🇺 Русская озвучка</span>
-                </div>
-            `;
-        }
-    } else {
-        el.player.innerHTML = `
-            <div class="player-loading">
-                <div class="loader-spinner"></div>
-                <p>🎬 Выберите платформу для просмотра</p>
-                <span class="lang-label">🇷🇺 Русская озвучка</span>
-            </div>
-        `;
-    }
+    // Встраиваем YouTube трейлер (пример)
+    el.player.innerHTML = `
+        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen allow="autoplay; encrypted-media; fullscreen" loading="lazy"></iframe>
+    `;
     
     el.modal.classList.add('active');
     document.body.style.overflow = 'hidden';
@@ -921,57 +810,9 @@ function closeModal() {
 }
 
 // ============================================
-// ИЗБРАННОЕ
-// ============================================
-function toggleFavorite(movie) {
-    const idx = favorites.findIndex(f => f.id === movie.id);
-    if (idx === -1) {
-        favorites.push({
-            id: movie.id,
-            title: movie.title,
-            year: movie.year || new Date(movie.release_date || '').getFullYear() || '',
-            poster: movie.poster_path,
-            rating: movie.vote_average,
-            type: movie.media_type || 'movie'
-        });
-        showNotification('✅ Добавлено в избранное!', 'success');
-    } else {
-        favorites.splice(idx, 1);
-        showNotification('🗑️ Удалено из избранного', 'info');
-    }
-    localStorage.setItem('kinomoz_favorites', JSON.stringify(favorites));
-    updateFavCount();
-    if (currentMovie && currentMovie.id === movie.id) openModal(movie.id);
-}
-
-function showFavorites() {
-    if (!favorites.length) {
-        showNotification('📭 Избранное пусто', 'info');
-        return;
-    }
-    const movies = favorites.map(f => ({
-        ...f,
-        poster_path: f.poster,
-        media_type: f.type || 'movie',
-        title: f.title,
-        vote_average: f.rating
-    }));
-    filteredMovies = movies;
-    renderMovies(movies);
-    el.sectionTitle.textContent = '⭐ Избранное';
-    el.search.value = '';
-    el.searchClear.style.display = 'none';
-    closeMobile();
-}
-
-function updateFavCount() {
-    el.favCount.textContent = favorites.length;
-    el.favCount.style.display = favorites.length > 0 ? 'flex' : 'none';
-}
-
-// ============================================
 // УВЕДОМЛЕНИЯ
 // ============================================
+
 function showNotification(msg, type = 'info') {
     const n = document.createElement('div');
     n.className = `notification ${type}`;
@@ -986,6 +827,7 @@ function showNotification(msg, type = 'info') {
 // ============================================
 // МОБИЛЬНОЕ МЕНЮ
 // ============================================
+
 function openMobile() {
     el.mobileMenu.classList.add('open');
     el.mobileOverlay.classList.add('open');
@@ -1001,73 +843,116 @@ function closeMobile() {
 // ============================================
 // СОБЫТИЯ
 // ============================================
+
+// Навигация
 el.navBtns.forEach(btn => {
     btn.addEventListener('click', function() {
         el.navBtns.forEach(b => b.classList.remove('active'));
         this.classList.add('active');
         const action = this.dataset.action;
+        state.viewMode = 'all';
         el.search.value = '';
+        state.search = '';
         el.searchClear.style.display = 'none';
+        el.searchHistory.classList.remove('active');
+        
         if (action === 'all') {
-            currentFilter = 'all';
-            el.sectionTitle.textContent = '🎬 Все фильмы и сериалы';
-            filterAndSort();
+            state.filter = 'all';
+            state.viewMode = 'all';
+            renderMovies();
         } else if (action === 'movies') {
-            currentFilter = 'movie';
-            el.sectionTitle.textContent = '🎬 Все фильмы';
-            filterAndSort();
+            state.filter = 'movie';
+            state.viewMode = 'all';
+            renderMovies();
         } else if (action === 'tv') {
-            currentFilter = 'tv';
-            el.sectionTitle.textContent = '📺 Все сериалы';
-            filterAndSort();
+            state.filter = 'tv';
+            state.viewMode = 'all';
+            renderMovies();
+        } else if (action === 'favorites') {
+            state.viewMode = 'favorites';
+            renderMovies();
         }
         closeMobile();
     });
 });
 
+// Фильтры
 el.filters.forEach(btn => {
     btn.addEventListener('click', function() {
         el.filters.forEach(b => b.classList.remove('active'));
         this.classList.add('active');
-        currentFilter = this.dataset.filter;
-        if (el.search.value.trim()) {
-            searchMovies(el.search.value);
-        } else {
-            filterAndSort();
-        }
+        state.filter = this.dataset.filter;
+        state.viewMode = 'all';
+        state.page = 1;
+        renderMovies();
     });
 });
 
+// Сортировка
 el.sortSelect.addEventListener('change', function() {
-    currentSort = this.value;
-    if (el.search.value.trim()) {
-        searchMovies(el.search.value);
-    } else {
-        filterAndSort();
+    state.sort = this.value;
+    state.page = 1;
+    renderMovies();
+});
+
+// Поиск
+let searchTimeout;
+el.search.addEventListener('focus', function() {
+    if (state.history.length) {
+        renderHistory();
     }
 });
 
-let searchTimeout;
+el.search.addEventListener('blur', function() {
+    setTimeout(() => {
+        el.searchHistory.classList.remove('active');
+    }, 200);
+});
+
 el.search.addEventListener('input', function() {
     const val = this.value.trim();
     el.searchClear.style.display = val ? 'block' : 'none';
     clearTimeout(searchTimeout);
-    searchTimeout = setTimeout(() => {
-        if (val) {
-            searchMovies(val);
-        } else {
-            el.sectionTitle.textContent = '🎬 Все фильмы и сериалы';
-            filterAndSort();
+    
+    if (val) {
+        el.searchHistory.classList.remove('active');
+        searchTimeout = setTimeout(() => {
+            state.search = val;
+            state.viewMode = 'all';
+            state.page = 1;
+            addToHistory(val);
+            renderMovies();
+        }, 400);
+    } else {
+        state.search = '';
+        state.page = 1;
+        renderMovies();
+        if (state.history.length) {
+            renderHistory();
         }
-    }, 300);
+    }
 });
+
 el.searchClear.addEventListener('click', function() {
     el.search.value = '';
     el.searchClear.style.display = 'none';
-    el.sectionTitle.textContent = '🎬 Все фильмы и сериалы';
-    filterAndSort();
+    state.search = '';
+    state.page = 1;
+    el.searchHistory.classList.remove('active');
+    renderMovies();
 });
 
+// Кнопка очистки истории
+el.clearHistoryBtn.addEventListener('click', clearHistory);
+
+// Загрузить ещё
+el.loadMore.addEventListener('click', function() {
+    state.page++;
+    renderMovies();
+    this.scrollIntoView({ behavior: 'smooth', block: 'center' });
+});
+
+// Модалка
 el.modalClose.addEventListener('click', closeModal);
 el.modal.addEventListener('click', function(e) {
     if (e.target === this) closeModal();
@@ -1076,28 +961,50 @@ document.addEventListener('keydown', function(e) {
     if (e.key === 'Escape') closeModal();
 });
 
-el.favBtn.addEventListener('click', showFavorites);
-el.trendingBtn.addEventListener('click', function() {
-    currentFilter = 'all';
-    el.sectionTitle.textContent = '🎬 Все фильмы и сериалы';
+// Кнопки
+el.favBtn.addEventListener('click', function() {
+    state.viewMode = 'favorites';
+    state.search = '';
     el.search.value = '';
     el.searchClear.style.display = 'none';
-    filterAndSort();
-    closeMobile();
+    el.searchHistory.classList.remove('active');
+    renderMovies();
+    // Обновляем активную вкладку
     el.navBtns.forEach(b => b.classList.remove('active'));
-    document.querySelector('.nav-btn[data-action="all"]').classList.add('active');
-});
-el.logo.addEventListener('click', function() {
-    currentFilter = 'all';
-    el.sectionTitle.textContent = '🎬 Все фильмы и сериалы';
-    el.search.value = '';
-    el.searchClear.style.display = 'none';
-    filterAndSort();
-    closeMobile();
-    el.navBtns.forEach(b => b.classList.remove('active'));
-    document.querySelector('.nav-btn[data-action="all"]').classList.add('active');
+    document.querySelector('.nav-btn[data-action="favorites"]')?.classList.add('active');
 });
 
+el.trendingBtn.addEventListener('click', function() {
+    state.viewMode = 'all';
+    state.filter = 'all';
+    state.search = '';
+    el.search.value = '';
+    el.searchClear.style.display = 'none';
+    state.page = 1;
+    renderMovies();
+    closeMobile();
+    el.navBtns.forEach(b => b.classList.remove('active'));
+    document.querySelector('.nav-btn[data-action="all"]')?.classList.add('active');
+    el.filters.forEach(b => b.classList.remove('active'));
+    document.querySelector('.filter-btn[data-filter="all"]')?.classList.add('active');
+});
+
+el.logo.addEventListener('click', function() {
+    state.viewMode = 'all';
+    state.filter = 'all';
+    state.search = '';
+    el.search.value = '';
+    el.searchClear.style.display = 'none';
+    state.page = 1;
+    renderMovies();
+    closeMobile();
+    el.navBtns.forEach(b => b.classList.remove('active'));
+    document.querySelector('.nav-btn[data-action="all"]')?.classList.add('active');
+    el.filters.forEach(b => b.classList.remove('active'));
+    document.querySelector('.filter-btn[data-filter="all"]')?.classList.add('active');
+});
+
+// Мобильное меню
 el.mobileToggle.addEventListener('click', openMobile);
 el.mobileClose.addEventListener('click', closeMobile);
 el.mobileOverlay.addEventListener('click', closeMobile);
@@ -1107,57 +1014,60 @@ el.mobileNav.forEach(item => {
         el.mobileNav.forEach(i => i.classList.remove('active'));
         this.classList.add('active');
         const action = this.dataset.action;
+        state.viewMode = 'all';
         el.search.value = '';
+        state.search = '';
         el.searchClear.style.display = 'none';
+        el.searchHistory.classList.remove('active');
+        state.page = 1;
+        
         if (action === 'all') {
-            currentFilter = 'all';
-            el.sectionTitle.textContent = '🎬 Все фильмы и сериалы';
-            filterAndSort();
+            state.filter = 'all';
+            renderMovies();
         } else if (action === 'movies') {
-            currentFilter = 'movie';
-            el.sectionTitle.textContent = '🎬 Все фильмы';
-            filterAndSort();
+            state.filter = 'movie';
+            renderMovies();
         } else if (action === 'tv') {
-            currentFilter = 'tv';
-            el.sectionTitle.textContent = '📺 Все сериалы';
-            filterAndSort();
+            state.filter = 'tv';
+            renderMovies();
         } else if (action === 'favorites') {
-            showFavorites();
+            state.viewMode = 'favorites';
+            renderMovies();
         }
         closeMobile();
     });
 });
 
-// ============================================
-// ДОБАВЛЕНИЕ В ИЗБРАННОЕ (долгий тап на телефонах)
-// ============================================
+// Долгий тап для избранного (телефоны)
 let longPressTimer;
 document.addEventListener('touchstart', function(e) {
     const card = e.target.closest('.movie-card');
     if (card) {
         longPressTimer = setTimeout(() => {
-            const id = parseInt(card.dataset.id) || parseInt(card.querySelector('[onclick]')?.getAttribute('onclick')?.match(/\d+/)?.[0]);
-            if (id) {
-                const movie = MOVIES.find(m => m.id === id);
-                if (movie) toggleFavorite(movie);
-            }
-        }, 800);
+            const id = parseInt(card.dataset.id);
+            if (id) toggleFavorite(id);
+        }, 600);
     }
 });
 document.addEventListener('touchend', function() { clearTimeout(longPressTimer); });
 document.addEventListener('touchmove', function() { clearTimeout(longPressTimer); });
 
 // ============================================
-// СТАРТ
+// ЗАПУСК
 // ============================================
-renderMovies(MOVIES);
+
+renderMovies();
 updateFavCount();
 
-// ===== ДОБАВЛЕНИЕ ЯНДЕКС.МЕТРИКИ =====
-setTimeout(function() {
-    // Здесь код Яндекс.Метрики
-    console.log('📊 Яндекс.Метрика подключена');
-}, 1000);
+// Показываем кнопку очистки истории, если есть история
+if (state.history.length) {
+    el.clearHistoryBtn.style.display = 'flex';
+}
+
+console.log('🎬 KinoMoz PRO загружен!');
+console.log(`📊 Фильмов в базе: ${MOVIES.length}`);
+console.log(`❤️ В избранном: ${state.favorites.length}`);
+console.log(`📝 Запросов в истории: ${state.history.length}`);
 </script>
 
 </body>

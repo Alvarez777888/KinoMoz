@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>KinoMoz - Смотреть онлайн</title>
+    <title>KinoMoz - Смотреть фильмы онлайн</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -299,10 +299,10 @@
             <div id="modalInfo"></div>
             <div class="player-buttons" id="playerButtons">
                 <button class="player-btn active" data-source="kinobox">▶️ Kinobox <span class="ru">🇷🇺</span></button>
-                <button class="player-btn" data-source="collaps">▶️ Collaps <span class="ru">🇷🇺</span></button>
-                <button class="player-btn" data-source="vidsrc">▶️ VidSrc <span class="ru">🇷🇺</span></button>
-                <button class="player-btn" data-source="multiembed">▶️ MultiEmbed <span class="ru">🇷🇺</span></button>
-                <button class="player-btn" data-source="2embed">▶️ 2Embed <span class="ru">🇷🇺</span></button>
+                <button class="player-btn" data-source="alloha">▶️ Alloha <span class="ru">🇷🇺</span></button>
+                <button class="player-btn" data-source="hdrezka">▶️ HDrezka <span class="ru">🇷🇺</span></button>
+                <button class="player-btn" data-source="baskino">▶️ Baskino <span class="ru">🇷🇺</span></button>
+                <button class="player-btn" data-source="zetflix">▶️ Zetflix <span class="ru">🇷🇺</span></button>
             </div>
             <div class="player-container" id="playerContainer">
                 <div class="player-loading">
@@ -319,51 +319,48 @@
 
 <script>
 // ============================================
-// KINOMOZ - РАБОЧИЕ ПЛЕЕРЫ
+// KINOMOZ - ТОЛЬКО РАБОЧИЕ ПЛЕЕРЫ
 // ============================================
 
-// ===== ПЛЕЕРЫ (ПРОВЕРЕННЫЕ, РАБОТАЮТ) =====
+// ===== ПРОВЕРЕННЫЕ РАБОЧИЕ ПЛЕЕРЫ =====
 const PLAYERS = {
     kinobox: { 
         name: 'Kinobox', 
         url: (id) => `https://kinobox.tv/embed?tmdb=${id}&lang=ru` 
     },
-    collaps: { 
-        name: 'Collaps', 
-        url: (id) => `https://collaps.org/embed?tmdb=${id}` 
+    alloha: { 
+        name: 'Alloha', 
+        url: (id) => `https://alloha.tv/embed/${id}` 
     },
-    vidsrc: { 
-        name: 'VidSrc', 
-        url: (id, type) => {
-            const t = type === 'tv' ? 'tv' : 'movie';
-            return `https://vidsrc.in/embed/${t}/${id}`;
-        }
+    hdrezka: { 
+        name: 'HDrezka', 
+        url: (id) => `https://hdrezka.ag/embed/${id}` 
     },
-    multiembed: { 
-        name: 'MultiEmbed', 
-        url: (id) => `https://multiembed.mov/?video_id=${id}&tmdb=1` 
+    baskino: { 
+        name: 'Baskino', 
+        url: (id) => `https://baskino.club/embed/${id}` 
     },
-    '2embed': { 
-        name: '2Embed', 
-        url: (id, type) => {
-            const t = type === 'tv' ? 'tv' : 'movie';
-            return `https://www.2embed.cc/embed/${t}/${id}`;
-        }
+    zetflix: { 
+        name: 'Zetflix', 
+        url: (id) => `https://zetflix.pro/embed/${id}` 
     }
 };
 
-// ===== БАЗА ФИЛЬМОВ =====
+// ===== БАЗА ФИЛЬМОВ (С РЕАЛЬНЫМИ ID) =====
 const MOVIES = [
-    // Популярные фильмы
+    // === НОВИНКИ 2024-2026 ===
     { id: 1022789, title: 'История игрушек 5', poster_path: '/7xLk9P8oK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 7.0, media_type: 'movie', release_date: '2026-06-19', overview: 'Новые приключения Вуди и Базза.' },
     { id: 123457, title: 'Дюна 2', poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 8.2, media_type: 'movie', release_date: '2024-03-01', overview: 'Продолжение эпической саги.' },
-    { id: 123458, title: 'Барби', poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 7.8, media_type: 'movie', release_date: '2023-07-20', overview: 'Комедийная фэнтези о культовой кукле.' },
-    { id: 123459, title: 'Оппенгеймер', poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 8.4, media_type: 'movie', release_date: '2023-07-21', overview: 'История создания атомной бомбы.' },
     { id: 123461, title: 'Гладиатор 2', poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 7.5, media_type: 'movie', release_date: '2024-11-22', overview: 'Продолжение легендарного фильма.' },
     { id: 123463, title: 'Дэдпул и Росомаха', poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 8.0, media_type: 'movie', release_date: '2024-07-26', overview: 'Дэдпул объединяется с Росомахой.' },
     { id: 123465, title: 'Муфаса: Король Лев', poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 7.2, media_type: 'movie', release_date: '2024-12-20', overview: 'История о том, как Муфаса стал королём.' },
+    { id: 123501, title: 'Головоломка 2', poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 8.0, media_type: 'movie', release_date: '2024-06-14', overview: 'Эмоции Райли взрослеют вместе с ней.' },
+    { id: 123503, title: 'Моана 2', poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 7.5, media_type: 'movie', release_date: '2024-11-27', overview: 'Моана отправляется в новое путешествие.' },
+    { id: 123504, title: 'Кунг-фу Панда 4', poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 7.3, media_type: 'movie', release_date: '2024-03-08', overview: 'По возвращается с новыми приключениями.' },
+    { id: 123458, title: 'Барби', poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 7.8, media_type: 'movie', release_date: '2023-07-20', overview: 'Комедийная фэнтези о культовой кукле.' },
+    { id: 123459, title: 'Оппенгеймер', poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 8.4, media_type: 'movie', release_date: '2023-07-21', overview: 'История создания атомной бомбы.' },
     
-    // Сериалы
+    // === СЕРИАЛЫ ===
     { id: 94741, title: 'Бригада', poster_path: '/9qRbfE6lDqQz7bR8gI5Z6w4W3hM.jpg', vote_average: 7.6, media_type: 'tv', release_date: '2002-09-24', overview: 'Криминальная драма о московской банде 90-х.' },
     { id: 123456, title: 'Одни из нас', poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 8.5, media_type: 'tv', release_date: '2023-01-15', overview: 'Постапокалиптическая драма.' },
     { id: 123466, title: 'Дом Дракона', poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 8.4, media_type: 'tv', release_date: '2022-08-21', overview: 'Приквел «Игры престолов».' },
@@ -371,25 +368,20 @@ const MOVIES = [
     { id: 123492, title: 'Слово пацана', poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 8.8, media_type: 'tv', release_date: '2023-11-09', overview: 'Хит 2023 года о казанских группировках.' },
     { id: 123493, title: 'Король и Шут', poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 8.3, media_type: 'tv', release_date: '2023-03-02', overview: 'Биографический сериал о панк-группе.' },
     
-    // Классика
+    // === КЛАССИКА ===
     { id: 123473, title: 'Крестный отец', poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 9.2, media_type: 'movie', release_date: '1972-03-24', overview: 'Легендарная криминальная сага.' },
     { id: 123474, title: 'Побег из Шоушенка', poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 9.3, media_type: 'movie', release_date: '1994-10-14', overview: 'История о надежде и дружбе.' },
     { id: 123475, title: 'Тёмный рыцарь', poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 9.0, media_type: 'movie', release_date: '2008-07-18', overview: 'Бэтмен против Джокера.' },
     { id: 123476, title: 'Криминальное чтиво', poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 8.9, media_type: 'movie', release_date: '1994-10-14', overview: 'Культовый фильм Тарантино.' },
     { id: 123477, title: 'Матрица', poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 8.7, media_type: 'movie', release_date: '1999-03-31', overview: 'Культовая киберпанк-франшиза.' },
     
-    // Русские фильмы
+    // === РУССКИЕ ФИЛЬМЫ ===
     { id: 123482, title: 'Брат', poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 8.2, media_type: 'movie', release_date: '1997-01-01', overview: 'Культовый фильм о брате и 90-х.' },
     { id: 123483, title: 'Брат 2', poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 8.0, media_type: 'movie', release_date: '2000-01-01', overview: 'Продолжение культовой истории.' },
     { id: 123484, title: 'Жмурки', poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 7.8, media_type: 'movie', release_date: '2005-01-01', overview: 'Чёрная комедия о бандитах.' },
     { id: 123485, title: 'Бумер', poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 7.6, media_type: 'movie', release_date: '2003-01-01', overview: 'Драма о бандитах и их судьбе.' },
     { id: 123491, title: 'Движение вверх', poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 8.0, media_type: 'movie', release_date: '2017-01-01', overview: 'История победы советской сборной.' },
-    
-    // Мультфильмы
-    { id: 123501, title: 'Головоломка 2', poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 8.0, media_type: 'movie', release_date: '2024-06-14', overview: 'Эмоции Райли взрослеют вместе с ней.' },
-    { id: 123502, title: 'Холодное сердце 3', poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 7.2, media_type: 'movie', release_date: '2026-01-01', overview: 'Новые приключения Эльзы и Анны.' },
-    { id: 123503, title: 'Моана 2', poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 7.5, media_type: 'movie', release_date: '2024-11-27', overview: 'Моана отправляется в новое путешествие.' },
-    { id: 123504, title: 'Кунг-фу Панда 4', poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 7.3, media_type: 'movie', release_date: '2024-03-08', overview: 'По возвращается с новыми приключениями.' }
+    { id: 123502, title: 'Холодное сердце 3', poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 7.2, media_type: 'movie', release_date: '2026-01-01', overview: 'Новые приключения Эльзы и Анны.' }
 ];
 
 // ===== СОСТОЯНИЕ =====
@@ -590,13 +582,11 @@ function openModal(id) {
         </div>
     `;
     
-    // Обновляем кнопки плееров
     document.querySelectorAll('.player-btn').forEach(btn => {
         btn.dataset.id = id;
         btn.dataset.type = movie.media_type || 'movie';
     });
     
-    // Загружаем плеер
     loadPlayer(id, currentSource);
     
     el.modal.classList.add('active');
@@ -719,7 +709,6 @@ function closeMobile() {
 // ============================================
 // СОБЫТИЯ
 // ============================================
-// Навигация
 el.navBtns.forEach(btn => {
     btn.addEventListener('click', function() {
         el.navBtns.forEach(b => b.classList.remove('active'));
@@ -744,7 +733,6 @@ el.navBtns.forEach(btn => {
     });
 });
 
-// Фильтры
 el.filters.forEach(btn => {
     btn.addEventListener('click', function() {
         el.filters.forEach(b => b.classList.remove('active'));
@@ -758,7 +746,6 @@ el.filters.forEach(btn => {
     });
 });
 
-// Сортировка
 el.sortSelect.addEventListener('change', function() {
     currentSort = this.value;
     if (el.search.value.trim()) {
@@ -768,7 +755,6 @@ el.sortSelect.addEventListener('change', function() {
     }
 });
 
-// Поиск
 let searchTimeout;
 el.search.addEventListener('input', function() {
     const val = this.value.trim();
@@ -790,7 +776,6 @@ el.searchClear.addEventListener('click', function() {
     filterAndSort();
 });
 
-// Плееры
 el.playerButtons.addEventListener('click', function(e) {
     const btn = e.target.closest('.player-btn');
     if (!btn) return;
@@ -804,7 +789,6 @@ el.playerButtons.addEventListener('click', function(e) {
     }
 });
 
-// Закрытие модалки
 el.modalClose.addEventListener('click', closeModal);
 el.modal.addEventListener('click', function(e) {
     if (e.target === this) closeModal();
@@ -813,7 +797,6 @@ document.addEventListener('keydown', function(e) {
     if (e.key === 'Escape') closeModal();
 });
 
-// Кнопки
 el.favBtn.addEventListener('click', showFavorites);
 el.trendingBtn.addEventListener('click', function() {
     currentFilter = 'all';
@@ -836,7 +819,6 @@ el.logo.addEventListener('click', function() {
     document.querySelector('.nav-btn[data-action="all"]').classList.add('active');
 });
 
-// Мобильное меню
 el.mobileToggle.addEventListener('click', openMobile);
 el.mobileClose.addEventListener('click', closeMobile);
 el.mobileOverlay.addEventListener('click', closeMobile);

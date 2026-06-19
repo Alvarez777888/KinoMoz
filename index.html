@@ -207,6 +207,17 @@
         .back-to-top.show{display:flex}
         
         .progress-bar{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,#e50914,#ff6b6b);z-index:10000;transition:width .3s;width:0%}
+        
+        .partner-section{margin-top:20px;padding:20px;background:rgba(255,255,255,0.02);border-radius:12px;border:1px solid rgba(255,255,255,0.04)}
+        .partner-section h3{color:var(--text2);font-size:16px;margin-bottom:12px}
+        .partner-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px}
+        .partner-card{background:var(--card);padding:12px 16px;border-radius:8px;display:flex;align-items:center;gap:12px;transition:all .3s;cursor:pointer;border:1px solid transparent}
+        .partner-card:hover{transform:translateY(-2px);border-color:rgba(255,255,255,0.1)}
+        .partner-card .icon{font-size:24px}
+        .partner-card .info{flex:1}
+        .partner-card .info h4{font-size:13px;font-weight:600;color:var(--text)}
+        .partner-card .info p{font-size:11px;color:var(--text3)}
+        .partner-card .commission{font-size:11px;color:var(--gold)}
     </style>
 </head>
 <body>
@@ -295,6 +306,45 @@
         <button class="load-more" id="loadMore">
             <i class="fas fa-chevron-down"></i> Загрузить ещё
         </button>
+
+        <!-- ПАРТНЁРСКАЯ ПРОГРАММА -->
+        <div class="partner-section">
+            <h3>🤝 Партнёрские программы</h3>
+            <div class="partner-grid">
+                <div class="partner-card" onclick="window.open('https://partner.ivi.ru/','_blank')">
+                    <span class="icon">🎬</span>
+                    <div class="info">
+                        <h4>IVI</h4>
+                        <p>Партнёрская программа</p>
+                    </div>
+                    <span class="commission">до 15%</span>
+                </div>
+                <div class="partner-card" onclick="window.open('https://partner.okko.ru/','_blank')">
+                    <span class="icon">🎬</span>
+                    <div class="info">
+                        <h4>Okko</h4>
+                        <p>Партнёрская программа</p>
+                    </div>
+                    <span class="commission">до 10%</span>
+                </div>
+                <div class="partner-card" onclick="window.open('https://partner.kinopoisk.ru/','_blank')">
+                    <span class="icon">🎬</span>
+                    <div class="info">
+                        <h4>Кинопоиск</h4>
+                        <p>Партнёрская программа</p>
+                    </div>
+                    <span class="commission">до 5%</span>
+                </div>
+                <div class="partner-card" onclick="window.open('https://wink.ru/partners','_blank')">
+                    <span class="icon">🎬</span>
+                    <div class="info">
+                        <h4>Wink</h4>
+                        <p>Партнёрская программа</p>
+                    </div>
+                    <span class="commission">до 8%</span>
+                </div>
+            </div>
+        </div>
     </div>
 </main>
 
@@ -352,14 +402,14 @@
 
 <script>
 // ============================================
-// KINOMOZ - ИСПРАВЛЕННАЯ ВЕРСИЯ
+// KINOMOZ - ИСПРАВЛЕННАЯ ВЕРСИЯ С API
 // ============================================
 
 // ===== API КИНОПОИСКА =====
 const API_TOKEN = 'EFM0RN9-PAP4N74-QV16385-YGJJZJ0';
 const API_URL = 'https://api.poiskkino.dev/v1.4';
 
-// ===== БОЛЬШОЙ СПИСОК УНИКАЛЬНЫХ ЗАПАСНЫХ ПОСТЕРОВ =====
+// ===== УНИКАЛЬНЫЕ ЗАПАСНЫЕ ПОСТЕРЫ =====
 const FALLBACK_POSTERS = [
     'https://st.kp.yandex.net/images/film_iphone/iphone360_474.jpg',
     'https://st.kp.yandex.net/images/film_iphone/iphone360_301.jpg',
@@ -372,7 +422,6 @@ const FALLBACK_POSTERS = [
     'https://st.kp.yandex.net/images/film_iphone/iphone360_686.jpg',
     'https://st.kp.yandex.net/images/film_iphone/iphone360_685.jpg',
     'https://st.kp.yandex.net/images/film_iphone/iphone360_437.jpg',
-    'https://st.kp.yandex.net/images/film_iphone/iphone360_436.jpg',
     'https://st.kp.yandex.net/images/film_iphone/iphone360_111543.jpg',
     'https://st.kp.yandex.net/images/film_iphone/iphone360_447301.jpg',
     'https://st.kp.yandex.net/images/film_iphone/iphone360_251733.jpg',
@@ -392,8 +441,6 @@ const FALLBACK_POSTERS = [
     'https://st.kp.yandex.net/images/film_iphone/iphone360_76692.jpg',
     'https://st.kp.yandex.net/images/film_iphone/iphone360_71100.jpg',
     'https://st.kp.yandex.net/images/film_iphone/iphone360_1039251.jpg',
-    'https://st.kp.yandex.net/images/film_iphone/iphone360_684484.jpg',
-    'https://st.kp.yandex.net/images/film_iphone/iphone360_704450.jpg',
     'https://st.kp.yandex.net/images/film_iphone/iphone360_401.jpg',
     'https://st.kp.yandex.net/images/film_iphone/iphone360_415.jpg',
     'https://st.kp.yandex.net/images/film_iphone/iphone360_439.jpg',
@@ -418,10 +465,6 @@ const FALLBACK_POSTERS = [
     'https://st.kp.yandex.net/images/film_iphone/iphone360_1328598.jpg',
     'https://st.kp.yandex.net/images/film_iphone/iphone360_1301853.jpg',
     'https://st.kp.yandex.net/images/film_iphone/iphone360_1339815.jpg',
-    'https://st.kp.yandex.net/images/film_iphone/iphone360_1068440.jpg',
-    'https://st.kp.yandex.net/images/film_iphone/iphone360_629585.jpg',
-    'https://st.kp.yandex.net/images/film_iphone/iphone360_1328590.jpg',
-    'https://st.kp.yandex.net/images/film_iphone/iphone360_913153.jpg',
     'https://st.kp.yandex.net/images/film_iphone/iphone360_1121581.jpg',
     'https://st.kp.yandex.net/images/film_iphone/iphone360_1159214.jpg',
     'https://st.kp.yandex.net/images/film_iphone/iphone360_1224131.jpg',
@@ -431,25 +474,11 @@ const FALLBACK_POSTERS = [
     'https://st.kp.yandex.net/images/film_iphone/iphone360_1243158.jpg',
     'https://st.kp.yandex.net/images/film_iphone/iphone360_1216988.jpg',
     'https://st.kp.yandex.net/images/film_iphone/iphone360_1188494.jpg',
-    'https://st.kp.yandex.net/images/film_iphone/iphone360_1166013.jpg',
-    'https://st.kp.yandex.net/images/film_iphone/iphone360_1243160.jpg',
-    'https://st.kp.yandex.net/images/film_iphone/iphone360_1160085.jpg',
-    'https://st.kp.yandex.net/images/film_iphone/iphone360_1160086.jpg',
-    'https://st.kp.yandex.net/images/film_iphone/iphone360_1160087.jpg',
-    'https://st.kp.yandex.net/images/film_iphone/iphone360_1160088.jpg',
-    'https://st.kp.yandex.net/images/film_iphone/iphone360_1384590.jpg',
-    'https://st.kp.yandex.net/images/film_iphone/iphone360_1384591.jpg',
-    'https://st.kp.yandex.net/images/film_iphone/iphone360_1384592.jpg'
+    'https://st.kp.yandex.net/images/film_iphone/iphone360_1166013.jpg'
 ];
 
 // ===== СОСТОЯНИЕ =====
 let MOVIES = [];
-let allMovies = [];
-let currentPage = 1;
-let totalPages = 1;
-let isLoading = false;
-let hasMore = true;
-
 let state = {
     filter: 'all',
     sort: 'popularity.desc',
@@ -469,12 +498,11 @@ function getFallbackPoster(index) {
 
 function getValidTitle(movie) {
     // ПРИОРИТЕТ: РУССКОЕ НАЗВАНИЕ
-    if (movie.name) return movie.name;
-    if (movie.alternativeName) return movie.alternativeName;
-    if (movie.title) return movie.title;
-    if (movie.enName) return movie.enName;
-    // Если нет названия - генерируем
-    return 'Фильм ' + (movie.id || '');
+    if (movie.name && movie.name.length > 0) return movie.name;
+    if (movie.alternativeName && movie.alternativeName.length > 0) return movie.alternativeName;
+    if (movie.title && movie.title.length > 0) return movie.title;
+    if (movie.enName && movie.enName.length > 0) return movie.enName;
+    return 'Фильм';
 }
 
 function getValidPoster(movie, index) {
@@ -490,13 +518,13 @@ function getValidPoster(movie, index) {
 }
 
 function getValidDescription(movie) {
-    if (movie.description) return movie.description;
-    if (movie.shortDescription) return movie.shortDescription;
+    if (movie.description && movie.description.length > 0) return movie.description;
+    if (movie.shortDescription && movie.shortDescription.length > 0) return movie.shortDescription;
     if (movie.name) return `${movie.name} — один из лучших фильмов.`;
     return 'Описание отсутствует.';
 }
 
-// ===== ЗАГРУЗКА ВСЕХ ФИЛЬМОВ =====
+// ===== ЗАГРУЗКА ВСЕХ ФИЛЬМОВ ЧЕРЕЗ API =====
 async function loadAllMovies() {
     const progressBar = document.getElementById('progressBar');
     const status = document.getElementById('loadingStatus');
@@ -510,11 +538,11 @@ async function loadAllMovies() {
     
     try {
         // Получаем общее количество
-        const countResponse = await fetch(`${API_URL}/movie?page=1&limit=1`, {
+        const countResponse = await fetch(`${API_URL}/movie?page=1&limit=1&language=ru`, {
             headers: { 'X-API-KEY': API_TOKEN }
         });
         const countData = await countResponse.json();
-        totalPages = Math.min(countData.pages || 10, 10);
+        let totalPages = Math.min(countData.pages || 10, 10);
         const totalMovies = Math.min(countData.total || 500, 500);
         
         status.textContent = `📊 Найдено ${totalMovies} фильмов. Загрузка...`;
@@ -524,9 +552,9 @@ async function loadAllMovies() {
         let loadedPages = 0;
         let movieIndex = 0;
         
-        // Загружаем все страницы
+        // Загружаем все страницы с русским языком
         for (let page = 1; page <= totalPages; page++) {
-            const response = await fetch(`${API_URL}/movie?page=${page}&limit=50`, {
+            const response = await fetch(`${API_URL}/movie?page=${page}&limit=50&language=ru`, {
                 headers: { 'X-API-KEY': API_TOKEN }
             });
             
@@ -575,8 +603,7 @@ async function loadAllMovies() {
         }
         
         // Сохраняем все фильмы
-        allMovies = uniqueMovies;
-        MOVIES = [...allMovies];
+        MOVIES = uniqueMovies;
         
         progressBar.style.width = '100%';
         status.textContent = `✅ Загружено ${MOVIES.length} уникальных фильмов с Кинопоиска!`;
@@ -598,16 +625,9 @@ async function loadAllMovies() {
     }
 }
 
-// ===== ЛОКАЛЬНАЯ БАЗА =====
+// ===== ЛОКАЛЬНАЯ БАЗА (ЕСЛИ API НЕ РАБОТАЕТ) =====
 function useLocalMovies() {
-    MOVIES = getLocalMovies();
-    renderMovies();
-    updateFavCount();
-    document.getElementById('loadingStatus').textContent = `✅ Загружено ${MOVIES.length} фильмов из локальной базы`;
-}
-
-function getLocalMovies() {
-    const movies = [];
+    MOVIES = [];
     const baseMovies = [
         { id: 1, title: 'Гладиатор', year: 2000, rating: 8.5, type: 'movie', poster: 'https://st.kp.yandex.net/images/film_iphone/iphone360_474.jpg', description: 'Римский генерал Максимус становится гладиатором.' },
         { id: 2, title: 'Матрица', year: 1999, rating: 8.7, type: 'movie', poster: 'https://st.kp.yandex.net/images/film_iphone/iphone360_301.jpg', description: 'Хакер Нео узнаёт, что реальность — это иллюзия.' },
@@ -623,7 +643,7 @@ function getLocalMovies() {
     // Расширяем до 200 фильмов
     for (let i = 0; i < 200; i++) {
         const base = baseMovies[i % baseMovies.length];
-        movies.push({
+        MOVIES.push({
             id: 1000 + i,
             title: base.title + (i > 10 ? ` ${Math.floor(i/10)}` : ''),
             year: 1990 + (i % 30),
@@ -633,11 +653,14 @@ function getLocalMovies() {
             description: base.description + ` (версия ${i+1})`
         });
     }
-    return [...baseMovies, ...movies];
+    MOVIES = [...baseMovies, ...MOVIES];
+    renderMovies();
+    updateFavCount();
+    document.getElementById('loadingStatus').textContent = `✅ Загружено ${MOVIES.length} фильмов из локальной базы`;
 }
 
 // ============================================
-// ОСТАЛЬНЫЕ ФУНКЦИИ (без изменений)
+// ОСТАЛЬНЫЕ ФУНКЦИИ
 // ============================================
 
 function getFilteredMovies() {
@@ -677,7 +700,6 @@ function getFilteredMovies() {
     return result;
 }
 
-// ===== ОСТАЛЬНЫЕ ФУНКЦИИ (партнёры, рендеринг, события) остаются такими же =====
 const PARTNERS = {
     youtube: { name: 'Трейлер YouTube', icon: '▶️', class: 'youtube', url: (t) => `https://www.youtube.com/results?search_query=${encodeURIComponent(t + ' трейлер')}` },
     kinopoisk: { name: 'Кинопоиск', icon: '🎬', class: 'kinopoisk', url: (t) => `https://www.kinopoisk.ru/index.php?kp_query=${encodeURIComponent(t)}` },
@@ -1136,10 +1158,10 @@ document.addEventListener('touchmove', function() { clearTimeout(longPressTimer)
 loadAllMovies();
 
 console.log(`🎬 KinoMoz загружен!`);
-console.log(`📡 Используется API Кинопоиска с токеном: ${API_TOKEN.substring(0, 10)}...`);
+console.log(`📡 Используется API Кинопоиска`);
 console.log(`📊 Всего фильмов в базе: ${MOVIES.length}`);
 console.log(`❤️ В избранном: ${state.favorites.length}`);
-console.log(`🔄 Исправлена проблема с пустыми названиями и повторяющимися постерами`);
+console.log(`📝 Запросов в истории: ${state.history.length}`);
 </script>
 
 </body>

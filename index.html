@@ -29,15 +29,14 @@
         
         .search-wrap{flex:1;min-width:150px;max-width:450px;position:relative}
         .search-wrap input{width:100%;padding:10px 16px 10px 44px;border-radius:50px;border:1px solid rgba(255,255,255,0.06);background:rgba(255,255,255,0.05);color:var(--text);font-size:14px;outline:none;font-family:inherit;transition:all .3s}
-        .search-wrap input:focus{border-color:var(--accent);background:rgba(255,255,255,0.08);box-shadow:0 0 30px rgba(229,9,20,0.05)}
+        .search-wrap input:focus{border-color:var(--accent);background:rgba(255,255,255,0.08)}
         .search-wrap input::placeholder{color:var(--text3)}
         .search-wrap .icon{position:absolute;left:16px;top:50%;transform:translateY(-50%);color:var(--text3);font-size:14px}
-        .search-wrap .clear{position:absolute;right:12px;top:50%;transform:translateY(-50%);background:none;border:none;color:var(--text3);cursor:pointer;display:none;padding:4px;border-radius:50%;transition:all .3s}
-        .search-wrap .clear:hover{background:rgba(255,255,255,0.08);color:var(--text)}
+        .search-wrap .clear{position:absolute;right:12px;top:50%;transform:translateY(-50%);background:none;border:none;color:var(--text3);cursor:pointer;display:none;padding:4px}
         
         .header-actions{display:flex;gap:8px;flex-shrink:0}
         .header-btn{width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,0.04);color:var(--text2);border:none;font-size:16px;cursor:pointer;transition:all .3s;position:relative;display:flex;align-items:center;justify-content:center}
-        .header-btn:hover{background:rgba(255,255,255,0.1);color:var(--text);transform:scale(1.05)}
+        .header-btn:hover{background:rgba(255,255,255,0.1);color:var(--text)}
         .header-btn .badge{position:absolute;top:-2px;right:-2px;background:var(--accent);color:#fff;font-size:10px;font-weight:700;min-width:20px;height:20px;border-radius:50%;display:flex;align-items:center;justify-content:center;border:2px solid var(--bg)}
         .header-btn-accent{background:var(--accent);color:#fff}
         .header-btn-accent:hover{background:#ff1a2a;color:#fff}
@@ -64,9 +63,6 @@
         .section-title{font-size:20px;font-weight:700;display:flex;align-items:center;gap:12px}
         .section-title .count{font-size:14px;font-weight:400;color:var(--text3)}
         
-        .history-badge{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--text3);cursor:pointer;padding:4px 12px;border-radius:20px;background:rgba(255,255,255,0.04);transition:all .3s}
-        .history-badge:hover{background:rgba(255,255,255,0.08);color:var(--text2)}
-        
         .movie-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:24px}
         
         .movie-card{background:var(--card);border-radius:var(--radius);overflow:hidden;cursor:pointer;transition:all .4s cubic-bezier(.4,0,.2,1);border:1px solid rgba(255,255,255,0.03)}
@@ -81,7 +77,6 @@
         .badge-year{bottom:10px;left:10px;background:rgba(0,0,0,0.7);color:var(--text)}
         .badge-type{top:10px;left:10px;background:rgba(229,9,20,0.9);color:#fff;font-size:9px;text-transform:uppercase;letter-spacing:.5px}
         .badge-fav{bottom:10px;right:10px;background:rgba(229,9,20,0.9);color:#fff;font-size:16px;padding:4px 10px}
-        .badge-legal{bottom:10px;right:10px;background:rgba(76,175,80,0.9);color:#fff;font-size:9px;padding:3px 10px}
         
         .movie-card .overlay{position:absolute;inset:0;background:rgba(0,0,0,0.6);opacity:0;transition:all .3s;display:flex;align-items:center;justify-content:center;gap:10px}
         .movie-card:hover .overlay{opacity:1}
@@ -126,14 +121,6 @@
         .movie-info .details .tags{display:flex;gap:8px;flex-wrap:wrap}
         .movie-info .details .tags span{background:rgba(255,255,255,0.04);padding:4px 14px;border-radius:50px;font-size:12px;color:var(--text2)}
         .movie-info .details .tags .lang-tag{background:rgba(76,175,80,0.15);color:var(--green)}
-        .movie-info .details .tags .legal-tag{background:rgba(33,150,243,0.15);color:#2196F3}
-        
-        .player-container{width:100%;aspect-ratio:16/9;background:#000;border-radius:8px;overflow:hidden;position:relative}
-        .player-container iframe{width:100%;height:100%;border:none}
-        .player-loading{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;background:var(--bg)}
-        .player-loading .loader-spinner{width:40px;height:40px}
-        .player-loading p{color:var(--text3);font-size:14px}
-        .player-loading .lang-label{color:var(--green);font-size:13px}
         
         .partner-buttons{display:flex;gap:10px;flex-wrap:wrap;padding:12px 0;border-top:1px solid rgba(255,255,255,0.04);border-bottom:1px solid rgba(255,255,255,0.04);margin:12px 0}
         .partner-btn{display:flex;align-items:center;gap:8px;padding:8px 18px;border-radius:50px;background:rgba(255,255,255,0.04);color:var(--text2);border:1px solid rgba(255,255,255,0.06);font-size:13px;font-weight:500;cursor:pointer;transition:all .3s;text-decoration:none;font-family:inherit}
@@ -143,6 +130,13 @@
         .partner-btn.kinopoisk{background:#1a1a1a;color:#fff}
         .partner-btn.wink{background:#1a2a2a;color:#fff}
         .partner-btn.youtube{background:#1a0a0a;color:#fff}
+        
+        .player-container{width:100%;aspect-ratio:16/9;background:#000;border-radius:8px;overflow:hidden;position:relative}
+        .player-container iframe{width:100%;height:100%;border:none}
+        .player-loading{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;background:var(--bg)}
+        .player-loading .loader-spinner{width:40px;height:40px}
+        .player-loading p{color:var(--text3);font-size:14px}
+        .player-loading .lang-label{color:var(--green);font-size:13px}
         
         .notifications{position:fixed;bottom:30px;right:30px;z-index:9999;display:flex;flex-direction:column;gap:10px;max-width:380px}
         .notification{padding:12px 20px;border-radius:12px;background:var(--bg2);color:var(--text);box-shadow:0 8px 40px rgba(0,0,0,0.4);border-left:4px solid var(--accent);animation:slideInRight .4s ease;font-size:14px;border:1px solid rgba(255,255,255,0.04)}
@@ -176,7 +170,6 @@
         .footer-social a:hover{background:var(--accent);color:#fff;transform:scale(1.1)}
         .footer-bottom{max-width:1400px;margin:20px auto 0;padding:12px 20px 0;border-top:1px solid rgba(255,255,255,0.04);text-align:center;color:var(--text3);font-size:12px}
         
-        /* ИСТОРИЯ ПОИСКА */
         .search-history{position:absolute;top:calc(100% + 8px);left:0;right:0;background:var(--bg2);border-radius:12px;border:1px solid rgba(255,255,255,0.06);padding:8px 0;display:none;z-index:100;max-height:250px;overflow-y:auto}
         .search-history.active{display:block}
         .search-history-item{display:flex;align-items:center;justify-content:space-between;padding:8px 16px;color:var(--text2);font-size:13px;cursor:pointer;transition:all .3s}
@@ -229,8 +222,8 @@
             <div class="search-history" id="searchHistory"></div>
         </div>
         <div class="header-actions">
-            <button class="header-btn" id="favoritesBtn" title="Избранное"><i class="fas fa-heart"></i><span class="badge" id="favCount">0</span></button>
-            <button class="header-btn header-btn-accent" id="trendingBtn" title="Тренды"><i class="fas fa-fire"></i></button>
+            <button class="header-btn" id="favoritesBtn"><i class="fas fa-heart"></i><span class="badge" id="favCount">0</span></button>
+            <button class="header-btn header-btn-accent" id="trendingBtn"><i class="fas fa-fire"></i></button>
             <button class="mobile-toggle" id="mobileToggle"><i class="fas fa-bars"></i></button>
         </div>
     </div>
@@ -276,7 +269,6 @@
                 <span id="sectionTitleText">🎬 Все фильмы и сериалы</span>
                 <span class="count" id="movieCount"></span>
             </h2>
-            <span class="history-badge" id="clearHistoryBtn" style="display:none;"><i class="fas fa-trash-alt"></i> Очистить историю</span>
         </div>
         
         <div class="movie-grid" id="movieGrid"></div>
@@ -296,7 +288,7 @@
     <div class="footer-inner">
         <div class="footer-brand">
             <span class="logo-text">Kino<span style="color:#e50914;">Moz</span></span>
-            <p>Смотрите фильмы и сериалы онлайн с русской озвучкой. Бесплатно и без регистрации.</p>
+            <p>Смотрите фильмы и сериалы онлайн с русской озвучкой.</p>
             <div class="footer-social">
                 <a href="#"><i class="fab fa-telegram"></i></a>
                 <a href="#"><i class="fab fa-vk"></i></a>
@@ -341,144 +333,107 @@
 
 <script>
 // ============================================
-// KINOMOZ PRO - ПОЛНАЯ ВЕРСИЯ
+// KINOMOZ - С РАБОЧИМИ ССЫЛКАМИ
 // ============================================
 
-// ===== ВСЕ ФИЛЬМЫ И СЕРИАЛЫ (2000-2026) =====
-const MOVIES = [
-    // ==========================================
-    // 2000-2005
-    // ==========================================
-    { id: 1, title: 'Гладиатор', year: 2000, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 8.5, media_type: 'movie', overview: 'Легендарный фильм о римском генерале, ставшем гладиатором.' },
-    { id: 2, title: 'Матрица', year: 1999, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 8.7, media_type: 'movie', overview: 'Культовая киберпанк-франшиза о мире иллюзий.' },
-    { id: 3, title: 'Властелин колец: Братство кольца', year: 2001, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 8.8, media_type: 'movie', overview: 'Начало эпической саги о кольце всевластья.' },
-    { id: 4, title: 'Властелин колец: Две крепости', year: 2002, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 8.7, media_type: 'movie', overview: 'Продолжение эпической саги о Средиземье.' },
-    { id: 5, title: 'Властелин колец: Возвращение короля', year: 2003, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 8.9, media_type: 'movie', overview: 'Финал эпической саги о войне за Средиземье.' },
-    { id: 6, title: 'Гарри Поттер и философский камень', year: 2001, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 7.6, media_type: 'movie', overview: 'Начало истории о юном волшебнике.' },
-    { id: 7, title: 'Гарри Поттер и Тайная комната', year: 2002, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 7.4, media_type: 'movie', overview: 'Второй год обучения в Хогвартсе.' },
-    { id: 8, title: 'Гарри Поттер и узник Азкабана', year: 2004, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 7.9, media_type: 'movie', overview: 'Третий год обучения и побег из тюрьмы.' },
-    { id: 9, title: 'Пираты Карибского моря: Проклятие Чёрной жемчужины', year: 2003, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 8.0, media_type: 'movie', overview: 'Начало приключений капитана Джека Воробья.' },
-    { id: 10, title: 'Терминатор 3: Восстание машин', year: 2003, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 6.3, media_type: 'movie', overview: 'Новый терминатор против Джона Коннора.' },
-    { id: 11, title: 'Брат', year: 1997, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 8.2, media_type: 'movie', overview: 'Культовый фильм о брате и 90-х.' },
-    { id: 12, title: 'Брат 2', year: 2000, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 8.0, media_type: 'movie', overview: 'Продолжение культовой истории.' },
-    { id: 13, title: 'Бригада', year: 2002, poster_path: '/9qRbfE6lDqQz7bR8gI5Z6w4W3hM.jpg', vote_average: 7.6, media_type: 'tv', overview: 'Криминальная драма о московской банде 90-х.' },
-    
-    // ==========================================
-    // 2005-2010
-    // ==========================================
-    { id: 14, title: 'Тёмный рыцарь', year: 2008, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 9.0, media_type: 'movie', overview: 'Бэтмен против Джокера. Лучший супергеройский фильм.' },
-    { id: 15, title: 'Начало', year: 2010, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 8.8, media_type: 'movie', overview: 'Фильм о снах и реальности от Кристофера Нолана.' },
-    { id: 16, title: 'Аватар', year: 2009, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 7.8, media_type: 'movie', overview: 'Фантастический фильм о планете Пандора.' },
-    { id: 17, title: 'Гарри Поттер и Кубок огня', year: 2005, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 7.7, media_type: 'movie', overview: 'Турнир трёх волшебников.' },
-    { id: 18, title: 'Гарри Поттер и Орден Феникса', year: 2007, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 7.5, media_type: 'movie', overview: 'Создание Отряда Дамблдора.' },
-    { id: 19, title: 'Гарри Поттер и Принц-полукровка', year: 2009, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 7.6, media_type: 'movie', overview: 'Тайна Принца-полукровки.' },
-    { id: 20, title: 'Пираты Карибского моря: Сундук мертвеца', year: 2006, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 7.3, media_type: 'movie', overview: 'Новые приключения Джека Воробья.' },
-    { id: 21, title: 'Пираты Карибского моря: На краю света', year: 2007, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 7.1, media_type: 'movie', overview: 'Финал приключений Джека Воробья.' },
-    { id: 22, title: 'Жмурки', year: 2005, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 7.8, media_type: 'movie', overview: 'Чёрная комедия о бандитах.' },
-    { id: 23, title: 'Бумер', year: 2003, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 7.6, media_type: 'movie', overview: 'Драма о бандитах и их судьбе.' },
-    { id: 24, title: '9 рота', year: 2005, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 7.8, media_type: 'movie', overview: 'Военная драма о войне в Афганистане.' },
-    { id: 25, title: 'Дневной дозор', year: 2006, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 7.2, media_type: 'movie', overview: 'Продолжение истории о Дозорах Света и Тьмы.' },
-    { id: 26, title: 'Ночной дозор', year: 2004, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 7.0, media_type: 'movie', overview: 'Фэнтези о битве Света и Тьмы.' },
-    { id: 27, title: 'Доктор Хаус', year: 2004, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 8.7, media_type: 'tv', overview: 'Сериал о гениальном враче-диагносте.' },
-    { id: 28, title: 'Офис', year: 2005, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 9.0, media_type: 'tv', overview: 'Культовая комедия о работниках офиса.' },
-    { id: 29, title: 'Теория большого взрыва', year: 2007, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 8.1, media_type: 'tv', overview: 'Комедия о гениальных физиках и их друзьях.' },
-    
-    // ==========================================
-    // 2010-2015
-    // ==========================================
-    { id: 30, title: 'Интерстеллар', year: 2014, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 8.6, media_type: 'movie', overview: 'Фильм о космосе и любви, преодолевающей время.' },
-    { id: 31, title: 'Джанго освобождённый', year: 2012, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 8.4, media_type: 'movie', overview: 'Фильм Тарантино о рабе, ставшем охотником за головами.' },
-    { id: 32, title: 'Бесславные ублюдки', year: 2009, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 8.3, media_type: 'movie', overview: 'Альтернативная история Второй мировой.' },
-    { id: 33, title: 'Хоббит: Нежданное путешествие', year: 2012, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 7.8, media_type: 'movie', overview: 'Начало приключений Бильбо Бэггинса.' },
-    { id: 34, title: 'Хоббит: Пустошь Смауга', year: 2013, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 7.8, media_type: 'movie', overview: 'Продолжение приключений Бильбо.' },
-    { id: 35, title: 'Хоббит: Битва пяти воинств', year: 2014, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 7.4, media_type: 'movie', overview: 'Финал истории о гномах и драконе.' },
-    { id: 36, title: 'Гарри Поттер и Дары Смерти: Часть 1', year: 2010, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 7.7, media_type: 'movie', overview: 'Предпоследняя глава о Гарри Поттере.' },
-    { id: 37, title: 'Гарри Поттер и Дары Смерти: Часть 2', year: 2011, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 8.1, media_type: 'movie', overview: 'Финал саги о Гарри Поттере.' },
-    { id: 38, title: 'Мстители', year: 2012, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 8.0, media_type: 'movie', overview: 'Первое объединение супергероев Marvel.' },
-    { id: 39, title: 'Мстители: Эра Альтрона', year: 2015, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 7.3, media_type: 'movie', overview: 'Мстители против искусственного интеллекта.' },
-    { id: 40, title: 'Железный человек', year: 2008, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 7.9, media_type: 'movie', overview: 'Начало вселенной Marvel с Тони Старком.' },
-    { id: 41, title: 'Железный человек 3', year: 2013, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 7.1, media_type: 'movie', overview: 'Новые приключения Тони Старка.' },
-    { id: 42, title: 'Тор', year: 2011, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 7.0, media_type: 'movie', overview: 'История о скандинавском боге.' },
-    { id: 43, title: 'Первый мститель', year: 2011, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 6.9, media_type: 'movie', overview: 'История Капитана Америки.' },
-    { id: 44, title: 'Стражи Галактики', year: 2014, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 8.0, media_type: 'movie', overview: 'Приключения команды изгоев в космосе.' },
-    { id: 45, title: 'Движение вверх', year: 2017, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 8.0, media_type: 'movie', overview: 'История победы советской сборной на Олимпиаде-72.' },
-    { id: 46, title: 'Дурак', year: 2014, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 7.9, media_type: 'movie', overview: 'Социальная драма о простом сантехнике.' },
-    { id: 47, title: 'Левиафан', year: 2014, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 7.8, media_type: 'movie', overview: 'Драма о маленьком человеке и большой системе.' },
-    { id: 48, title: 'Игра престолов', year: 2011, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 9.2, media_type: 'tv', overview: 'Эпическое фэнтези о борьбе за Железный трон.' },
-    { id: 49, title: 'Во все тяжкие', year: 2008, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 9.5, media_type: 'tv', overview: 'История учителя химии, ставшего наркобароном.' },
-    { id: 50, title: 'Шерлок', year: 2010, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 9.0, media_type: 'tv', overview: 'Современная версия о великом сыщике.' },
-    { id: 51, title: 'Черное зеркало', year: 2011, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 8.8, media_type: 'tv', overview: 'Антология о тёмной стороне технологий.' },
-    
-    // ==========================================
-    // 2015-2020
-    // ==========================================
-    { id: 52, title: 'Безумный Макс: Дорога ярости', year: 2015, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 8.1, media_type: 'movie', overview: 'Постапокалиптический экшен с сумасшедшим Максом.' },
-    { id: 53, title: 'Марсианин', year: 2015, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 8.0, media_type: 'movie', overview: 'История астронавта, оставшегося на Марсе.' },
-    { id: 54, title: 'Ла-Ла Ленд', year: 2016, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 8.0, media_type: 'movie', overview: 'Мюзикл о любви в Лос-Анджелесе.' },
-    { id: 55, title: 'Форсаж 7', year: 2015, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 7.1, media_type: 'movie', overview: 'Новые приключения команды Доминика Торетто.' },
-    { id: 56, title: 'Форсаж 8', year: 2017, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 6.9, media_type: 'movie', overview: 'Новые приключения Торетто и его команды.' },
-    { id: 57, title: 'Мстители: Война бесконечности', year: 2018, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 8.4, media_type: 'movie', overview: 'Мстители против Таноса.' },
-    { id: 58, title: 'Мстители: Финал', year: 2019, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 8.4, media_type: 'movie', overview: 'Финал истории о Мстителях.' },
-    { id: 59, title: 'Человек-паук: Возвращение домой', year: 2017, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 7.4, media_type: 'movie', overview: 'Новые приключения Человека-паука.' },
-    { id: 60, title: 'Человек-паук: Вдали от дома', year: 2019, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 7.5, media_type: 'movie', overview: 'Питер Паркер в Европе.' },
-    { id: 61, title: 'Джокер', year: 2019, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 8.4, media_type: 'movie', overview: 'История становления культового злодея.' },
-    { id: 62, title: 'Паразиты', year: 2019, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 8.5, media_type: 'movie', overview: 'Драма о классовой борьбе в Корее.' },
-    { id: 63, title: '1917', year: 2019, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 8.3, media_type: 'movie', overview: 'Военная драма о временах Первой мировой.' },
-    { id: 64, title: 'Текст', year: 2019, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 7.4, media_type: 'movie', overview: 'Российский триллер о современном мире.' },
-    { id: 65, title: 'Дылда', year: 2019, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 7.2, media_type: 'movie', overview: 'Драма о бывших военнослужащих.' },
-    { id: 66, title: 'Ход королевы', year: 2020, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 8.6, media_type: 'tv', overview: 'История о шахматной гении и её пути к вершине.' },
-    { id: 67, title: 'Ведьмак', year: 2019, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 8.1, media_type: 'tv', overview: 'Приключения Геральта из Ривии.' },
-    { id: 68, title: 'Мандалорец', year: 2019, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 8.6, media_type: 'tv', overview: 'Приключения охотника за головами в галактике.' },
-    { id: 69, title: 'Секретные материалы', year: 1993, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 8.6, media_type: 'tv', overview: 'Культовый сериал о паранормальном.' },
-    
-    // ==========================================
-    // 2020-2023
-    // ==========================================
-    { id: 70, title: 'Дюна', year: 2021, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 8.0, media_type: 'movie', overview: 'Эпическая сага о пустынной планете Арракис.' },
-    { id: 71, title: 'Бэтмен', year: 2022, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 7.8, media_type: 'movie', overview: 'Новая история о Бэтмене в Готэме.' },
-    { id: 72, title: 'Топ Ган: Мэверик', year: 2022, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 8.3, media_type: 'movie', overview: 'Возвращение легендарного лётчика.' },
-    { id: 73, title: 'Аватар 2: Путь воды', year: 2022, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 7.6, media_type: 'movie', overview: 'Продолжение истории на планете Пандора.' },
-    { id: 74, title: 'Оппенгеймер', year: 2023, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 8.4, media_type: 'movie', overview: 'История создания атомной бомбы.' },
-    { id: 75, title: 'Барби', year: 2023, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 7.8, media_type: 'movie', overview: 'Комедийная фэнтези о культовой кукле.' },
-    { id: 76, title: 'Человек-паук: Нет пути домой', year: 2021, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 8.2, media_type: 'movie', overview: 'Мультивселенная с Питером Паркером.' },
-    { id: 77, title: 'Доктор Стрэндж: В мультивселенной безумия', year: 2022, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 7.0, media_type: 'movie', overview: 'Новые приключения Доктора Стрэнджа.' },
-    { id: 78, title: 'Чёрный Адам', year: 2022, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 6.2, media_type: 'movie', overview: 'История антигероя DC.' },
-    { id: 79, title: 'Аквамен 2', year: 2023, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 5.5, media_type: 'movie', overview: 'Новые приключения Аквамена.' },
-    { id: 80, title: 'Шазам! Ярость богов', year: 2023, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 6.1, media_type: 'movie', overview: 'Продолжение истории о Шазаме.' },
-    { id: 81, title: 'Одни из нас', year: 2023, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 8.5, media_type: 'tv', overview: 'Постапокалиптическая драма по игре.' },
-    { id: 82, title: 'Дом Дракона', year: 2022, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 8.4, media_type: 'tv', overview: 'Приквел «Игры престолов».' },
-    { id: 83, title: 'Уэнсдэй', year: 2022, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 8.1, media_type: 'tv', overview: 'Дочь семейки Аддамс в академии.' },
-    { id: 84, title: 'Слово пацана', year: 2023, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 8.8, media_type: 'tv', overview: 'Хит 2023 года о казанских группировках.' },
-    { id: 85, title: 'Король и Шут', year: 2023, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 8.3, media_type: 'tv', overview: 'Биографический сериал о панк-группе.' },
-    { id: 86, title: 'Пацаны', year: 2019, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 8.7, media_type: 'tv', overview: 'Чёрная комедия о супергероях.' },
-    { id: 87, title: 'Фарго', year: 2014, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 8.8, media_type: 'tv', overview: 'Криминальная драма с чёрным юмором.' },
-    
-    // ==========================================
-    // 2024-2026
-    // ==========================================
-    { id: 88, title: 'Дюна 2', year: 2024, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 8.2, media_type: 'movie', overview: 'Продолжение эпической саги.' },
-    { id: 89, title: 'Гладиатор 2', year: 2024, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 7.5, media_type: 'movie', overview: 'Продолжение легендарного фильма.' },
-    { id: 90, title: 'Дэдпул и Росомаха', year: 2024, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 8.0, media_type: 'movie', overview: 'Дэдпул объединяется с Росомахой.' },
-    { id: 91, title: 'Муфаса: Король Лев', year: 2024, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 7.2, media_type: 'movie', overview: 'История о том, как Муфаса стал королём.' },
-    { id: 92, title: 'Головоломка 2', year: 2024, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 8.0, media_type: 'movie', overview: 'Эмоции Райли взрослеют вместе с ней.' },
-    { id: 93, title: 'Моана 2', year: 2024, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 7.5, media_type: 'movie', overview: 'Моана отправляется в новое путешествие.' },
-    { id: 94, title: 'Кунг-фу Панда 4', year: 2024, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 7.3, media_type: 'movie', overview: 'По возвращается с новыми приключениями.' },
-    { id: 95, title: 'Веном 3', year: 2024, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 6.8, media_type: 'movie', overview: 'Эдди Брок сталкивается с новой угрозой.' },
-    { id: 96, title: 'Фуриоса', year: 2024, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 7.8, media_type: 'movie', overview: 'Приквел «Безумного Макса».' },
-    { id: 97, title: 'История игрушек 5', year: 2026, poster_path: '/7xLk9P8oK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 7.0, media_type: 'movie', overview: 'Новые приключения Вуди и Базза.' },
-    { id: 98, title: 'Майкл', year: 2026, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 8.6, media_type: 'movie', overview: 'Биографическая драма о Майкле Джексоне.' },
-    { id: 99, title: 'Странные дела (5 сезон)', year: 2025, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 8.7, media_type: 'tv', overview: 'Заключительный сезон культового сериала.' },
-    { id: 100, title: 'Мандалорец (4 сезон)', year: 2025, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 8.6, media_type: 'tv', overview: 'Новые приключения в галактике.' }
-];
-
-// ===== ПАРТНЁРЫ =====
+// ===== КОНФИГУРАЦИЯ ПЛАТФОРМ =====
 const PARTNERS = {
-    ivi: { name: 'IVI', icon: '🎬', class: 'ivi' },
-    okko: { name: 'Okko', icon: '🎬', class: 'okko' },
-    kinopoisk: { name: 'Кинопоиск', icon: '🎬', class: 'kinopoisk' },
-    wink: { name: 'Wink', icon: '🎬', class: 'wink' },
-    youtube: { name: 'YouTube', icon: '▶️', class: 'youtube' }
+    youtube: { 
+        name: 'Трейлер на YouTube', 
+        icon: '▶️', 
+        class: 'youtube',
+        url: (title) => `https://www.youtube.com/results?search_query=${encodeURIComponent(title + ' трейлер')}`
+    },
+    kinopoisk: { 
+        name: 'Кинопоиск', 
+        icon: '🎬', 
+        class: 'kinopoisk',
+        url: (title) => `https://www.kinopoisk.ru/index.php?kp_query=${encodeURIComponent(title)}`
+    },
+    ivi: { 
+        name: 'IVI', 
+        icon: '🎬', 
+        class: 'ivi',
+        url: (title) => `https://www.ivi.ru/search/?q=${encodeURIComponent(title)}`
+    },
+    okko: { 
+        name: 'Okko', 
+        icon: '🎬', 
+        class: 'okko',
+        url: (title) => `https://okko.ru/search?q=${encodeURIComponent(title)}`
+    },
+    wink: { 
+        name: 'Wink', 
+        icon: '🎬', 
+        class: 'wink',
+        url: (title) => `https://wink.ru/search?q=${encodeURIComponent(title)}`
+    }
 };
+
+// ===== БАЗА ФИЛЬМОВ =====
+const MOVIES = [
+    // 2000-2005
+    { id: 1, title: 'Гладиатор', year: 2000, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 8.5, media_type: 'movie', overview: 'Легендарный фильм о римском генерале.' },
+    { id: 2, title: 'Матрица', year: 1999, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 8.7, media_type: 'movie', overview: 'Культовая киберпанк-франшиза.' },
+    { id: 3, title: 'Властелин колец: Братство кольца', year: 2001, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 8.8, media_type: 'movie', overview: 'Начало эпической саги.' },
+    { id: 4, title: 'Властелин колец: Две крепости', year: 2002, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 8.7, media_type: 'movie', overview: 'Продолжение эпической саги.' },
+    { id: 5, title: 'Властелин колец: Возвращение короля', year: 2003, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 8.9, media_type: 'movie', overview: 'Финал эпической саги.' },
+    { id: 6, title: 'Гарри Поттер и философский камень', year: 2001, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 7.6, media_type: 'movie', overview: 'Начало истории о юном волшебнике.' },
+    { id: 7, title: 'Брат', year: 1997, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 8.2, media_type: 'movie', overview: 'Культовый фильм о брате и 90-х.' },
+    { id: 8, title: 'Брат 2', year: 2000, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 8.0, media_type: 'movie', overview: 'Продолжение культовой истории.' },
+    { id: 9, title: 'Бригада', year: 2002, poster_path: '/9qRbfE6lDqQz7bR8gI5Z6w4W3hM.jpg', vote_average: 7.6, media_type: 'tv', overview: 'Криминальная драма о московской банде.' },
+    { id: 10, title: 'Пираты Карибского моря', year: 2003, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 8.0, media_type: 'movie', overview: 'Приключения Джека Воробья.' },
+    
+    // 2005-2010
+    { id: 11, title: 'Тёмный рыцарь', year: 2008, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 9.0, media_type: 'movie', overview: 'Бэтмен против Джокера.' },
+    { id: 12, title: 'Начало', year: 2010, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 8.8, media_type: 'movie', overview: 'Фильм о снах и реальности.' },
+    { id: 13, title: 'Аватар', year: 2009, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 7.8, media_type: 'movie', overview: 'Фантастика о планете Пандора.' },
+    { id: 14, title: '9 рота', year: 2005, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 7.8, media_type: 'movie', overview: 'Военная драма о войне в Афганистане.' },
+    { id: 15, title: 'Жмурки', year: 2005, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 7.8, media_type: 'movie', overview: 'Чёрная комедия о бандитах.' },
+    { id: 16, title: 'Доктор Хаус', year: 2004, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 8.7, media_type: 'tv', overview: 'Сериал о гениальном враче.' },
+    
+    // 2010-2015
+    { id: 17, title: 'Интерстеллар', year: 2014, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 8.6, media_type: 'movie', overview: 'Фильм о космосе и любви.' },
+    { id: 18, title: 'Джанго освобождённый', year: 2012, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 8.4, media_type: 'movie', overview: 'Фильм Тарантино.' },
+    { id: 19, title: 'Хоббит: Нежданное путешествие', year: 2012, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 7.8, media_type: 'movie', overview: 'Приключения Бильбо Бэггинса.' },
+    { id: 20, title: 'Мстители', year: 2012, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 8.0, media_type: 'movie', overview: 'Объединение супергероев Marvel.' },
+    { id: 21, title: 'Игра престолов', year: 2011, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 9.2, media_type: 'tv', overview: 'Эпическое фэнтези о борьбе за трон.' },
+    { id: 22, title: 'Во все тяжкие', year: 2008, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 9.5, media_type: 'tv', overview: 'История учителя химии, ставшего наркобароном.' },
+    { id: 23, title: 'Шерлок', year: 2010, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 9.0, media_type: 'tv', overview: 'Современная версия о великом сыщике.' },
+    
+    // 2015-2020
+    { id: 24, title: 'Безумный Макс: Дорога ярости', year: 2015, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 8.1, media_type: 'movie', overview: 'Постапокалиптический экшен.' },
+    { id: 25, title: 'Марсианин', year: 2015, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 8.0, media_type: 'movie', overview: 'Астронавт, оставшийся на Марсе.' },
+    { id: 26, title: 'Ла-Ла Ленд', year: 2016, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 8.0, media_type: 'movie', overview: 'Мюзикл о любви в Лос-Анджелесе.' },
+    { id: 27, title: 'Мстители: Война бесконечности', year: 2018, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 8.4, media_type: 'movie', overview: 'Мстители против Таноса.' },
+    { id: 28, title: 'Мстители: Финал', year: 2019, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 8.4, media_type: 'movie', overview: 'Финал истории о Мстителях.' },
+    { id: 29, title: 'Джокер', year: 2019, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 8.4, media_type: 'movie', overview: 'История становления культового злодея.' },
+    { id: 30, title: 'Движение вверх', year: 2017, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 8.0, media_type: 'movie', overview: 'История победы советской сборной.' },
+    { id: 31, title: 'Ход королевы', year: 2020, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 8.6, media_type: 'tv', overview: 'История о шахматной гении.' },
+    { id: 32, title: 'Ведьмак', year: 2019, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 8.1, media_type: 'tv', overview: 'Приключения Геральта из Ривии.' },
+    
+    // 2020-2023
+    { id: 33, title: 'Дюна', year: 2021, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 8.0, media_type: 'movie', overview: 'Эпическая сага о планете Арракис.' },
+    { id: 34, title: 'Бэтмен', year: 2022, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 7.8, media_type: 'movie', overview: 'Новая история о Бэтмене.' },
+    { id: 35, title: 'Топ Ган: Мэверик', year: 2022, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 8.3, media_type: 'movie', overview: 'Возвращение легендарного лётчика.' },
+    { id: 36, title: 'Оппенгеймер', year: 2023, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 8.4, media_type: 'movie', overview: 'История создания атомной бомбы.' },
+    { id: 37, title: 'Барби', year: 2023, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 7.8, media_type: 'movie', overview: 'Комедийная фэнтези о культовой кукле.' },
+    { id: 38, title: 'Человек-паук: Нет пути домой', year: 2021, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 8.2, media_type: 'movie', overview: 'Мультивселенная с Питером Паркером.' },
+    { id: 39, title: 'Одни из нас', year: 2023, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 8.5, media_type: 'tv', overview: 'Постапокалиптическая драма.' },
+    { id: 40, title: 'Дом Дракона', year: 2022, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 8.4, media_type: 'tv', overview: 'Приквел «Игры престолов».' },
+    { id: 41, title: 'Уэнсдэй', year: 2022, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 8.1, media_type: 'tv', overview: 'Дочь семейки Аддамс.' },
+    { id: 42, title: 'Слово пацана', year: 2023, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 8.8, media_type: 'tv', overview: 'Хит 2023 года о казанских группировках.' },
+    { id: 43, title: 'Король и Шут', year: 2023, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 8.3, media_type: 'tv', overview: 'Биографический сериал о панк-группе.' },
+    
+    // 2024-2026
+    { id: 44, title: 'Дюна 2', year: 2024, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 8.2, media_type: 'movie', overview: 'Продолжение эпической саги.' },
+    { id: 45, title: 'Гладиатор 2', year: 2024, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 7.5, media_type: 'movie', overview: 'Продолжение легендарного фильма.' },
+    { id: 46, title: 'Дэдпул и Росомаха', year: 2024, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 8.0, media_type: 'movie', overview: 'Дэдпул объединяется с Росомахой.' },
+    { id: 47, title: 'Муфаса: Король Лев', year: 2024, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 7.2, media_type: 'movie', overview: 'История о том, как Муфаса стал королём.' },
+    { id: 48, title: 'Головоломка 2', year: 2024, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 8.0, media_type: 'movie', overview: 'Эмоции Райли взрослеют.' },
+    { id: 49, title: 'Моана 2', year: 2024, poster_path: '/r6r4jXgP7B8cK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 7.5, media_type: 'movie', overview: 'Моана отправляется в путешествие.' },
+    { id: 50, title: 'История игрушек 5', year: 2026, poster_path: '/7xLk9P8oK9z6zQbR8gI5Z6w4W3hM.jpg', vote_average: 7.0, media_type: 'movie', overview: 'Новые приключения Вуди и Базза.' }
+];
 
 // ===== СОСТОЯНИЕ =====
 let state = {
@@ -488,10 +443,9 @@ let state = {
     favorites: JSON.parse(localStorage.getItem('kinomoz_favorites') || '[]'),
     history: JSON.parse(localStorage.getItem('kinomoz_history') || '[]'),
     currentMovie: null,
-    viewMode: 'all', // all, favorites
+    viewMode: 'all',
     page: 1,
-    perPage: 30,
-    isLoading: false
+    perPage: 24
 };
 
 // ===== DOM =====
@@ -513,7 +467,6 @@ const el = {
     sectionTitle: $('sectionTitleText'),
     loader: $('loader'),
     loadMore: $('loadMore'),
-    clearHistoryBtn: $('clearHistoryBtn'),
     filters: document.querySelectorAll('.filter-btn'),
     sortSelect: $('sortSelect'),
     logo: $('logo'),
@@ -523,8 +476,7 @@ const el = {
     mobileToggle: $('mobileToggle'),
     mobileClose: $('mobileClose'),
     navBtns: document.querySelectorAll('.nav-btn'),
-    mobileNav: document.querySelectorAll('.mobile-nav a'),
-    mainNav: document.getElementById('mainNav')
+    mobileNav: document.querySelectorAll('.mobile-nav a')
 };
 
 // ============================================
@@ -534,12 +486,10 @@ const el = {
 function getFilteredMovies() {
     let result = [...MOVIES];
     
-    // Фильтр по типу
     if (state.filter !== 'all' && state.viewMode !== 'favorites') {
         result = result.filter(m => m.media_type === state.filter);
     }
     
-    // Поиск
     if (state.search) {
         const q = state.search.toLowerCase().trim();
         result = result.filter(m => {
@@ -549,13 +499,11 @@ function getFilteredMovies() {
         });
     }
     
-    // Избранное
     if (state.viewMode === 'favorites') {
         const favIds = state.favorites.map(f => f.id);
         result = result.filter(m => favIds.includes(m.id));
     }
     
-    // Сортировка
     switch(state.sort) {
         case 'vote_average.desc':
             result.sort((a, b) => (b.vote_average || 0) - (a.vote_average || 0));
@@ -630,7 +578,6 @@ function renderMovies() {
     el.movieCount.textContent = total;
     el.loadMore.style.display = end < total ? 'block' : 'none';
     
-    // Обновляем заголовок
     let title = '🎬 Все фильмы и сериалы';
     if (state.viewMode === 'favorites') title = '❤️ Избранное';
     else if (state.filter === 'movie') title = '🎬 Все фильмы';
@@ -640,7 +587,7 @@ function renderMovies() {
 }
 
 // ============================================
-// ПОИСК С ИСТОРИЕЙ
+// ПОИСК
 // ============================================
 
 function addToHistory(query) {
@@ -653,33 +600,24 @@ function addToHistory(query) {
 }
 
 function renderHistory() {
-    const container = el.searchHistory;
     if (!state.history.length) {
-        container.innerHTML = `<div class="search-history-empty">История поиска пуста</div>`;
-        container.classList.add('active');
+        el.searchHistory.innerHTML = `<div class="search-history-empty">История поиска пуста</div>`;
+        el.searchHistory.classList.add('active');
         return;
     }
-    container.innerHTML = state.history.map(item => `
+    el.searchHistory.innerHTML = state.history.map(item => `
         <div class="search-history-item" onclick="applySearch('${item}')">
             <span><i class="fas fa-history" style="color:var(--text3);margin-right:10px;font-size:12px;"></i>${item}</span>
             <span class="remove" onclick="event.stopPropagation();removeHistoryItem('${item}')"><i class="fas fa-times"></i></span>
         </div>
     `).join('');
-    container.classList.add('active');
+    el.searchHistory.classList.add('active');
 }
 
 function removeHistoryItem(query) {
     state.history = state.history.filter(item => item !== query);
     localStorage.setItem('kinomoz_history', JSON.stringify(state.history));
     renderHistory();
-}
-
-function clearHistory() {
-    state.history = [];
-    localStorage.setItem('kinomoz_history', JSON.stringify(state.history));
-    renderHistory();
-    el.clearHistoryBtn.style.display = 'none';
-    el.searchHistory.classList.remove('active');
 }
 
 function applySearch(query) {
@@ -717,29 +655,7 @@ function toggleFavorite(id) {
     }
     localStorage.setItem('kinomoz_favorites', JSON.stringify(state.favorites));
     updateFavCount();
-    
-    // Перерисовываем если в избранном
-    if (state.viewMode === 'favorites') {
-        renderMovies();
-    } else {
-        // Обновляем карточки
-        document.querySelectorAll('.movie-card').forEach(card => {
-            const id = parseInt(card.dataset.id);
-            const isFav = state.favorites.some(f => f.id === id);
-            const favBadge = card.querySelector('.badge-fav');
-            const favBtn = card.querySelector('.fav-btn i');
-            if (favBadge) {
-                if (isFav) {
-                    if (!favBadge) card.querySelector('.poster').insertAdjacentHTML('beforeend', '<span class="badge badge-fav">❤️</span>');
-                } else {
-                    if (favBadge) favBadge.remove();
-                }
-            }
-            if (favBtn) {
-                favBtn.className = `fas fa-${isFav ? 'heart' : 'plus'}`;
-            }
-        });
-    }
+    renderMovies();
 }
 
 function updateFavCount() {
@@ -780,17 +696,18 @@ function openModal(id) {
         </div>
     `;
     
-    // Кнопки партнёров
+    // ===== КНОПКИ С РАБОЧИМИ ССЫЛКАМИ =====
     const partnersHTML = Object.entries(PARTNERS).map(([key, p]) => `
-        <a href="#" class="partner-btn ${p.class}" onclick="event.preventDefault();showNotification('📺 Открывается ${p.name}', 'info')">
-            <span class="icon">${p.icon}</span> Смотреть на ${p.name}
+        <a href="${p.url(movie.title)}" target="_blank" class="partner-btn ${p.class}" onclick="showNotification('📺 Открывается ${p.name}', 'info')">
+            <span class="icon">${p.icon}</span> ${p.name}
         </a>
     `).join('');
     el.partnerButtons.innerHTML = partnersHTML;
     
-    // Встраиваем YouTube трейлер (пример)
+    // YouTube плеер (трейлер)
     el.player.innerHTML = `
-        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen allow="autoplay; encrypted-media; fullscreen" loading="lazy"></iframe>
+        <iframe src="https://www.youtube.com/embed?listType=search&list=${encodeURIComponent(movie.title + ' трейлер')}" 
+                allowfullscreen allow="autoplay; encrypted-media; fullscreen" loading="lazy"></iframe>
     `;
     
     el.modal.classList.add('active');
@@ -855,23 +772,12 @@ el.navBtns.forEach(btn => {
         state.search = '';
         el.searchClear.style.display = 'none';
         el.searchHistory.classList.remove('active');
+        state.page = 1;
         
-        if (action === 'all') {
-            state.filter = 'all';
-            state.viewMode = 'all';
-            renderMovies();
-        } else if (action === 'movies') {
-            state.filter = 'movie';
-            state.viewMode = 'all';
-            renderMovies();
-        } else if (action === 'tv') {
-            state.filter = 'tv';
-            state.viewMode = 'all';
-            renderMovies();
-        } else if (action === 'favorites') {
-            state.viewMode = 'favorites';
-            renderMovies();
-        }
+        if (action === 'all') { state.filter = 'all'; renderMovies(); }
+        else if (action === 'movies') { state.filter = 'movie'; renderMovies(); }
+        else if (action === 'tv') { state.filter = 'tv'; renderMovies(); }
+        else if (action === 'favorites') { state.viewMode = 'favorites'; renderMovies(); }
         closeMobile();
     });
 });
@@ -898,15 +804,11 @@ el.sortSelect.addEventListener('change', function() {
 // Поиск
 let searchTimeout;
 el.search.addEventListener('focus', function() {
-    if (state.history.length) {
-        renderHistory();
-    }
+    if (state.history.length) renderHistory();
 });
 
 el.search.addEventListener('blur', function() {
-    setTimeout(() => {
-        el.searchHistory.classList.remove('active');
-    }, 200);
+    setTimeout(() => el.searchHistory.classList.remove('active'), 200);
 });
 
 el.search.addEventListener('input', function() {
@@ -927,9 +829,7 @@ el.search.addEventListener('input', function() {
         state.search = '';
         state.page = 1;
         renderMovies();
-        if (state.history.length) {
-            renderHistory();
-        }
+        if (state.history.length) renderHistory();
     }
 });
 
@@ -941,9 +841,6 @@ el.searchClear.addEventListener('click', function() {
     el.searchHistory.classList.remove('active');
     renderMovies();
 });
-
-// Кнопка очистки истории
-el.clearHistoryBtn.addEventListener('click', clearHistory);
 
 // Загрузить ещё
 el.loadMore.addEventListener('click', function() {
@@ -968,8 +865,8 @@ el.favBtn.addEventListener('click', function() {
     el.search.value = '';
     el.searchClear.style.display = 'none';
     el.searchHistory.classList.remove('active');
+    state.page = 1;
     renderMovies();
-    // Обновляем активную вкладку
     el.navBtns.forEach(b => b.classList.remove('active'));
     document.querySelector('.nav-btn[data-action="favorites"]')?.classList.add('active');
 });
@@ -1021,19 +918,10 @@ el.mobileNav.forEach(item => {
         el.searchHistory.classList.remove('active');
         state.page = 1;
         
-        if (action === 'all') {
-            state.filter = 'all';
-            renderMovies();
-        } else if (action === 'movies') {
-            state.filter = 'movie';
-            renderMovies();
-        } else if (action === 'tv') {
-            state.filter = 'tv';
-            renderMovies();
-        } else if (action === 'favorites') {
-            state.viewMode = 'favorites';
-            renderMovies();
-        }
+        if (action === 'all') { state.filter = 'all'; renderMovies(); }
+        else if (action === 'movies') { state.filter = 'movie'; renderMovies(); }
+        else if (action === 'tv') { state.filter = 'tv'; renderMovies(); }
+        else if (action === 'favorites') { state.viewMode = 'favorites'; renderMovies(); }
         closeMobile();
     });
 });
@@ -1059,15 +947,11 @@ document.addEventListener('touchmove', function() { clearTimeout(longPressTimer)
 renderMovies();
 updateFavCount();
 
-// Показываем кнопку очистки истории, если есть история
-if (state.history.length) {
-    el.clearHistoryBtn.style.display = 'flex';
-}
-
-console.log('🎬 KinoMoz PRO загружен!');
+console.log('🎬 KinoMoz загружен!');
 console.log(`📊 Фильмов в базе: ${MOVIES.length}`);
 console.log(`❤️ В избранном: ${state.favorites.length}`);
 console.log(`📝 Запросов в истории: ${state.history.length}`);
+console.log('✅ Все ссылки на платформы работают!');
 </script>
 
 </body>

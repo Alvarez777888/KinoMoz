@@ -19,7 +19,6 @@
         .logo{display:flex;align-items:center;gap:8px;cursor:pointer;flex-shrink:0}
         .logo-text{font-size:24px;font-weight:900;background:linear-gradient(135deg,#e50914,#ff6b6b);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
         .logo-text span{-webkit-text-fill-color:var(--text);font-weight:300}
-        .logo-badge{font-size:9px;background:#4CAF50;color:#fff;padding:2px 10px;border-radius:50px;font-weight:600}
         
         .nav{display:flex;gap:4px;flex-wrap:wrap}
         .nav-btn{padding:8px 18px;border-radius:50px;background:transparent;color:var(--text2);border:none;font-size:13px;font-weight:500;cursor:pointer;transition:all .3s}
@@ -208,7 +207,6 @@
     <div class="header-inner">
         <div class="logo" id="logo">
             <span class="logo-text">Kino<span>Moz</span></span>
-            <span class="logo-badge">РЕАЛЬНЫЕ</span>
         </div>
         <nav class="nav" id="mainNav">
             <button class="nav-btn active" data-action="all">Все</button>
@@ -399,24 +397,44 @@ const REAL_MOVIES = [
     { id: 48, title: 'История игрушек 5', year: 2026, rating: 7.0, type: 'movie', poster: 'https://st.kp.yandex.net/images/film_iphone/iphone360_1243158.jpg', description: 'Новые приключения Вуди и Базза.' }
 ];
 
-// ===== ГЕНЕРИРУЕМ 500+ ФИЛЬМОВ (расширяем базу) =====
+// ===== ГЕНЕРИРУЕМ БОЛЬШЕ ФИЛЬМОВ =====
 function generateMovies() {
     const movies = [...REAL_MOVIES];
     const templates = REAL_MOVIES;
-    
-    // Добавляем вариации для наполнения
-    const years = [2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026];
+    const years = [2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024,2025,2026];
+    const posters = [
+        'https://st.kp.yandex.net/images/film_iphone/iphone360_474.jpg',
+        'https://st.kp.yandex.net/images/film_iphone/iphone360_301.jpg',
+        'https://st.kp.yandex.net/images/film_iphone/iphone360_328.jpg',
+        'https://st.kp.yandex.net/images/film_iphone/iphone360_312.jpg',
+        'https://st.kp.yandex.net/images/film_iphone/iphone360_349.jpg',
+        'https://st.kp.yandex.net/images/film_iphone/iphone360_689.jpg',
+        'https://st.kp.yandex.net/images/film_iphone/iphone360_437.jpg',
+        'https://st.kp.yandex.net/images/film_iphone/iphone360_111543.jpg',
+        'https://st.kp.yandex.net/images/film_iphone/iphone360_447301.jpg',
+        'https://st.kp.yandex.net/images/film_iphone/iphone360_251733.jpg',
+        'https://st.kp.yandex.net/images/film_iphone/iphone360_244898.jpg',
+        'https://st.kp.yandex.net/images/film_iphone/iphone360_464266.jpg',
+        'https://st.kp.yandex.net/images/film_iphone/iphone360_466757.jpg',
+        'https://st.kp.yandex.net/images/film_iphone/iphone360_505058.jpg',
+        'https://st.kp.yandex.net/images/film_iphone/iphone360_464963.jpg',
+        'https://st.kp.yandex.net/images/film_iphone/iphone360_405007.jpg',
+        'https://st.kp.yandex.net/images/film_iphone/iphone360_428347.jpg',
+        'https://st.kp.yandex.net/images/film_iphone/iphone360_49832.jpg',
+        'https://st.kp.yandex.net/images/film_iphone/iphone360_436306.jpg',
+        'https://st.kp.yandex.net/images/film_iphone/iphone360_409616.jpg'
+    ];
     
     let id = 100;
     for (let i = 0; i < 500; i++) {
         const base = templates[i % templates.length];
         const year = years[i % years.length];
         const rating = (5 + (i % 40) / 10).toFixed(1);
+        const poster = posters[i % posters.length];
         
-        // Добавляем уникальные названия
         let title = base.title;
         if (i > 50) {
-            const suffixes = ['', ' 2', ' 3', ' 4', ' Новое начало', ' Наследие', ' Возвращение', ' Последняя битва'];
+            const suffixes = ['', ' 2', ' 3', ' 4', ' Новое начало', ' Наследие', ' Возвращение'];
             title = base.title + suffixes[i % suffixes.length];
         }
         
@@ -426,7 +444,7 @@ function generateMovies() {
             year: year,
             rating: parseFloat(rating),
             type: base.type || 'movie',
-            poster: base.poster || 'https://st.kp.yandex.net/images/film_iphone/iphone360_474.jpg',
+            poster: poster,
             description: `${title} — ${base.description || 'Один из лучших фильмов'}`
         });
     }
@@ -596,8 +614,9 @@ function renderMovies() {
 }
 
 // ============================================
-// ОБНОВЛЕНИЕ
+// ОБНОВЛЕНИЕ + ЛОГО
 // ============================================
+
 function updateMovies() {
     el.loader.style.display = 'flex';
     el.loaderText.textContent = 'Обновление базы...';
@@ -608,6 +627,28 @@ function updateMovies() {
         state.page = 1;
         renderMovies();
     }, 1000);
+}
+
+// ===== ЛОГО ВОЗВРАЩАЕТ НА ГЛАВНУЮ =====
+function goHome() {
+    state.viewMode = 'all';
+    state.filter = 'all';
+    state.search = '';
+    el.search.value = '';
+    el.searchClear.style.display = 'none';
+    el.searchHistory.classList.remove('active');
+    state.page = 1;
+    renderMovies();
+    
+    // Обновляем активные кнопки
+    el.navBtns.forEach(b => b.classList.remove('active'));
+    document.querySelector('.nav-btn[data-action="all"]')?.classList.add('active');
+    el.filters.forEach(b => b.classList.remove('active'));
+    document.querySelector('.filter-btn[data-filter="all"]')?.classList.add('active');
+    
+    // Прокрутка наверх
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    closeMobile();
 }
 
 // ============================================
@@ -771,6 +812,9 @@ function closeMobile() {
 // СОБЫТИЯ
 // ============================================
 
+// Логотип - возврат на главную
+el.logo.addEventListener('click', goHome);
+
 el.navBtns.forEach(btn => {
     btn.addEventListener('click', function() {
         el.navBtns.forEach(b => b.classList.remove('active'));
@@ -876,21 +920,6 @@ el.favBtn.addEventListener('click', function() {
     document.querySelector('.nav-btn[data-action="favorites"]')?.classList.add('active');
 });
 
-el.logo.addEventListener('click', function() {
-    state.viewMode = 'all';
-    state.filter = 'all';
-    state.search = '';
-    el.search.value = '';
-    el.searchClear.style.display = 'none';
-    state.page = 1;
-    renderMovies();
-    closeMobile();
-    el.navBtns.forEach(b => b.classList.remove('active'));
-    document.querySelector('.nav-btn[data-action="all"]')?.classList.add('active');
-    el.filters.forEach(b => b.classList.remove('active'));
-    document.querySelector('.filter-btn[data-filter="all"]')?.classList.add('active');
-});
-
 el.mobileToggle.addEventListener('click', openMobile);
 el.mobileClose.addEventListener('click', closeMobile);
 el.mobileOverlay.addEventListener('click', closeMobile);
@@ -939,6 +968,7 @@ console.log(`🎬 KinoMoz загружен!`);
 console.log(`📊 Фильмов в базе: ${MOVIES.length}`);
 console.log(`❤️ В избранном: ${state.favorites.length}`);
 console.log(`📝 Запросов в истории: ${state.history.length}`);
+console.log(`🔄 Логотип возвращает на главную`);
 </script>
 
 </body>
